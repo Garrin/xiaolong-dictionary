@@ -104,7 +104,7 @@ Gebaeude:PC10Z:das Krankenhaus:医院:yīyuàn:2
 Verben:PC11:zurueckgeben:还:huán:2
 Literatur:PC11:die Illustrierte:画报:huàbào:2
 Literatur:PC11:das Woerterbuch/das Lexikon:词典:cídian3:2
-Grammatik/Zeitwoerter:PC11/LSC01/NPC06:jetzt/heutzutage:现在:xiànzài:0
+Grammatik/Zeitwoerter:PC11/LSC01/NPC06:jetzt/heutzutage:现在:xiànzài:2
 Verben:PC11:brauchen/gebrauchen:用:yong4:2
 Zeitangaben:PC11:eine kurze Zeit:一下儿:yíxiàr:2
 Verabschiedung/Gruß:PC11/NPC05:Auf Wiedersehen:再见:zàijiàn:2
@@ -191,7 +191,7 @@ ZEW:PC16:(lange Dinge/Hose/Straße):条:tiáo:0
 Kleidung:PC16:der Rock:裙子:qúnzi:0
 Zahlen:PC16:zwei:两:liang3:0
 Papierzeug:PC16:die Karte/das Billett:票:piào:0
-Gebaeude:PC16/NPC06:die Beijing-Oper:京剧:jīngjù:0
+Gebaeude:PC16/NPC06:die Beijing-Oper:京剧:jīngjù:2
 Zeiten:PC16:der Abend:晚上:wan3shang:2
 ---:PC16/NPC06:zu/sehr/aeußerst:太:tài:2
 ---:PC16:von (irgendwo):从:cóng:2
@@ -296,7 +296,7 @@ ZEW/Personendaten:PC20:Jahre alt sein:岁:suì:0
 ---:PC20:teilnehmen/mitmachen:参加:cānjiā:0
 Schule/Studium:PC20:der Klassenkamerad/der Kommilitone/der Mitstudent:同学:tóngxué:0
 ---:PC20:sicher/gewiss/sicherlich/bestimmt:一定:yídìng:0
----:PC20/NPC06:interessant:有意思:yǒuyìsi:0
+---:PC20/NPC06:interessant:有意思:yǒuyìsi:2
 Zeit:PC20:die Woche:星期:xīngqī:0
 Zeit/Wochentage:PC20:Sonntag:星期日:xīngqīrì:0
 Verben:PC20/NPC05:wissen/kennen:知道:zhīdào:2
@@ -363,7 +363,7 @@ Raeume:PC22:das Zimmer:房间:fángjian1:0
 Raeume:PC22:das Schlafzimmer:卧室:wòshì:0
 Raeume:PC22:das Badezimmer:洗澡间:xi3zao3jian1:0
 Verben:PC22:ein Bad nehmen:洗澡:xi3zao3:0
-Grammatik/Fragepartikel:PC22/NPC06:wie:怎么样:zěnmeyàng:0
+Grammatik/Fragepartikel:PC22/NPC06:wie:怎么样:zěnmeyàng:2
 Richtung:PC22Z:außen:外边:wàibian1:0
 Richtung:PC22Z:unten/unter:下边:xiàbian1:0
 Richtung:PC22Z:vorn/vor:前边:qiánbian1:0
@@ -419,7 +419,7 @@ Zeit:PC25/NPC05:spaet:晚:wǎn:2
 ---:PC25:anhalten:停:tíng:0
 Richtung:PC25:vor/vorn/Vordergrund:前边:qiánbian1:0
 Geografie:PC25:der Fluss:河:hé:0
-Freizeit:PC25/NPC06:schwimmen:游泳:yóuyǒng:0
+Freizeit:PC25/NPC06:schwimmen:游泳:yóuyǒng:2
 ---:PC25:vorbereiten:准备:zhun3bèi:0
 Freizeit:PC25:angeln:钓:diào:0
 Essen/Tiere:PC25:der Fisch:鱼:yú:0
@@ -813,11 +813,11 @@ Namen:NPC05:(Name):王小云:Wáng Xiǎoyún:2
 ---:NPC05:nicht brauchen:不用:búyòng:2
 Namen:NPC05:(Name):宋华:Sòng Huá:0
 Wetter:NPC06:Wetter:天气:tiānqì:2
-Zeit:NPC06:Zeit:时间:shíjiān:2
-ZEW:NPC06:...mal:遍:biàn:0
+Zeit:NPC06:Zeit(-raum):时间:shíjiān:2
+ZEW:NPC06:...mal:遍:biàn:2
 ---:NPC06:Ball spielen:打球:dǎ qiú:0
----:NPC06:spielen/schlagen:打:dǎ:0
+---:NPC06:spielen/schlagen:打:dǎ:2
 ---:NPC06:Ball/Kugel:球:qiú:0
-Floskeln:NPC06:bedauern/bedauerlicherweise/leider:抱歉:bàoqiàn:0
+Floskeln:NPC06:bedauern/bedauerlicherweise/leider:抱歉:bàoqiàn:2
 ---:NPC06:befuerchten/vielleicht:恐怕:kǒngpà:0
----:NPC06:in Ordnung sein/es geht/es ist moeglich:行:xíng:0
+---:NPC06:in Ordnung sein/es geht/es ist moeglich:行:xíng:2
