@@ -1,0 +1,234 @@
+Personalpronomen:PC01/LSC01/NPC01:Du:你:nǐ:2
+---:PC01/LSC01/NPC01:gut:好:hǎo:2
+Grammatik/Fragepartikel:PC02/LSC01/NPC01:---:吗:ma:2
+Grammatik/Personalpronomen:PC02/LSC01/NPC01:ich/mir/mich:我:wǒ:2
+Adjektive:PC02/LSC01/NPC01:sehr:很:hěn:2
+Grammatik/Modalpartikel:PC02/NPC01:---:呢:ne:2
+---:PC03/NPC02:beschaeftigt:忙:máng:2
+---:PC03/LSC01/NPC02:nein/nicht:不:bù:2
+Familie:PC03/NPC02:aelterer Bruder (der):哥哥:gēge:2
+Grammatik/Personalpronomen:PC03/LSC01/NPC02:er/ihm/ihn:他:tā:2
+Familie:PC03/NPC02:juengerer Bruder (der):弟弟:dìdi:2
+Grammatik/Personalpronomen:PC03/NPC02:sie/ihnen:他们:tāmen:2
+Personen:PC03/NPC02:alle:都:dōu:2
+Berufe:PC05/NPC03:der Arzt:大夫/医生:dàifu/yīsheng:2
+Grammatik/Strukturpartikel:PC05/LSC01/NPC04:(Attributpartikel):的:de:2
+Verkehr:PC05/NPC08Z:das Fahrzeug:车:chē:2
+grammatik/personalpronomen:PC05/LSC01/NPC03:sie/ihr:她:tā:2
+---:PC05/NPC03:jener/jene/jenes/das (dort):那:nà:2
+Grammatik/Fragepartikel:PC06/NPC03:welcher/welche/welches:哪:nǎ:2
+Laender:PC06/NPC03:das Land/das Reich:国:guó:2
+---:PC06/LSC01/NPC03:die Person/ der Mensch:人:rén:2
+Grammatik/Fragepartikel:PC06/NPC03:wer:谁:shéi:2
+Grammatik/Personalpronomen:PC06/NPC02:wir/uns:我们:wǒmen:2
+Berufe:PC06/NPC03:der Lehrer:老师:lǎoshī:2
+Sprachen:PC06/NPC04:das Chinesisch:汉语:hànyǔ:2
+Laender:PC06/LSC01/NPC03:China:中国:zhōngguó:2
+Laender:PC06Z/NPC04:USA/Vereinigte Staaten von Amerika:美国:měiguó:2
+---:PC04/LSC01/NPC03:dieser/diese/dieses:这:zhè:2
+---:PC04/LSC01/NPC03:sein/ja:是:shì:2
+Personen:PC04/LSC01/NPC02:der Freund:朋友:péngyou:2
+Familie:PC04/NPC02:der Vater/der Papa:爸爸:bàba:2
+Familie:PC04/NPC02:die Mutter/die Mama:妈妈:māma:2
+Grammatik/Personalpronomen:PC04/NPC06:ihr/euch:你们:nǐmen:2
+Grammatik/Fragepartikel:PC07/NPC04:was:什么:shénme:2
+Wahrnehmung:PC07/NPC07:sehen/ansehen/lesen/schauen/anschauen:看:kàn:2
+Staedte:PC07/LSC01/NPC09:Beijing:北京:běijīng:2
+---:PC08/NPC04:bitte/bitten:请:qǐng:2
+Essen/Trinken:PC08/NPC02:trinken:喝:hē:2
+Getraenke:PC08/NPC09Z:der Tee:茶:chá:2
+Grammatik/Personalpronomen:PC08/LSC01/NPC03:Sie (Hoeflichkeitsform):您:nín:2
+---:PC08/NPC04:eintreten/hereinkommen:进:jìn:2
+---:PC08/LSC01/NPC05:danken:谢谢:xièxiè:2
+Getraenke:PC08Z/NPC02:der Kaffee:咖啡:kāfēi:2
+Getraenke:PC08Z/PC19/NPC09Z:das Bier:啤酒:píjiǔ:0
+Getraenke:PC08Z/PC25Z/NPC09Z:die Milch:牛奶:níunǎi:0
+Anrede:PC08Z/PC12/NPC04:der Herr:先生:xiānsheng/xiānshēng:2
+Name:PC09/NPC04:werter Name:贵姓:guìxìng:2
+Floskeln:PC09/LSC01/NPC04:Darf ich fragen ... ?/Gestatten Sie mir die Frage, ... ?:请问:qǐngwèn:2
+Verben:PC09/NPC04/NPC05/NPC07:fragen:问:wèn: 2
+Name:PC09/LSC01/NPC04:heißen/Nachname:姓:xìng:2
+Verben/Name:PC09/LSC01/NPC04:heißen / jn. oder etw. rufen:叫:jiào:2
+Sprachen:PC09/NPC03:die Fremdsprache:外语:wàiyǔ:2
+Schule/Studium:PC09/NPC04:das Institut/die Hochschule:学院:xuéyuàn:2
+Berufe:PC09/NPC04:der Student/der Schueler:学生:xuéshēng:2
+Verben:PC09/NPC04:lernen/studieren:学习:xuéxí:2
+Verben:PC09/NPC07:lernen/studieren:学:xué:2
+Anrede:PC09Z/PC19/NPC05:das Fraeulein:小姐:xiǎojiě:2
+Laender:PC09Z/PC13Z/NPC04:England:英国:yīngguó:2
+---:PC10/NPC05:(irgendwo) sein:在:zài:2
+Verben:PC10/NPC05:sitzen/sich setzen:坐:zuò:2
+Grammatik/Fragepartikel:PC10/NPC05:wo:哪儿:nǎr:2
+Gebaeude:PC10/NPC05:das Wohnheim:宿舍:sùshè:0
+Grammatik/Fragepartikel:PC10/NPC08:wie viele/wieviel:多少:duōshao:2
+Zeit:PC10/PC20/LSC01/NPC05:die Nummer/der Tag/das Datum/die Nummer:号:hào:2
+Zahlen:PC10/LSC01/NPC05:vier:四:sì:2
+ZEW:PC10/NPC05:der(das) Stock(werk):层:céng:0
+Zahlen:PC10/LSC01/NPC05:Zwei:二:èr:2
+Zahlen:PC10/NPC05:Null:〇/零:líng:2
+---:PC10Z/PC16/NPC05:hier:这儿:zhèr:2
+Literatur:PC11/NPC08Z:das Woerterbuch/das Lexikon:词典:cídiǎn:0
+Grammatik/Zeitwoerter:PC11/LSC01/NPC06:jetzt/heutzutage:现在:xiànzài:2
+Zeitangaben:PC11/NPC07:eine kurze Zeit/einmal/mal kurz:一下儿:yíxiàr:2
+Verabschiedung/Gruß:PC11/NPC05:Auf Wiedersehen:再见:zàijiàn:2
+Geschlecht:PC12/NPC05:weiblich:女:nǚ:2
+Verben:PC12/LCS01/NPC04:jn. kennen/jn. erlernen/jn. kennenlernen:认识:rènshi:2
+Verben:PC12/NPC06:gehen:去:qù:2
+Name:PC13/LSC01/NPC07:der Name:名字:míngzi:2
+---:PC13/NPC07:(Ausruf) ah!/(Ausruf) oh!:啊:à:2
+Verben:PC13/NPC09:etw. kaufen:买:mǎi:2
+Verben:PC13/NPC04:kommen:来:lái:2
+Verben:PC13/NPC07:jemanden vorstellen/etwas vorstellen:介绍:jièshào:2
+Geschlecht:PC13/NPC02:maennlich:男:nán:2
+Grammatik/Zeitwoerter/Modalpartikel:PC13/NPC05:---:了:le:2
+---:PC13/NPC08:und/mit:和:hé:2
+Verben:PC13/NPC06:sprechen/sagen:说:shuō:2
+Berufe:PC13Z/NPC07:der Professor:教授:jiàoshòu:2
+Verben:PC14/NPC08:arbeiten/Arbeit:工作:gōngzuò:2
+---:PC14/NPC08:die Familie/das Haus/das Zuhause:家:jiā:2
+---:PC14/NPC06:haben/es gibt:有:yǒu:2
+---:PC14/NPC08:nicht:没:méi:2
+Familie:PC14/NPC08:die juengere Schwester:妹妹:mèimei:2
+Familie:PC14/NPC08:die aeltere Schwester:姐姐:jiějie:2
+Familie:PC14/NPC08Z:das Kind:孩子:háizi:0
+Berufe:PC14Z/NPC08Z:der Ingenieur:工程师:gōngchéngshī:0
+Sprachen:PC15/NPC07:das Chinesisch:中文:zhōngwén:2
+Studium:PC15/NPC07:die Fakultaet/der Fachbereich:系:xì:2
+ZEW:PC15/NPC08:(allgemeines ZEW):个:gè:2
+Grammatik/Fragepartikel/Anzahl:PC15/NPC08:wieviel/wie viele/einige:几:jǐ:2
+Studium:PC15/NPC07:lehren:教:jiāo:2
+---:PC15/NPC08:noch/außerdem/dazu noch:还:hái:2
+Zahlen:PC16/NPC08:zwei (vor ZEWs):两:liǎng:2
+Gebaeude:PC16/NPC06:die Beijing-Oper:京剧:jīngjù:2
+Zeiten:PC16/NPC09Z:der Abend/abends:晚上:wǎnshang:2
+---:PC16/NPC06:zu/sehr/aeußerst:太:tài:2
+---:PC16/NPC08:groß/alt:大:dà:2
+Schule:PC17/NPC09:Untericht/Vorlesung/Lektion:课:kè:2
+Zeit:PC18/NPC06:der Tag:天:tiān:2
+Zeit:PC18/NPC09:der Vormittag/vormittags:上午:shàngwǔ:2
+Essen:PC18/NPC09:essen:吃:chī:2
+Anzahl:PC18/PC21/NPC08:viele/viel:多:duō:2
+Zeit:PC18/NPC09:der Nachmittag/nachmittags:下午:xiàwǔ:2
+Zeit:PC18/NPC06:die Zeit (Zeitpunkt):时候:shíhou:2
+Verben:PC19/NPC02:wollen/werden (Fut.)/muessen:要:yào:2
+Verben:PC19/LSC01/NPC08:moegen:喜欢:xǐhuan:0
+ZEW:PC19/NPC09:die Flasche:瓶:píng:0
+Musik:PC19/NPC07Z:die Musik:音乐:yīnyuè:2
+Obst:PC19Z/NPC09:die Weintraube:葡萄:pútao:0
+Personendaten/Zeit:PC20/NPC09:der Geburtstag:生日:shēngri:2
+Zeit:PC20/NPC06:Heute:今天:jīntiān:2
+Zeit:PC20/NPC09:dieses Jahr/heuer:今年:jīnnián:2
+ZEW/Personendaten:PC20/NPC09:Jahre alt sein/Lebensjahr:岁:suì:2
+---:PC20/NPC09:gratulieren/beglueckwuenschen/Gratulation:祝贺:zhùhè:0
+---:PC20/NPC09:teilnehmen/mitmachen:参加:cānjiā:0
+---:PC20/NPC06:interessant:有意思:yǒuyìsi:2
+Zeit:PC20/NPC09:die Woche:星期:xīngqī:0
+Zeit/Wochentage:PC20/NPC09:Sonntag:星期日:xīngqīrì:0
+Verben:PC20/NPC05:wissen/kennen:知道:zhīdào:0
+Zeit:PC20/NPC09:das Jahr:年:nián:2
+---:PC20Z/NPC05:Entschuldigung!/Verzeihung!:对不起:duìbuqǐ:2
+---:PC20Z/NPC05:macht nichts/kein Problem/schon gut:没关系:méiguānxi:0
+---:PC21/NPC08:echt/wahr/wirklich:真:zhēn:0
+---:PC21/NPC09:jm. etw. wuenschen:祝:zhù:0
+---:PC21/NPC04:gluecklich/erfreut:高兴:gāoxìng:2
+---:PC21/NPC09:schoen/huebsch:漂亮:piàoliang:0
+---:PC21/NPC07:oeffnen/beginnen:开:kāi:0
+Papierzeug:PC21Z/PC23/NPC08:das Foto:照片:zhàopiàn:2
+---:PC22/NPC08:klein/jung:小:xiǎo:2
+Anzahl:PC22/NPC08:wenige/wenig:少:shǎo:2
+Grammatik/Fragepartikel:PC22/NPC06:wie:怎么样:zěnmeyàng:0
+Zeit:PC23/NPC06:morgen:明天:míngtiān:2
+Zeit:PC25/NPC05:spaet:晚:wǎn:2
+Freizeit:PC25/NPC06:schwimmen:游泳:yóuyǒng:0
+Essen:PC25/NPC09Z:das Brot:面包:miànbāo:0
+---:PC25/NPC05:nochmal/wieder:再:zài:2
+---:PC26/NPC09:koennen/Treffen/Sitzung:会:huì:0
+---:PC26/NPC04:koennen/duerfen:可以:kěyǐ:2
+---:PC26Z/NPC04:hereinkommen/eintreten:进来:jìnlái:2
+---:PC27/NPC07Z:die Kultur:文化:wénhuà:0
+Zeit:PC28/NPC06:gestern:昨天:zuótiān:2
+---:PC29/NPC09:oben/letzt-/vergangen-/einsteigen:上:shàng:0
+Getraenke:NPC09Z:die Cola:可乐:kělè:0
+Familie:NPC08Z:Großvater (vaeterlicherseits):爷爷/祖父:yéye/zǔfù:2
+Familie:NPC08Z:Großvater (muetterlicherseits):老爷/外公/外祖父:lǎoyé/wàigōng/wàizǔfù:2
+Familie:NPC03:Großmutter (muetterlicherseits)/Oma (muetterlicherseits):外婆:wàipó:2
+Familie:NPC03:Großmutter (vaeterlicherseits)/Oma (vaeterlicherseits):奶奶:nǎinai:2
+Stimmung:NPC09:gluecklich/vergnuegt/froehlich:快乐:kuàilè:0
+Tiere:NPC08:der Hund:狗:gǒu:2
+Sprachen:NPC04:die Sprache:语言:yǔyán:2
+Faecher:NPC07Z:die Mathematik:数学:shùxué:2
+Namen:NPC01:(Name):陆雨平:Lù Yǔpíng:0
+Namen:NPC01:(Name):力波:Lìbō:2
+---:NPC01:auch:也:yě:2
+---:NPC01:(Name):林娜:Lín Nà:2
+Namen:NPC02:(Nachname):丁:Dīng:2
+Namen:NPC03:(Nachname):陈:Chén:2
+Berufe:NPC04:der Journalist:记者:jìzhě:2
+Namen:NPC04:(Nachname):杨:Yáng:2
+Namen:NPC04:(Name):马大为:Mǎ Dàwéi:2
+Laender:NPC04:Kanada:加拿大:Jiānádà:2
+Raeume:NPC05:der Speisesaal/Restaurant:餐厅:cāntīng:2
+Namen:NPC05:(Name):王小云:Wáng Xiǎoyún:2
+---:NPC05:nicht brauchen:不用:búyòng:2
+Namen:NPC05:(Name):宋华:Sòng Huá:0
+Wetter:NPC06:Wetter:天气:tiānqì:2
+Zeit:NPC06:Zeit:时间:shíjiān:2
+ZEW:NPC06:...mal:遍:biàn:2
+---:NPC06:Ball spielen:打球:dǎ qiú:0
+---:NPC06:spielen/schlagen:打:dǎ:2
+---:NPC06:Ball/Kugel:球:qiú:0
+Floskeln:NPC06:bedauern/bedauerlicherweise/leider:抱歉:bàoqiàn:0
+---:NPC06:befuerchten/vielleicht:恐怕:kǒngpà:0
+---:NPC06:in Ordnung sein/es geht/es ist moeglich:行:xíng:2
+Schule/Studium:NPC07:mit der Schule beginnen/mit dem Semester beginnen:开学:kāixué:2
+---:NPC07:hoch/groß:高:gāo:0
+---:NPC07:Visitenkarte:名片:míngpiàn:2
+---:NPC07:(Nachname):张:Zhāng:2
+Schule/Studium:NPC07:Fachgebiet/Studienrichtung:专业:zhuānyè:2
+---:NPC07:bildende Kunst:美术:měishù:2
+Schule/Studium:NPC07Z:Geschichte:历史:lìshǐ:0
+Schule/Studium:NPC07Z:die Philosophie:哲学:zhéxué:0
+---:NPC07Z:die Wirtschaft:经济:jīngjì:0
+Schule/Studium:NPC07Z:die Physik:物理:wùlǐ:0
+Schule/Studium:NPC07Z:die Chemie:化学:huàxué:0
+---:NPC07Z:die Erziehung:教育:jiàoyù:0
+Schule/Studium:NPC07Z:etwas als Wahlfach studieren:选修:xuǎnxiū:0
+ZEW:NPC08:(ZEW fuer Familienmitglieder):口:kǒu:2
+---:NPC08:insgesamt:一共:yígòng:2
+ZEW:NPC08:(ZEW fuer flache Gegenstaende):张:zhāng:2
+---:NPC08:selbstverstaendlich/natuerlich:当然:dāngrán:0
+---:NPC08:niedlich/liebenswert:可爱:kě'ài:2
+---:NPC08:lieben/gern haben:爱:ài:2
+---:NPC08:tun:做:zuò:2
+Namen:NPC08:(Name):贝贝:bèibei:2
+---:NPC08:außen/außerhalb:外:wài:2
+---:NPC08:Sprache:语:yǔ:2
+Laender:NPC08:Ausland:外国:wàiguó:2
+---:NPC08:hundert:百:bǎi:2
+---:NPC08Z:Computer:电脑:diànnǎo:0
+---:NPC08Z:Dekan:系主任:xìzhǔrèn:0
+Berufe:NPC08Z:wissenschaftlicher Assistent:助教:zhùjiào:0
+Berufe:NPC08Z:Anwalt/Rechtsanwalt:律师:lǜshī:0
+---:NPC09:unten/naechst-:下:xià:2
+---:NPC09:geboren werden:生:shēng:0
+---:NPC09:wie alt:多大:duōdà:2
+---:NPC09:geboren werden:出生:chūshēng:0
+---:NPC09:herauskommen/rausgehen:出:chū:2
+---:NPC09:im Tierkreiszeichen ... geboren sein:属:shǔ:0
+---:NPC09:das Treffen/die Party/die Feier:聚会:jùhuì:0
+---:NPC09:Kuchen:蛋糕:dàngāo:0
+---:NPC09:das Ei:蛋:dàn:0
+---:NPC09:Kuchen:糕:gāo:0
+Getraenke:NPC09:Rotwein:红葡萄酒:hóngpútaojiǔ:0
+Farben:NPC09:rot:红:hóng:0
+Getraenke:NPC09:Alkohol/Wein/Schnapps:酒:jiǔ:0
+Essen:NPC09:gebratene Ente:烤鸭:kǎoyā:0
+Tiere:NPC09:Ente:鸭:yā:0
+---:NPC09:wieder (Zukunft):再:zài:2
+Essen:NPC09:Geburtstagsnudeln:寿面:shòumiàn:0
+Essen:NPC09:Nudeln:面:miàn:0
+Essen:NPC09Z:die chinesische Kueche:中餐:zhōngcān:0
+Getraenke:NPC09Z:die Sprite:雪碧:xuěbì:0
+Essen:NPC09Z:der Hamburger:汉堡:hànbǎo:0
+Essen:NPC09Z:der Hotdog:热狗:règǒu:0
+Essen:NPC09Z:der gekochte Reis:米饭:mǐfàn:0
