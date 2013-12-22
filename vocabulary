@@ -95,7 +95,7 @@ Zahlen:PC10/LSC01/NPC05:Zwei:二:èr:0
 Zahlen:PC10/LSC01:Drei:三:sān:2
 Zahlen:PC10/LSC01:Fuenf:五:wǔ:2
 Zahlen:PC10/NPC05:Null:〇/零:líng:1
-Gebaeude:PC10Z:das Krankenhaus:医院:yīyuàn:2
+Gebaeude/Gesundheit:PC10Z/NPC12:das Krankenhaus:医院:yīyuàn:2
 ---:PC10Z:die Toilette:厕所:cèsuǒ:0
 ---:PC10Z/PC16/NPC05:hier:这儿:zhèr:2
 Verben:PC11:zurueckgeben:还:huán:2
@@ -140,7 +140,7 @@ Papierzeug:PC13Z:die Briefmarke:邮票:yóupiào:0
 Berufe:PC13Z/NPC07:der Professor:教授:jiàoshòu:2
 Verben:PC14:tun/arbeiten:作:zuò:2
 Verben:PC14/NPC08:arbeiten/Arbeit:工作:gōngzuò:0
-Verben:PC14:denken/vermissen/wollen:想:xiǎng:2
+Verben:PC14/NPC12:denken/vermissen/wollen:想:xiǎng:2
 ---:PC14/NPC08:die Familie/das Haus/das Zuhause:家:jiā:0
 ---:PC14/NPC06:haben/es gibt:有:yǒu:2
 ---:PC14/NPC08:nicht:没:méi:0
@@ -150,7 +150,7 @@ Gebaeude:PC14:die Bank/das Geldinstitut:银行:yínháng:0
 Familie:PC14:der Ehepartner:爱人:àiren:0
 Gebaeude:PC14/NPC10Z:der Buchladen/die Buchhandlung:书店:shūdiàn:0
 Familie:PC14/NPC08Z:das Kind:孩子:háizi:0
----:PC14/NPC10:geben/fuer/zu:给:gěi:2
+---:PC14/NPC10:geben/fuer/zu/zu Gunsten von jemandem:给:gěi:2
 Verben:PC14/NPC11:schreiben:写:xiě:2
 Papierzeug:PC14:der Brief:信:xìn:0
 Verben:PC14:erzaehlen:告诉:gàosu:0
@@ -192,7 +192,7 @@ Zeiten:PC16/NPC09Z:der Abend/abends:晚上:wǎnshang:2
 ---:PC16:von (irgendwo):从:cóng:2
 Verben:PC16/NPC10:suchen/jemanden rufen/jemandem Wechselgeld herausgeben:找:zhǎo:2
 ---:PC16:alt:旧:jiù:0
-Kleidung:PC16:anziehen/tragen:穿:chuān:0
+Kleidung:PC16/NPC12:anziehen/tragen:穿:chuān:0
 ZEW:PC16:(Kleidung):件:jiàn:0
 Kleidung:PC16:das Hemd/die Bluse:衬衫:chènshān:0
 Farben:PC16:gruen:绿色:lǜsè:0
@@ -217,7 +217,7 @@ Zeit:PC17:spaeter/in Zukunft:以后:yǐhòu:2
 ---:PC17:etwas (zu tun):事儿:shìr:0
 Verben:PC17/NPC11:zurueckgehen/zurueckkehren:回:huí:2
 Verben:PC17/NPC10:mit/folgen/begleiten/mit jemandem/jemandem folgen:跟:gēn:2
----:PC17:zusammen:一起:yìqǐ:0
+---:PC17/NPC12:zusammen/gemeinsam:一起:yìqǐ:2
 ---:PC17:der Film:电影:diànyǐng:0
 Gebaeude:PC17:das Café:咖啡馆:kāfēiguǎn:0
 Getraenke:PC17:der Kaffee:咖啡:kāfēi:0
@@ -234,7 +234,7 @@ Zeit:PC17Z:Uhr:钟:zhōng:0
 Zeit:PC17Z:vor/vorher/frueher:以前:yǐqián:0
 ZEW/Zeit:PC17:die Minute:分:fēn:0
 Zeit:PC18/NPC06:der Tag:天:tiān:2
----:PC18:jeder:每:měi:0
+---:PC18/NPC12:jedes/jede/jeder:每:měi:2
 Verben:PC18/NPC11:aufstehen:起床:qǐchuáng:2
 Verben:PC18/NPC11:sich erheben/aufstehen:起:qǐ:2
 Moebel:PC18/NPC11:das Bett:床:chuáng:2
@@ -243,7 +243,7 @@ Essen:PC18/NPC09:essen:吃:chī:2
 Essen:PC18:das Essen:饭:fàn:0
 Anzahl:PC18/PC21/NPC08:viele/viel:多:duō:2
 Zeit:PC18/NPC09:der Nachmittag/nachmittags:下午:xiàwǔ:2
----:PC18:Pause machen:休息:xiūxi:0
+---:PC18/NPC12:sich ausruhen/eine Pause machen:休息:xiūxi:0
 Zeit:PC18:manchmal:有时候:yǒushíhou:0
 Zeit:PC18/NPC06:die Zeit (Zeitpunkt):时候:shíhou:2
 ---:PC18/NPC11:die Frage/das Problem:问题:wèntí:2
@@ -255,10 +255,10 @@ Verben:PC19/LSC01/NPC08:moegen:喜欢:xǐhuan:0
 Getraenke:PC19:der Yasmintee:花茶:huāchá:0
 Getraenke:PC19:schwarzer Tee/roter Tee:红茶:hóngchá:0
 Farben:PC19:rot:红色:hóngsè:0
----:PC19:oder:还是:háishì:2
+---:PC19/NPC12:oder (nur bei Fragen):还是:háishì:2
 Getraenke:PC19:der Orangensaft:桔子水:júzishuǐ:0
 Obst:PC19:die Orange:桔子:júzi:0
-Getraenke:PC19:das Wasser:水:shuǐ:2
+Getraenke/Elemente:PC19/NPC12:das Wasser:水:shuǐ:2
 ZEW:PC19/NPC09:die Flasche:瓶:píng:2
 Wahrnehmung:PC19:hoeren/zuhoeren:听:tīng:0
 Musik:PC19:das Volkslied:民歌:míngē:0
@@ -317,7 +317,7 @@ Anrede:PC21:die Frau:太太:tàitai:0
 ---:PC21:jung:年轻:niánqīng:0
 Verben:PC21/NPC11Z:tanzen:跳舞:tiàowǔ:0
 ---:PC21:das Fraeulein/die junge Frau:姑娘:gūniang:0
-Grammatik/Modalpartikel:PC21:---:吧:ba:0
+Grammatik/Modalpartikel:PC21/NPC12:(Modalpartikel fuer den Imperativ):吧:ba:2
 ---:PC21/NPC09:schoen/huebsch:漂亮:piàoliang:0
 ---:PC21:noch (mehr/besser):更:gèng:0
 ---:PC21:aehneln/gleichen:象:xiàng:0
@@ -424,7 +424,7 @@ Sport:PC25:der Trainer:教练:jiàoliàn:0
 ---:PC25:nicht schlecht/ziemlich gut:不错:búcuò:0
 Essen:PC25/NPC09Z:das Brot:面包:miànbāo:0
 Essen:PC25:der Schinken:火腿:huǒtuǐ:0
----:PC25/NPC11:ein bisschen:一点儿:yìdiǎnr:2
+---:PC25/NPC11/NPC12:ein bisschen:一点儿:yìdiǎnr:2
 Essen:PC25:der Kaese:奶酪:nǎilào:0
 ---:PC25/NPC05:nochmal/wieder:再:zài:2
 Getraenke:PC25:das Mineralwasser:矿泉水:kuàngquánshuǐ:0
@@ -491,7 +491,7 @@ Getraenke:PC27Z:der Weinbrand:白兰地:báilándì:0
 Getraenke:PC27Z:der Sekt:香槟酒:xiāngbīnjiǔ:0
 Titel:PC27Z:der Militaerattaché:武官:wǔguān:0
 Berufe:PC27Z:1.Sekretaer:一秘:yīmì:0
----:PC27Z:erkranken/Krankheit:病:bìng:0
+---:PC27Z/NPC12:erkranken/Krankheit:病:bìng:2
 Berufe:PC27Z:der Schueler:小学生:xiǎoxuéshēng:0
 Sport:PC28:der Fußball:足球:zúqiú:0
 ---:PC28:der Ball (rund):球:qiú:0
@@ -542,7 +542,7 @@ Charaktereigenschaften:PC29:fleißig:努力:nǔlì:0
 ---:PC29:dicht/eng:紧:jǐn:0
 ---:PC29/NPC09/NPC11:oben/letzt-/vergangen-/einsteigen/zu etwas hingehen:上:shàng:2
 ---:PC29:beachten:注意:zhùyì:0
-Koerper:PC29:der Koerper/die Gesundheit:身体:shēntǐ:0
+Koerper:PC29/NPC12:der Koerper/die Gesundheit:身体:shēntǐ:0
 ---:PC29:beruhigt sein:放心:fàngxīn:0
 ---:PC29:vergessen:忘:wàng:0
 Stimmung:PC29:traurig:难过:nánguò:0
@@ -584,7 +584,7 @@ Familie:NPC08Z:Großvater (muetterlicherseits):老爷/外公/外祖父:lǎoyé/w
 Familie:NPC03:Großmutter (muetterlicherseits)/Oma (muetterlicherseits):外婆:wàipó:0
 Familie:NPC03:Großmutter (vaeterlicherseits)/Oma (vaeterlicherseits):奶奶:nǎinai:0
 Laender:---:Spanien:西班牙:xībānyá:0
-Koerper:---:der Kopf:头:tóu:0
+Koerper:NPC12:der Kopf:头:tóu:2
 Koerper:---:der Hals:颈:jǐng:0
 Koerper:---:die Brust:臆/胸:yì/xiōng:0
 Koerper:---:der Bauch:腹:fù:0
@@ -619,7 +619,7 @@ Getraenke:---:die Fanta:芬达:fēndá:0
 Richtung:---:der Norden:北:běi:0
 Richtung:---:der Osten:东:dōng:0
 Richtung:---:der Sueden:南:nán:0
-Richtung:---:der Westen:西:xī:0
+Richtung:NPC12:der Westen/westlich:西:xī:2
 Zeit/Wochentage:---:Montag:星期一/周一:xīngqīyī/zhōuyī:0
 Zeit/Wochentage:---:Dienstag:星期二/周二:xīngqīèr/zhōuèr:0
 Zeit/Wochentage:---:Mittwoch:星期三/周三:xīngqīsān/zhōusān:0
@@ -663,7 +663,7 @@ Tiere:NPC08:der Hund:狗:gǒu:0
 Tiere:---:der Panda:熊猫:xióngmāo:0
 Tiere:---:der rote Panda/der kleine Panda:小熊猫:xiǎoxióngmāo:0
 ---:---:der Eingang:人口:rénkǒu:0
-Sport:---:trainieren:锻炼:duànliàn:0
+Sport:NPC12:trainieren:锻炼:duànliàn:0
 Sport:---:das Training:训练:xùnliàn:0
 Tiere:---:der Drache:龙:lóng:0
 Getraenke:---:der Wodka:伏特加:fútèjiā:0
@@ -911,3 +911,34 @@ Zeitangabe:---:naechstes Wochenende:下周末:xiàzhōumò:0
 ---:---:lange (fuer Zeitraeume):很久:hěnjiǔ:0
 Verabschiedung:---:Bis bald!/Auf Wiedersehen!:回头见:huítóujiàn:0
 Wuensche:---:Gute Besserung!:早日康复:zǎorìkāngfù:0
+Gesundheit:NPC12:am ganzen Koerper/ganzer Koerper:全身:quánshēn:2
+---:NPC12:ganz/gesamt/vollstaendig:全:quán:2
+Gesundheit:NPC12:Koerper:身:shēn:2
+Gesundheit:NPC12:behaglich/angenehm/sich wohl fuehlen:舒服:shūfu:0
+Gesundheit:NPC12:schmerzhaft/etwas schmerzt:疼:téng:2
+Koerper:NPC12:Kehle/Stimme:嗓子:sǎngzi:2
+Gesundheit:NPC12:zum Arzt gehen:看病:kànbìng:2
+Wetter:NPC12:kalt:冷:lěng:0
+Kleidung:NPC12:Kleidung:衣服:yīfu:0
+---:NPC12:sich anmelden (im Krankenhaus eine Nummer ziehen)/etwas registrieren lassen:挂号:guàhào:0
+Gesundheit:NPC12:sich entzuenden/entzuendet sein:发炎:fāyán:0
+Gesundheit:NPC12:Fieber haben:发烧:fāshāo:0
+---:NPC12:verbrennen:烧:shāo:0
+Gesundheit:NPC12:sich erkaelten/die Erklaeltung:感冒:gǎnmào:0
+Gesundheit:NPC12:im Krankenhaus liegen:住院:zhùyuàn:0
+Gesundheit:NPC12:die Medizin:药:yào:0
+---:NPC12:etwas tun wollen/bereit sein/gewillt sein:愿意:yuànyì:0
+Gesundheit:NPC12:traditionelle chinesische Medizin:中药:zhōngyào:0
+Gesundheit:NPC12:westliche Medizin:西药:xīyào:0
+Koerper:NPC12Z:der Zahn:牙:yá:0
+Koerper:NPC12Z:der Bauch/der Magen:肚子:dùzi:0
+Gesundheit:NPC12Z:jemanden operieren:开刀:kāidāo:0
+---:NPC12Z:im Labor untersuchen:化验:huàyàn:0
+Koerper:NPC12Z:das Blut:血:xiě:0
+---:NPC12Z:Stuhlgang:大便:dàbiàn:0
+---:NPC12Z:Urin:小便:xiǎobiàn:0
+---:NPC12Z:jemandem eine Spritze geben:打针:dǎzhēn:0
+Temperatur:NPC12Z:heiß:热:rè:0
+Temperatur:NPC12Z:(angenehm) kuehl:凉快:liángkuai:0
+---:NPC12Z:das Leben:生活:shēnghuó:0
+Sprachen:NPC12Z:Englisch (Schriftsprache):英文:yīngwén:0
