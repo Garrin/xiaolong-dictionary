@@ -286,7 +286,9 @@ public class TrainVocablesDialogue extends JFrame {
 	 * switches to the next vocable of the training vocables
 	 */
 	private void nextVocable() {
-		VocableManager.changeVocableLearnLevel(trainingVocables.get(currentPositionInTrainingVocables), learnLevelLanguageTextField.getText());
+		if(!learnLevelLanguageTextField.getText().equals(trainingVocables.get(currentPositionInTrainingVocables).getLearnLevel())) {
+			VocableManager.changeVocableLearnLevel(trainingVocables.get(currentPositionInTrainingVocables), learnLevelLanguageTextField.getText());
+		}
 		
 		currentPositionInTrainingVocables = (currentPositionInTrainingVocables + 1) % trainingVocables.size();
 		setVocable(trainingVocables.get(currentPositionInTrainingVocables));
@@ -308,7 +310,9 @@ public class TrainVocablesDialogue extends JFrame {
 	 * Switches to the previous vocable of the training vocables
 	 */
 	private void previousVocable() {
-		VocableManager.changeVocableLearnLevel(trainingVocables.get(currentPositionInTrainingVocables), learnLevelLanguageTextField.getText());
+		if(!learnLevelLanguageTextField.getText().equals(trainingVocables.get(currentPositionInTrainingVocables).getLearnLevel())) {
+			VocableManager.changeVocableLearnLevel(trainingVocables.get(currentPositionInTrainingVocables), learnLevelLanguageTextField.getText());
+		}
 		
 		currentPositionInTrainingVocables = (currentPositionInTrainingVocables - 1);
 		if(currentPositionInTrainingVocables < 0) {
@@ -365,10 +369,12 @@ public class TrainVocablesDialogue extends JFrame {
 			if(Settings.trainingOptions_firstToSecond) {
 				secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
 				bigCharacterBox.setCharacters(trainingVocables.get(currentPositionInTrainingVocables).getSecondLanguage());
+				bigCharacterBox.setCharacters("");
 				translationShown = false;
 			} else {
 				secondLanguageTextField.setText(Settings.languageOptions_firstLanguageName + " hidden");
 				bigCharacterBox.setCharacters(trainingVocables.get(currentPositionInTrainingVocables).getFirstLanguage());
+				bigCharacterBox.setCharacters("");
 				translationShown = false;
 			}
 			
