@@ -303,6 +303,15 @@ public class TrainVocablesDialogue extends JFrame {
 		
 		bigCharacterBox.setCharacters("");
 		secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
+		
+		//reset buttons
+		showPhoneticScriptButton.setText("Show " + Settings.languageOptions_phoneticScriptName);
+		if(Settings.trainingOptions_firstToSecond) {
+			showTranslationButton.setText("Show " + Settings.languageOptions_secondLanguageName);
+		} else {
+			showTranslationButton.setText("Show " + Settings.languageOptions_firstLanguageName);
+		}
+		
 		translationShown = false;
 	}
 	
@@ -328,8 +337,20 @@ public class TrainVocablesDialogue extends JFrame {
 			phoneticScriptShown = false;
 		}
 		
+		//reset big character box
 		bigCharacterBox.setCharacters("");
+		
+		//always hide translation when a new vocable is set
 		secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
+		
+		//reset buttons
+		showPhoneticScriptButton.setText("Show " + Settings.languageOptions_phoneticScriptName);
+		if(Settings.trainingOptions_firstToSecond) {
+			showTranslationButton.setText("Show " + Settings.languageOptions_secondLanguageName);
+		} else {
+			showTranslationButton.setText("Show " + Settings.languageOptions_firstLanguageName);
+		}
+		
 		translationShown = false;
 	}
 	
@@ -354,9 +375,11 @@ public class TrainVocablesDialogue extends JFrame {
 	private void togglePhoneticScript() {
 		if(phoneticScriptShown) {
 			phoneticScriptLanguageTextField.setText(Settings.languageOptions_phoneticScriptName + " hidden");
+			showPhoneticScriptButton.setText("Show " + Settings.languageOptions_phoneticScriptName);
 			phoneticScriptShown = false;
 		} else {
 			phoneticScriptLanguageTextField.setText(trainingVocables.get(currentPositionInTrainingVocables).getPhoneticScript());
+			showPhoneticScriptButton.setText("Hide " + Settings.languageOptions_phoneticScriptName);
 			phoneticScriptShown = true;
 		}
 	}
@@ -370,11 +393,13 @@ public class TrainVocablesDialogue extends JFrame {
 				secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
 				bigCharacterBox.setCharacters(trainingVocables.get(currentPositionInTrainingVocables).getSecondLanguage());
 				bigCharacterBox.setCharacters("");
+				showTranslationButton.setText("Show " + Settings.languageOptions_secondLanguageName);
 				translationShown = false;
 			} else {
 				secondLanguageTextField.setText(Settings.languageOptions_firstLanguageName + " hidden");
 				bigCharacterBox.setCharacters(trainingVocables.get(currentPositionInTrainingVocables).getFirstLanguage());
 				bigCharacterBox.setCharacters("");
+				showTranslationButton.setText("Show " + Settings.languageOptions_firstLanguageName);
 				translationShown = false;
 			}
 			
@@ -382,10 +407,12 @@ public class TrainVocablesDialogue extends JFrame {
 			if(Settings.trainingOptions_firstToSecond) {
 				secondLanguageTextField.setText(trainingVocables.get(currentPositionInTrainingVocables).getSecondLanguage());
 				bigCharacterBox.setCharacters(trainingVocables.get(currentPositionInTrainingVocables).getSecondLanguage());
+				showTranslationButton.setText("Hide " + Settings.languageOptions_secondLanguageName);
 				translationShown = true;
 			} else {
 				secondLanguageTextField.setText(trainingVocables.get(currentPositionInTrainingVocables).getFirstLanguage());
 				bigCharacterBox.setCharacters(trainingVocables.get(currentPositionInTrainingVocables).getFirstLanguage());
+				showTranslationButton.setText("Hide " + Settings.languageOptions_firstLanguageName);
 				translationShown = true;
 			}
 		}
