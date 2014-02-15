@@ -63,7 +63,7 @@ public class TrainVocablesDialogue extends JFrame {
 		initializeComponents();
 		addComponents();
 		addActionListeners();
-		restartTraining();
+		startTraining();
 	}
 	
 	/**
@@ -155,7 +155,12 @@ public class TrainVocablesDialogue extends JFrame {
 	 * initializes the button components
 	 */
 	private void initializeButtonComponents() {
-		showPhoneticScriptButton = new JButton("Show " + Settings.languageOptions_phoneticScriptName);
+		if(Settings.trainingOptions_phoneticScript_shown) {
+			showPhoneticScriptButton = new JButton("Hide " + Settings.languageOptions_phoneticScriptName);
+		} else {
+			showPhoneticScriptButton = new JButton("Show " + Settings.languageOptions_phoneticScriptName);
+		}
+		
 		if(Settings.trainingOptions_firstToSecond) {
 			showTranslationButton = new JButton("Show " + Settings.languageOptions_secondLanguageName);
 		} else {
@@ -286,26 +291,14 @@ public class TrainVocablesDialogue extends JFrame {
 	 * switches to the next vocable of the training vocables
 	 */
 	private void nextVocable() {
-		if(!learnLevelLanguageTextField.getText().equals(trainingVocables.get(currentPositionInTrainingVocables).getLearnLevel())) {
-			VocableManager.changeVocableLearnLevel(trainingVocables.get(currentPositionInTrainingVocables), learnLevelLanguageTextField.getText());
-		}
+		saveVocableLearnLevel();
 		
 		currentPositionInTrainingVocables = (currentPositionInTrainingVocables + 1) % trainingVocables.size();
 		setVocable(trainingVocables.get(currentPositionInTrainingVocables));
 		
-		if(Settings.trainingOptions_phoneticScript_shown) {
-			phoneticScriptLanguageTextField.setText(trainingVocables.get(currentPositionInTrainingVocables).getPhoneticScript());
-			phoneticScriptShown = true;
-		} else {
-			phoneticScriptLanguageTextField.setText(Settings.languageOptions_phoneticScriptName + " hidden");
-			phoneticScriptShown = false;
-		}
-		
 		bigCharacterBox.setCharacters("");
 		secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
 		
-		//reset buttons
-		showPhoneticScriptButton.setText("Show " + Settings.languageOptions_phoneticScriptName);
 		if(Settings.trainingOptions_firstToSecond) {
 			showTranslationButton.setText("Show " + Settings.languageOptions_secondLanguageName);
 		} else {
@@ -319,23 +312,14 @@ public class TrainVocablesDialogue extends JFrame {
 	 * Switches to the previous vocable of the training vocables
 	 */
 	private void previousVocable() {
-		if(!learnLevelLanguageTextField.getText().equals(trainingVocables.get(currentPositionInTrainingVocables).getLearnLevel())) {
-			VocableManager.changeVocableLearnLevel(trainingVocables.get(currentPositionInTrainingVocables), learnLevelLanguageTextField.getText());
-		}
+		saveVocableLearnLevel();
 		
 		currentPositionInTrainingVocables = (currentPositionInTrainingVocables - 1);
 		if(currentPositionInTrainingVocables < 0) {
 			currentPositionInTrainingVocables = trainingVocables.size()-1;
 		}
-		setVocable(trainingVocables.get(currentPositionInTrainingVocables));
 		
-		if(Settings.trainingOptions_phoneticScript_shown) {
-			phoneticScriptLanguageTextField.setText(trainingVocables.get(currentPositionInTrainingVocables).getPhoneticScript());
-			phoneticScriptShown = true;
-		} else {
-			phoneticScriptLanguageTextField.setText(Settings.languageOptions_phoneticScriptName + " hidden");
-			phoneticScriptShown = false;
-		}
+		setVocable(trainingVocables.get(currentPositionInTrainingVocables));
 		
 		//reset big character box
 		bigCharacterBox.setCharacters("");
@@ -343,8 +327,6 @@ public class TrainVocablesDialogue extends JFrame {
 		//always hide translation when a new vocable is set
 		secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
 		
-		//reset buttons
-		showPhoneticScriptButton.setText("Show " + Settings.languageOptions_phoneticScriptName);
 		if(Settings.trainingOptions_firstToSecond) {
 			showTranslationButton.setText("Show " + Settings.languageOptions_secondLanguageName);
 		} else {
@@ -358,6 +340,12 @@ public class TrainVocablesDialogue extends JFrame {
 	 * Resets the training progress.
 	 */
 	private void restartTraining() {
+		saveVocableLearnLevel();
+		currentPositionInTrainingVocables = 0;
+		setVocable(trainingVocables.get(currentPositionInTrainingVocables));
+	}
+	
+	private void startTraining() {
 		currentPositionInTrainingVocables = 0;
 		setVocable(trainingVocables.get(currentPositionInTrainingVocables));
 	}
@@ -366,7 +354,15 @@ public class TrainVocablesDialogue extends JFrame {
 	 * closes the training dialogue
 	 */
 	private void stopTraining() {
+		saveVocableLearnLevel();
 		this.dispose();
+	}
+	
+	private void saveVocableLearnLevel() {
+		//Save change to the learn level of a vocable if one exists
+		if(!learnLevelLanguageTextField.getText().equals(trainingVocables.get(currentPositionInTrainingVocables).getLearnLevel())) {
+			VocableManager.changeVocableLearnLevel(trainingVocables.get(currentPositionInTrainingVocables), learnLevelLanguageTextField.getText());
+		}
 	}
 	
 	/**
@@ -423,22 +419,28 @@ public class TrainVocablesDialogue extends JFrame {
 	 * @param vocable the shown vocable
 	 */
 	private void setVocable(Vocable vocable) {
+		System.out.println("Pinyin is: " + phoneticScriptShown);
+		
+		//Settings texts according to the translation direction setting
 		if(Settings.trainingOptions_firstToSecond) {
 			firstLanguageTextField.setText(vocable.getFirstLanguage());
 			secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
-			if(Settings.trainingOptions_phoneticScript_shown) {
-				phoneticScriptLanguageTextField.setText(vocable.getPhoneticScript());
-			} else {
-				phoneticScriptLanguageTextField.setText(Settings.languageOptions_phoneticScriptName + " hidden");
-			}
 		} else {
 			firstLanguageTextField.setText(vocable.getSecondLanguage());
 			secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
-			if(Settings.trainingOptions_phoneticScript_shown) {
-				phoneticScriptLanguageTextField.setText(vocable.getPhoneticScript());
-			} else {
-				phoneticScriptLanguageTextField.setText(Settings.languageOptions_phoneticScriptName + " hidden");
-			}
+		}
+		
+		//showing or hiding the phonetic script depending on the show pinyin setting and labelling the show/hidePhoneticScript button accordingly 
+		if(Settings.trainingOptions_phoneticScript_shown) {
+			phoneticScriptLanguageTextField.setText(vocable.getPhoneticScript());
+			showPhoneticScriptButton.setText("Hide " + Settings.languageOptions_phoneticScriptName);
+			System.out.println(phoneticScriptShown + " --> " + true);
+			phoneticScriptShown = true;
+		} else {
+			phoneticScriptLanguageTextField.setText(Settings.languageOptions_phoneticScriptName + " hidden");
+			showPhoneticScriptButton.setText("Show " + Settings.languageOptions_phoneticScriptName);
+			System.out.println(phoneticScriptShown + " --> " + false);
+			phoneticScriptShown = false;
 		}
 		
 		learnLevelLanguageTextField.setText(vocable.getLearnLevel());

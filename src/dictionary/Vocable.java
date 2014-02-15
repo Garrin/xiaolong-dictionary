@@ -1,7 +1,10 @@
 
 package dictionary;
 
-
+/**
+ * @author XiaoLong
+ *
+ */
 public class Vocable implements Cloneable {
 	
 	private String topic;
@@ -10,6 +13,8 @@ public class Vocable implements Cloneable {
 	private String secondLanguage;
 	private String phoneticScript;
 	private String learnLevel;
+	private String importanceLevel;
+	private String description;
 	
 	public Vocable(String topic, String chapter, String firstLanguage, String secondLanguage, String phoneticScript, String learnLevel){
 		this.topic = topic;
@@ -18,6 +23,19 @@ public class Vocable implements Cloneable {
 		this.secondLanguage = secondLanguage;
 		this.phoneticScript = phoneticScript;
 		this.learnLevel = learnLevel;
+		this.importanceLevel = "";
+		this.description = "";
+	}
+	
+	public Vocable(String topic, String chapter, String firstLanguage, String secondLanguage, String phoneticScript, String learnLevel, String importanceLevel, String description){
+		this.topic = topic;
+		this.chapter = chapter;
+		this.firstLanguage = firstLanguage;
+		this.secondLanguage = secondLanguage;
+		this.phoneticScript = phoneticScript;
+		this.learnLevel = learnLevel;
+		this.importanceLevel = importanceLevel;
+		this.description = description;
 	}
 
 	/**
@@ -104,6 +122,35 @@ public class Vocable implements Cloneable {
 		this.learnLevel = level;
 	}
 	
+	
+	/**
+	 * @return the importanceLevel of this vocable
+	 */
+	public String getImportanceLevel() {
+		return this.importanceLevel;
+	}
+	
+	
+	/**
+	 * @param importanceLevel the importanceLevel to set
+	 */
+	public void setImportanceLevel(String importanceLevel) {
+		this.importanceLevel = importanceLevel;
+	}
+	
+	/**
+	 * @return the description of this vocable
+	 */
+	public String getDescription() {
+		return this.description;
+	}
+	
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	
 	/**
 	 * Getter and Setter

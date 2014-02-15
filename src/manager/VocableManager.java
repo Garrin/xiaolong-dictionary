@@ -28,6 +28,11 @@ public class VocableManager {
 			System.out.println("EMPTY!");
 		}
 		
+		/*
+		 * Perform the last search again, this time including the newly added vocable,
+		 * so that the new vocable could be in the resulting search result.
+		 * This first search is always a standard search and not an AND or OR search.
+		 */
 		lastSearchResult = searchVocableList(
 				lastSearchCriterias.get(0).searchTerm, 
 				lastSearchCriterias.get(0).checkTopic,
@@ -42,7 +47,11 @@ public class VocableManager {
 				VocableManager.getVocableList()
 		);
 		
-		//TODO check if the vocable needs to be in the search result
+		/*
+		 * Perform all of AND or OR searches (specifying searches) performed that led 
+		 * to the search result before the new vocable has been added, to have the 
+		 * same search including the new vocable. 
+		 */
 		for(int i = 1; i < lastSearchCriterias.size(); i++) {
 			if(lastSearchCriterias.get(i).andSearch) {
 			

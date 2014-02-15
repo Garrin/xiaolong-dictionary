@@ -9,11 +9,11 @@ Grammatik/Modalpartikel:PC02/NPC01:---:呢:ne:2
 Familie:PC03/NPC02:aelterer Bruder (der):哥哥:gēge:2
 Grammatik/Personalpronomen:PC03/LSC01/NPC02:er/ihm/ihn:他:tā:2
 Familie:PC03/NPC02:juengerer Bruder (der):弟弟:dìdi:2
-Grammatik/Personalpronomen:PC03/NPC02:sie/ihnen:他们:tāmen:0
+Grammatik/Personalpronomen:PC03/NPC02:sie/ihnen:他们:tāmen:2
 Personen:PC03/NPC02:alle:都:dōu:2
 Berufe:PC05/NPC03:der Arzt:大夫/医生:dàifu/yīsheng:2
 Grammatik/Strukturpartikel:PC05/LSC01/NPC04:(Attributpartikel):的:de:2
-Verkehr:PC05/NPC08Z:das Fahrzeug:车:chē:0
+Verkehr:PC05/NPC08Z:das Fahrzeug:车:chē:2
 grammatik/personalpronomen:PC05/LSC01/NPC03:sie/ihr:她:tā:2
 ---:PC05/NPC03:jener/jene/jenes/das (dort):那:nà:2
 Literatur:PC05/NPC10:das Buch:书:shū:2
@@ -85,21 +85,21 @@ Verben:PC10/NPC05:sitzen/sich setzen:坐:zuò:2
 Grammatik/Fragepartikel:PC10/NPC05:wo:哪儿:nǎr:2
 Gebaeude:PC10/NPC05:das Wohnheim:宿舍:sùshè:2
 Verben:PC10/NPC14:wohnen:住:zhù:2
-Grammatik/Fragepartikel:PC10/NPC08:wie viele/wieviel:多少:duōshao:0
+Grammatik/Fragepartikel:PC10/NPC08:wie viele/wieviel:多少:duōshao:2
 Zeit:PC10/PC20/LSC01/NPC05:die Nummer/der Tag/das Datum/die Nummer:号:hào:2
 Zahlen:PC10/LSC01/NPC05:vier:四:sì:2
 ZEW:PC10/NPC05:der(das) Stock(werk):层:céng:2
 Zahlen:PC10/LSC01:Eins:一:yī:2
-Zahlen:PC10/LSC01/NPC05:Zwei:二:èr:0
+Zahlen:PC10/LSC01/NPC05:Zwei:二:èr:2
 Zahlen:PC10/LSC01:Drei:三:sān:2
 Zahlen:PC10/LSC01:Fuenf:五:wǔ:2
 Zahlen:PC10/NPC05:Null:〇/零:líng:1
 Gebaeude/Gesundheit:PC10Z/NPC12:das Krankenhaus:医院:yīyuàn:2
----:PC10Z/NPC13:die Toilette:厕所:cèsuǒ:0
+---:PC10Z/NPC13:die Toilette:厕所:cèsuǒ:2
 ---:PC10Z/PC16/NPC05:hier:这儿:zhèr:2
 Verben:PC11:zurueckgeben:还:huán:2
 Literatur:PC11:die Illustrierte:画报:huàbào:2
-Literatur:PC11/NPC08Z:das Woerterbuch/das Lexikon:词典:cídiǎn:0
+Literatur:PC11/NPC08Z:das Woerterbuch/das Lexikon:词典:cídiǎn:2
 Grammatik/Zeitwoerter:PC11/LSC01/NPC06:jetzt/heutzutage:现在:xiànzài:2
 Verben:PC11:brauchen/gebrauchen:用:yòng:2
 Zeitangaben:PC11/NPC07:eine kurze Zeit/einmal/mal kurz:一下儿:yíxiàr:2
@@ -131,36 +131,36 @@ Verben:PC13/NPC07:jemanden vorstellen/etwas vorstellen:介绍:jièshào:2
 Geschlecht:PC13/NPC02:maennlich:男:nán:2
 ---:PC13/LSC01/NPC14:richtig:对:duì:2
 Grammatik/Zeitwoerter/Modalpartikel:PC13/NPC05:---:了:le:2
----:PC13/NPC08:und/mit:和:hé:0
+---:PC13/NPC08:und/mit:和:hé:2
 Verben:PC13/NPC06:sprechen/sagen:说:shuō:2
 Papierzeug:PC13Z/NPC10:das Heft/das Schreibheft:本子:běnzi:2
 Gebaeude:PC13Z/NPC14:das Postamt:邮局:yóujú:2
 Papierzeug:PC13Z:die Briefmarke:邮票:yóupiào:0
 Berufe:PC13Z/NPC07:der Professor:教授:jiàoshòu:2
 Verben:PC14:tun/arbeiten:作:zuò:2
-Verben:PC14/NPC08:arbeiten/Arbeit:工作:gōngzuò:0
+Verben:PC14/NPC08:arbeiten/Arbeit:工作:gōngzuò:2
 Verben:PC14/NPC12:denken/vermissen/wollen:想:xiǎng:2
----:PC14/NPC08:die Familie/das Haus/das Zuhause:家:jiā:0
+---:PC14/NPC08:die Familie/das Haus/das Zuhause:家:jiā:2
 ---:PC14/NPC06:haben/es gibt:有:yǒu:2
----:PC14/NPC08:nicht:没:méi:0
-Familie:PC14/NPC08:die juengere Schwester:妹妹:mèimei:0
-Familie:PC14/NPC08:die aeltere Schwester:姐姐:jiějie:0
+---:PC14/NPC08:nicht:没:méi:2
+Familie:PC14/NPC08:die juengere Schwester:妹妹:mèimei:2
+Familie:PC14/NPC08:die aeltere Schwester:姐姐:jiějie:2
 Gebaeude:PC14:die Bank/das Geldinstitut:银行:yínháng:0
 Familie:PC14:der Ehepartner:爱人:àiren:0
 Gebaeude:PC14/NPC10Z:der Buchladen/die Buchhandlung:书店:shūdiàn:2
-Familie:PC14/NPC08Z:das Kind:孩子:háizi:0
+Familie:PC14/NPC08Z:das Kind:孩子:háizi:2
 ---:PC14/NPC10:geben/fuer/zu/zu Gunsten von jemandem:给:gěi:2
 Verben:PC14/NPC11:schreiben:写:xiě:2
 Papierzeug:PC14:der Brief:信:xìn:0
-Verben:PC14/NPC13:erzaehlen/jemanden etwas mitteilen:告诉:gàosu:0
+Verben:PC14/NPC13:erzaehlen/jemanden etwas mitteilen:告诉:gàosu:2
 Berufe:PC14Z:der Angestellter:职员:zhíyuán:0
 Berufe:PC14Z/NPC08Z:der Ingenieur:工程师:gōngchéngshī:0
-Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:0
+Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:1
 ---:PC14Z/LSC01/NPC13:die Firma/das Unternehmen:公司:gōngsī:0
 Sprachen:PC15/NPC07:das Chinesisch:中文:zhōngwén:2
 Studium:PC15/NPC07:die Fakultaet/der Fachbereich:系:xì:2
 ZEW:PC15/NPC08:(allgemeines ZEW):个:gè:2
-Grammatik/Fragepartikel/Anzahl:PC15/NPC08:wieviel/wie viele/einige:几:jǐ:0
+Grammatik/Fragepartikel/Anzahl:PC15/NPC08:wieviel/wie viele/einige:几:jǐ:2
 Studium:PC15/NPC07/NPC11:lehren/unterrichten:教:jiāo:2
 Grammatik:PC15/NPC14:die Grammatik:语法:yǔfǎ:2
 ---:PC15/NPC11:chinesisches Schriftzeichen:汉字:hànzì:2
@@ -169,7 +169,7 @@ Grammatik:PC15/NPC14:die Grammatik:语法:yǔfǎ:2
 Sprachen:PC15/NPC14:gesprochene Sprache:口语:kǒuyǔ:2
 Wendungen:PC15:zu viel der Ehre:不敢当:bùgǎndāng:0
 ---:PC15:gegenseitig:互相:hùxiāng:0
----:PC15/NPC13Z:neu:新:xīn:0
+---:PC15/NPC13Z:neu:新:xīn:2
 Raeume:PC15:der Lesesaal:阅览室:yuèlǎnshì:0
 Papierzeug:PC15:die Zeitschrift:杂志:zázhì:0
 Papierzeug:PC15/NPC10:die Zeitung:报:bào:2
@@ -213,11 +213,11 @@ Schule:PC17/NPC11:Unterricht haben/Unterricht anfangen/zum Unterricht gehen:上�
 Schule:PC17/NPC09:Untericht/Vorlesung/Lektion:课:kè:2
 Schule:PC17/NPC11Z:Unterrichtsschluss haben/den Unterricht beenden:下课:xiàkè:2
 Zeit:PC17:spaeter/in Zukunft:以后:yǐhòu:2
----:PC17/NPC13:Angelegenheit/Sache:事儿:shìr:0
+---:PC17/NPC13:Angelegenheit/Sache:事儿:shìr:2
 Verben:PC17/NPC11:zurueckgehen/zurueckkehren:回:huí:2
 Verben:PC17/NPC10:mit/folgen/begleiten/mit jemandem/jemandem folgen:跟:gēn:2
 ---:PC17/NPC12:zusammen/gemeinsam:一起:yìqǐ:2
----:PC17/NPC13:der Film:电影:diànyǐng:0
+---:PC17/NPC13:der Film:电影:diànyǐng:1
 Gebaeude:PC17:das Café:咖啡馆:kāfēiguǎn:0
 Getraenke:PC17/NPC13:der Kaffee:咖啡:kāfēi:0
 ---:PC17/NPC11:halb/Haelfte:半:bàn:2
