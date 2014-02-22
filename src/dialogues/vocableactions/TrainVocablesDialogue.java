@@ -71,6 +71,7 @@ public class TrainVocablesDialogue extends JFrame {
 	 */
 	private void initializeComponents() {
 		this.setLayout(new MigLayout("wrap 2"));
+		this.setResizable(false);
 		
 		buttonPanel = new JPanel();
 		GridLayout gridLayout = new GridLayout(3,2);
