@@ -282,16 +282,9 @@ public class DictionaryMainWindow extends JFrame {
 			}
 		}
 		
-		//Get the correct values
-		String chapter = VocableManager.getLastSearchResult().get(row).getChapter();
-		String topic = VocableManager.getLastSearchResult().get(row).getTopic();
-		String learnLevel = VocableManager.getLastSearchResult().get(row).getLearnLevel();
-		
 		//If vocable was found (should always be the case)
 		if(row != -1) {
-			vocableDetailBox.updateChapter(chapter);
-			vocableDetailBox.updateTopic(topic);
-			vocableDetailBox.updateLevel(learnLevel);
+			vocableDetailBox.updateVocableDetails(VocableManager.getLastSearchResult().get(row));
 		}
 	}
 	

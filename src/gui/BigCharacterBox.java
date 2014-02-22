@@ -87,14 +87,17 @@ public class BigCharacterBox extends JPanel implements SearchListener {
 
 		StyleConstants.setFontSize(mainStyle, Settings.bigCharacterBoxOptions_fontSize);
 		StyleConstants.setAlignment(mainStyle, StyleConstants.ALIGN_CENTER);
+		System.out.println("Setting Font: " + Settings.bigCharacterBoxOptions_font);
 		StyleConstants.setFontFamily(mainStyle,	Settings.bigCharacterBoxOptions_font);
-
+		
 		StyleConstants.setLeftIndent(mainStyle, 0);
 		StyleConstants.setRightIndent(mainStyle, 0);
 		StyleConstants.setFirstLineIndent(mainStyle, 0);
-		StyleConstants.setFontFamily(mainStyle, Settings.BIG_CHARACTER_BOX_DEFAULT_FONT);
-		StyleConstants.setFontSize(mainStyle, Settings.BIG_CHARACTER_BOX_DEFAULT_FONTSIZE);
 
+		textPane.setText("_");
+		doc.setCharacterAttributes(0, doc.getLength(), mainStyle, true);
+		textPane.setText("");
+		
 		if (Settings.BIG_CHARACTER_BOX_DEFAULT_FONTWEIGHT.equals("bold")) {
 			StyleConstants.setBold(mainStyle, true);
 		} else if (Settings.BIG_CHARACTER_BOX_DEFAULT_FONTWEIGHT
@@ -104,7 +107,7 @@ public class BigCharacterBox extends JPanel implements SearchListener {
 
 		// Set the style
 		doc.setLogicalStyle(0, mainStyle);
-
+		
 		textPane.setEditable(false);
 		textPane.setBackground(getBackground());
 		System.out.println(getBackground().toString());
