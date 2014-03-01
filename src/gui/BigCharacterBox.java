@@ -25,6 +25,7 @@ import javax.swing.text.StyledDocument;
 
 import listener.search.SearchListener;
 import listener.vocables.VocableChangedListener;
+import listener.vocables.VocableDeletedListener;
 import listener.vocabletable.VocableTableActionsListener;
 import net.miginfocom.swing.MigLayout;
 import dictionary.Settings;
@@ -36,7 +37,7 @@ import factories.ObserveableFactory;
  * @author xiaolong
  */
 @SuppressWarnings("serial")
-public class BigCharacterBox extends JPanel implements SearchListener, VocableChangedListener, VocableTableActionsListener {
+public class BigCharacterBox extends JPanel implements SearchListener, VocableChangedListener, VocableDeletedListener, VocableTableActionsListener {
 
 	// private DictionaryMainWindow window;
 
@@ -55,6 +56,8 @@ public class BigCharacterBox extends JPanel implements SearchListener, VocableCh
 	private static Style mainStyle;
 	private StyleContext sc;
 	private StyledDocument doc;
+	
+	private Vocable currentlyDisplayedVocable;
 
 	public BigCharacterBox(String ignoredCharacters) {
 		this.ignoredCharacters = ignoredCharacters;
@@ -68,6 +71,7 @@ public class BigCharacterBox extends JPanel implements SearchListener, VocableCh
 	private void registerListeners() {
 		ObserveableFactory.getSearchObservable().registerListener(this);
 		ObserveableFactory.getVocablesObserveable().registerVocableChangedListener(this);
+		ObserveableFactory.getVocablesObserveable().registerVocableDeletedListener(this);
 		DictionaryMainWindow.vocableTable.registerVocableTableActionsListener(this);
 	}
 
@@ -286,6 +290,21 @@ public class BigCharacterBox extends JPanel implements SearchListener, VocableCh
 
 	@Override
 	public void selectedVocableInVocableTable(Vocable vocable) {
+		currentlyDisplayedVocable = vocable;
 		setCharacters(vocable.getSecondLanguage());
+	}
+
+	@Override
+	public void vocableDeletedActionPerformed(Vocable vocable) {
+		if(currentlyDisplayedVocable != null) {
+			if(	vocable.getFirstLanguage().equals(currentlyDisplayedVocable.getFirstLanguage()) &&
+				vocable.getPhoneticScript().equals(currentlyDisplayedVocable.getPhoneticScript()) &&
+				vocable.getSecondLanguage().equals(currentlyDisplayedVocable.getSecondLanguage())
+			) {
+				System.out.println("It's the shown Vocable being deleted! :O");
+			}
+		} else {
+			System.out.println("currentlyDisplayedVocable is null");
+		}
 	}
 }

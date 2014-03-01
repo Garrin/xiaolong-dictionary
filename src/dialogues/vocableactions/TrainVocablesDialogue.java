@@ -1,6 +1,7 @@
 
 package dialogues.vocableactions;
 
+import factories.ObserveableFactory;
 import gui.BigCharacterBox;
 import gui.JTextFieldWithContextMenu;
 
@@ -19,13 +20,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import listener.vocables.VocableDeletedListener;
 import manager.VocableManager;
 import net.miginfocom.swing.MigLayout;
 import dictionary.Settings;
 import dictionary.Vocable;
 
 @SuppressWarnings("serial")
-public class TrainVocablesDialogue extends JFrame {
+public class TrainVocablesDialogue extends JFrame implements VocableDeletedListener {
 	
 	private JLabel headingLabel;
 	private JLabel firstLanguageLabel;
@@ -57,11 +59,14 @@ public class TrainVocablesDialogue extends JFrame {
 	private boolean phoneticScriptShown = Settings.trainingOptions_phoneticScript_shown;
 	private boolean translationShown = false;
 	
+	private Vocable currentlyShownVocable;
+	
 	public TrainVocablesDialogue(ArrayList<Vocable> trainingVocables) {
 		this.trainingVocables = trainingVocables;
 		setTitle("Vocable Training");
 		initializeComponents();
 		addComponents();
+		registerAsListener();
 		addActionListeners();
 		startTraining();
 	}
@@ -240,6 +245,12 @@ public class TrainVocablesDialogue extends JFrame {
 		((JComponent) component).setBorder(border);
 	}
 	
+	/**
+	 * This method registers the {@link TrainVocablesDialogue} as a listener for the required events.
+	 */
+	private void registerAsListener() {
+		ObserveableFactory.getVocablesObserveable().registerVocableDeletedListener(this);
+	}
 	
 	/**
 	 * Adds action listeners to buttons in this dialogue
@@ -420,6 +431,8 @@ public class TrainVocablesDialogue extends JFrame {
 	 * @param vocable the shown vocable
 	 */
 	private void setVocable(Vocable vocable) {
+		currentlyShownVocable = trainingVocables.get(currentPositionInTrainingVocables);
+		
 		System.out.println("Pinyin is: " + phoneticScriptShown);
 		
 		//Settings texts according to the translation direction setting
@@ -452,5 +465,40 @@ public class TrainVocablesDialogue extends JFrame {
 		learnLevelLanguageTextField.setCaretPosition(0);
 		
 		statusLabel.setText("Vocable " + (currentPositionInTrainingVocables+1) + " of " + trainingVocables.size());
+	}
+
+	/**
+	 * Skips the current vocable without saving learn level changes.
+	 */
+	private void deleteVocableFromTrainingVocables(Vocable vocable) {
+		trainingVocables.remove(vocable);
+		
+		currentPositionInTrainingVocables = (currentPositionInTrainingVocables - 1);
+		if(currentPositionInTrainingVocables < 0) {
+			currentPositionInTrainingVocables = trainingVocables.size()-1;
+		}
+		
+		setVocable(trainingVocables.get(currentPositionInTrainingVocables));
+		
+		//reset big character box
+		bigCharacterBox.setCharacters("");
+		
+		//always hide translation when a new vocable is set
+		secondLanguageTextField.setText(Settings.languageOptions_secondLanguageName + " hidden");
+		
+		if(Settings.trainingOptions_firstToSecond) {
+			showTranslationButton.setText("Show " + Settings.languageOptions_secondLanguageName);
+		} else {
+			showTranslationButton.setText("Show " + Settings.languageOptions_firstLanguageName);
+		}
+		
+		translationShown = false;
+	}
+	
+	@Override
+	public void vocableDeletedActionPerformed(Vocable vocable) {
+		if(vocable == currentlyShownVocable) {
+			deleteVocableFromTrainingVocables(vocable);
+		}
 	}
 }
