@@ -4,18 +4,6 @@
  */
 package gui;
 
-import dialogues.options.BigCharacterBoxOptionsDialogue;
-import dialogues.options.DialogsOptionsDialogue;
-import dialogues.options.SearchHistoryOptionsDialogue;
-import dialogues.options.SearchOptionsDialogue;
-import dialogues.options.LanguageOptionsDialogue;
-import dialogues.options.SpecialCharactersOptionsDialogue;
-import dialogues.options.TrainingOptionsDialogue;
-import dialogues.options.VocableOptionsDialogue;
-import dialogues.options.VocableTableOptionsDialogue;
-import dialogues.*;
-import dictionary.Dictionary;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -28,6 +16,18 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
 import manager.VocableManager;
+import dialogues.HelpDialogue;
+import dialogues.InfoDialogue;
+import dialogues.options.BigCharacterBoxOptionsDialogue;
+import dialogues.options.DialogsOptionsDialogue;
+import dialogues.options.LanguageOptionsDialogue;
+import dialogues.options.SearchHistoryOptionsDialogue;
+import dialogues.options.SearchOptionsDialogue;
+import dialogues.options.SpecialCharactersOptionsDialogue;
+import dialogues.options.TrainingOptionsDialogue;
+import dialogues.options.VocableOptionsDialogue;
+import dialogues.options.VocableTableOptionsDialogue;
+import dictionary.FileManager;
 
 /**
  *
@@ -172,7 +172,7 @@ public class DictionaryMenuBar extends JMenuBar {
 		saveDictionaryMenuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Dictionary.saveVocableList();
+				FileManager.saveVocableList();
 			}
 		});
 		
@@ -375,43 +375,43 @@ public class DictionaryMenuBar extends JMenuBar {
 	}
 	
 	private void createNewDictionaryMenuItemActionPerformed() {
-		fileChooser = new JFileChooser(Dictionary.vocableFilename);
+		fileChooser = new JFileChooser(FileManager.vocableFilename);
 		int returnValue = fileChooser.showSaveDialog(window);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
-			Dictionary.vocableFilename = file.getPath();
-			Dictionary.createNewDictionary();
-			Dictionary.saveVocableList();
+			FileManager.vocableFilename = file.getPath();
+			FileManager.createNewDictionary();
+			FileManager.saveVocableList();
 		}
 	}
 	
 	private void openDictionaryMenuItemActionPerformed() {
-		fileChooser = new JFileChooser(Dictionary.vocableFilename);
+		fileChooser = new JFileChooser(FileManager.vocableFilename);
 		int returnValue = fileChooser.showOpenDialog(window);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
-			Dictionary.vocableFilename = file.getPath();
-			Dictionary.loadVocableList();
+			FileManager.vocableFilename = file.getPath();
+			FileManager.loadVocableList();
 		}
 	}
 	
 	private void saveDictionaryAsMenuItemActionPerformed() {
-		fileChooser = new JFileChooser(Dictionary.vocableFilename);
+		fileChooser = new JFileChooser(FileManager.vocableFilename);
 		int returnValue = fileChooser.showSaveDialog(window);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
-			Dictionary.vocableFilename = file.getPath();
-			Dictionary.saveVocableList();
+			FileManager.vocableFilename = file.getPath();
+			FileManager.saveVocableList();
 		}
 	}
 	
 	private void saveSearchResultAsMenuItemActionPerformed() {
-		fileChooser = new JFileChooser(Dictionary.vocableFilename);
+		fileChooser = new JFileChooser(FileManager.vocableFilename);
 		int returnValue = fileChooser.showSaveDialog(window);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File file = fileChooser.getSelectedFile();
-			Dictionary.searchResultFilename = file.getPath();
-			Dictionary.saveSearchResult(VocableManager.getLastSearchResult());
+			FileManager.searchResultFilename = file.getPath();
+			FileManager.saveSearchResult(VocableManager.getLastSearchResult());
 		}
 	}
 }

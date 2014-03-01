@@ -28,12 +28,12 @@ public class SaveOnExitConfirmation extends WindowAdapter {
 	public void windowClosing(WindowEvent e) {
 		JOptionPane.setDefaultLocale(Locale.ENGLISH);
 		
-		if(!Dictionary.vocabularyIsSavedToFile) {
+		if(!FileManager.vocabularyIsSavedToFile) {
 			if(Settings.showSaveVocabularyBeforeExitConfirmationDialog) {
 				showSaveVocabularyBeforeExitConfirmationDialogue();
 			} else {
 				if(Settings.saveVocabularyOnExit) {
-					Dictionary.saveVocableList();
+					FileManager.saveVocableList();
 				}
 				Settings.lastSearchTerm = SearchBox.getSearchTerm();
 				Settings.saveSettings();
@@ -79,7 +79,7 @@ public class SaveOnExitConfirmation extends WindowAdapter {
 				if(saveBeforeExit_doNotShowAgainCheckBox.isSelected()) {
 					saveVocabularyOnExit = true;
 				}
-				Dictionary.saveVocableList();
+				FileManager.saveVocableList();
 				updateSettings();
 				Settings.saveSettings();
 				System.exit(0);

@@ -1,16 +1,20 @@
 
 package dialogues.options;
 
-import dictionary.Settings;
-import gui.DictionaryMainWindow;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
 import net.miginfocom.swing.MigLayout;
+import dictionary.Settings;
+import factories.ObserveableFactory;
 
 /**
  *
@@ -112,14 +116,14 @@ public class VocableTableOptionsDialogue extends JDialog {
 	}
 	
 	private void okButtonAction() {
-		DictionaryMainWindow.vocableTable.updateFont( (String) fontComboBox.getSelectedItem(), Integer.parseInt( (String) fontSizeComboBox.getSelectedItem()), (String) fontWeightComboBox.getSelectedItem());
 		saveSettings();
+		ObserveableFactory.getVocableTableFontSettingsObservable().fireVocableTableFontSettingsNotification();
 		this.dispose();
 	}
 	
 	private void saveSettingsButtonAction() {
-		DictionaryMainWindow.vocableTable.updateFont( (String) fontComboBox.getSelectedItem(), Integer.parseInt( (String) fontSizeComboBox.getSelectedItem()), (String) fontWeightComboBox.getSelectedItem());
 		saveSettings();
+		ObserveableFactory.getVocableTableFontSettingsObservable().fireVocableTableFontSettingsNotification();
 	}
 	
 	private void cancelButtonAction() {

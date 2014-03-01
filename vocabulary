@@ -120,7 +120,7 @@ Sprachen:PC12:Franzoesisch:法语:fǎyǔ:2
 Verben:PC12/NPC06:gehen:去:qù:2
 Grammatik/Personalpronomen:PC12:sie/ihnen:她们:tāmen:2
 Name:PC13/LSC01/NPC07:der Name:名字:míngzi:2
-Gruß/Begrueßung:PC13/NPC13:(Ausruf) Hallo:喂:wèi:2
+Gruß/Begrueßung:PC13/NPC13:(Ausruf) Hallo:喂:wèi:0
 ---:PC13/NPC07:(Ausruf) ah!/(Ausruf) oh!:啊:à:2
 Gebaeude:PC13:der Laden:商店:shāngdiàn:1
 Verben:PC13/NPC09:etw. kaufen:买:mǎi:2
@@ -155,7 +155,7 @@ Papierzeug:PC14/NPC15:der Brief:信:xìn:0
 Verben:PC14/NPC13:erzaehlen/jemanden etwas mitteilen:告诉:gàosu:2
 Berufe:PC14Z:der Angestellter:职员:zhíyuán:0
 Berufe:PC14Z/NPC08Z:der Ingenieur:工程师:gōngchéngshī:0
-Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:1
+Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:0
 ---:PC14Z/LSC01/NPC13:die Firma/das Unternehmen:公司:gōngsī:2
 Sprachen:PC15/NPC07:das Chinesisch:中文:zhōngwén:2
 Studium:PC15/NPC07:die Fakultaet/der Fachbereich:系:xì:2
@@ -192,7 +192,7 @@ Zeiten:PC16/NPC09Z:der Abend/abends:晚上:wǎnshang:2
 Verben:PC16/NPC10:suchen/jemanden rufen/jemandem Wechselgeld herausgeben:找:zhǎo:2
 ---:PC16:alt:旧:jiù:0
 Kleidung:PC16/NPC12:anziehen/tragen:穿:chuān:2
-ZEW:PC16/NPC13:(ZEW Oberbekleidung, Arbeit, abstrakte Dinge):件:jiàn:2
+ZEW:PC16/NPC13:(ZEW Oberbekleidung, Arbeit, abstrakte Dinge):件:jiàn:1
 Kleidung:PC16:das Hemd/die Bluse:衬衫:chènshān:0
 Farben:PC16:gruen:绿色:lǜsè:0
 ---:PC16/NPC08:groß/alt:大:dà:2
@@ -333,10 +333,10 @@ Familie:PC21Z:die Tochter:女儿:nǚér:0
 Richtung:PC22:hinter/hinten:后边:hóubiān:0
 ---:PC22/NPC08:klein/jung:小:xiǎo:0
 ---:PC22:der Garten:花园:huāyuán:0
-Gebaeude:PC22/NPC13:das Haus/das Zimmer/dieWohnung:房子:fángzi:0
-Raeume:PC22/NPC13Z:das Wohnzimmer/der Salon:客厅:kètīng:0
+Gebaeude:PC22/NPC13:das Haus/das Zimmer/dieWohnung:房子:fángzi:2
+Raeume:PC22/NPC13Z:das Wohnzimmer/der Salon:客厅:kètīng:2
 Richtung:PC22:seite/seitlich:旁边:pángbiān:0
-Raeume:PC22/NPC13Z:das Arbeitszimmer:书房:shūfáng:0
+Raeume:PC22/NPC13Z:das Arbeitszimmer:书房:shūfáng:2
 Moebel:PC22:der Stuhl:椅子:yǐzi:0
 Anzahl:PC22/NPC08:wenige/wenig:少:shǎo:0
 Moebel:PC22:der Tisch:桌子:zhuōzi:0
@@ -344,9 +344,9 @@ Richtung:PC22:oben/auf/ueber:上边:shàngbiān:0
 ---:PC22:immer:总是:zǒngshì:0
 ---:PC22:immer:总:zǒng:0
 Verben:PC22/NPC14Z:aufraeumen/ordnen/in Ordnung bringen/Ordnung schaffen/etwas in Ordnung bringen:整理:zhěnglǐ:0
-Raeume:PC22/NPC13:die Kueche:厨房:chúfáng:0
+Raeume:PC22/NPC13:die Kueche:厨房:chúfáng:2
 Richtung:PC22:gegenueber:对面:duìmiàn:0
-Verben:PC22/NPC13:jm. helfen/jn. unterstuetzen:帮助:bāngzhu:0
+Verben:PC22/NPC13:jm. helfen/jn. unterstuetzen:帮助:bāngzhu:1
 Verben:PC22:helfen:帮:bāng:0
 Raeume:PC22:der Speisesaal/das Restaurant:餐厅:cāntīng:0
 Richtung:PC22:links:左边:zuǒbiān:0
@@ -451,7 +451,7 @@ Zeit:PC26:sofort:就:jiù:0
 ZEW/Zahlen:PC26:zwei/beide:俩:liǎ:0
 ---:PC26/NPC04/NPC11:koennen/duerfen:可以:kěyǐ:2
 ---:PC26:ideal/Ideal:理想:lǐxiǎng:0
----:PC26/NPC13:aber/jedoch:可是:kěshì:0
+---:PC26/NPC13:aber/jedoch:可是:kěshì:2
 ---:PC26:leicht:容易:róngyi:0
 Sprichwoerter:PC26:Wo ein Wille ist, ist auch ein Weg.:有志者事竟成:yǒuzhìzhěshìjìngchéng:0
 Sprichwoerter:PC26:das Sprichwort:成语:chéngyǔ:0
@@ -954,7 +954,7 @@ Studium:---:Informatik:信息学:xìnxīxué:0
 ---:NPC13:Elektrizitaet/Elektro-:电:diàn:0
 ---:NPC13:Schatten:影:yǐng:0
 ---:NPC13:mieten/vermieten:租:zū:0
-ZEW:NPC13:(ZEW fuer Raeume):间:jiān:0
+ZEW:NPC13:(ZEW fuer Raeume):间:jiān:2
 ---:NPC13:die Miete:房租:fángzū:0
 ---:NPC13:vielleicht/moeglicherweise:可能:kěnéng:0
 ---:NPC13:(Name einer Immobilienfirma):家美:jiāměi:0

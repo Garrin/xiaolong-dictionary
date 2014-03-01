@@ -30,7 +30,6 @@ import listener.settings.VocabularyLanguagesChangeListener;
 import manager.VocableManager;
 import net.miginfocom.swing.MigLayout;
 import dialogues.Helper;
-import dictionary.Dictionary;
 import dictionary.Settings;
 import dictionary.Vocable;
 
@@ -407,7 +406,7 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 	}
 	
 	private static boolean isVocableAlreadyInDictionary(String firstLanguage, String phoneticScript, String secondLanguage) {		
-		return Dictionary.isVocableAlreadyInVocableList(firstLanguage, phoneticScript, secondLanguage);
+		return VocableManager.isVocableAlreadyInVocableList(firstLanguage, phoneticScript, secondLanguage);
 	}
 
 	@Override

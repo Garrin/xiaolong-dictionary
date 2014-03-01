@@ -2,7 +2,7 @@ package manager;
 
 import java.util.ArrayList;
 
-import dictionary.Dictionary;
+import dictionary.FileManager;
 import dictionary.SearchCriteriaHistoryItem;
 import dictionary.Settings;
 import dictionary.Vocable;
@@ -88,7 +88,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireAddVocableNotification(vocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireDeleteVocableNotification(vocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -169,7 +169,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireDeleteVocableNotification(vocabletoDelete);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -183,7 +183,7 @@ public class VocableManager {
 			ObserveableFactory.getVocablesObserveable().fireDeleteVocableNotification(voc);
 			ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
 		}
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 	
 	/**
@@ -237,7 +237,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -257,7 +257,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 	
 	/**
@@ -277,7 +277,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -297,7 +297,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -317,7 +317,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -337,7 +337,7 @@ public class VocableManager {
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 	
 	
@@ -933,7 +933,7 @@ public class VocableManager {
 			voc.setLearnLevel(newLevel);
 		}
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		Dictionary.vocabularyIsSavedToFile = false;
+		FileManager.vocabularyIsSavedToFile = false;
 	}
 
 	/**
@@ -970,6 +970,27 @@ public class VocableManager {
 		ObserveableFactory.getSearchObservable().fireSearchNotification();
 	}
 
+	
+	/**
+	 * This method check wether a {@link Vocable} is already in the vocable list or not, 
+	 * by using the attributes firstLanguage, phoneticScript and secondLanguage as 
+	 * uniquely identifying attributes.
+	 * @param firstLanguage the firstLanguage
+	 * @param phoneticScript the phonetic Script
+	 * @param secondLanguage the secondLanguage
+	 * @return returns true if the {@link Vocable} is already in the list of {@link Vocable}s
+	 */
+	public static boolean isVocableAlreadyInVocableList(String firstLanguage, String phoneticScript, String secondLanguage) {
+		for(Vocable vocable : VocableManager.getVocableList()) {
+			if(	vocable.getFirstLanguage().equals(firstLanguage) &&
+				vocable.getPhoneticScript().equals(phoneticScript) &&
+				vocable.getSecondLanguage().equals(secondLanguage)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	/**
 	 * Returns the current vocableList.
 	 * 
@@ -998,7 +1019,44 @@ public class VocableManager {
 	public static void setLastSearchresult(ArrayList<Vocable> temporaryResult) {
 		lastSearchResult = temporaryResult;
 	}
+
+	/**
+	 * This method returns the {@link Vocable}, which has the three attributes first language, 
+	 * phonetic script and secondd language with the given values.
+	 * @param firstLanguage the firstLanguage attribute of the {@link Vocable}
+	 * @param phoneticScript the phoneticScript attribute of the {@link Vocable}
+	 * @param secondLanguage the secondLanguage attribute of the {@link Vocable}
+	 * @return the {@link Vocable} having the three attributes with the given values.
+	 */
+	public static Vocable getVocableWith(String firstLanguage, String phoneticScript, String secondLanguage) {
+		for(Vocable vocable : VocableManager.getVocableList()) {
+			if(	vocable.getFirstLanguage().equals(firstLanguage) &&
+				vocable.getPhoneticScript().equals(phoneticScript) &&
+				vocable.getSecondLanguage().equals(secondLanguage)) {
+				return vocable;
+			}
+		}
+		return null;
+	}
 	
+	/**
+	 * This method returns the {@link Vocable} of the lastSearchResult, which has the three attributes first language, 
+	 * phonetic script and secondd language with the given values.
+	 * @param firstLanguage the firstLanguage attribute of the {@link Vocable}
+	 * @param phoneticScript the phoneticScript attribute of the {@link Vocable}
+	 * @param secondLanguage the secondLanguage attribute of the {@link Vocable}
+	 * @return the {@link Vocable} having the three attributes with the given values.
+	 */
+	public static Vocable getVocableFromSearchResultWith(String firstLanguage, String phoneticScript, String secondLanguage) {
+		for(Vocable vocable : VocableManager.getLastSearchResult()) {
+			if(	vocable.getFirstLanguage().equals(firstLanguage) &&
+				vocable.getPhoneticScript().equals(phoneticScript) &&
+				vocable.getSecondLanguage().equals(secondLanguage)) {
+				return vocable;
+			}
+		}
+		return null;
+	}
 //	/**
 //	 * Checks if a vocable is in the last search result
 //	 * @return

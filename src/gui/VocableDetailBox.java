@@ -11,6 +11,7 @@ import javax.swing.border.TitledBorder;
 
 import listener.vocables.VocableChangedListener;
 import listener.vocables.VocableDeletedListener;
+import listener.vocabletable.VocableTableActionsListener;
 import net.miginfocom.swing.MigLayout;
 import dictionary.Vocable;
 import factories.ObserveableFactory;
@@ -20,8 +21,7 @@ import factories.ObserveableFactory;
  * @author xiaolong
  */
 @SuppressWarnings("serial")
-public class VocableDetailBox extends JPanel implements VocableDeletedListener,
-		VocableChangedListener {
+public class VocableDetailBox extends JPanel implements VocableDeletedListener, VocableChangedListener, VocableTableActionsListener {
 
 	// private DictionaryMainWindow window;
 
@@ -60,13 +60,12 @@ public class VocableDetailBox extends JPanel implements VocableDeletedListener,
 	 * This method registers this component as a listener for vocables
 	 */
 	private void registerListeners() {
-		ObserveableFactory.getVocablesObserveable()
-				.registerVocableChangedListener(this);
-		ObserveableFactory.getVocablesObserveable()
-				.registerVocableDeletedListener(this);
+		ObserveableFactory.getVocablesObserveable().registerVocableChangedListener(this);
+		ObserveableFactory.getVocablesObserveable().registerVocableDeletedListener(this);
+		DictionaryMainWindow.vocableTable.registerVocableTableActionsListener(this);
 	}
 
-	public void updateVocableDetails(Vocable vocable) {
+	private void updateVocableDetails(Vocable vocable) {
 		this.currentVocable = vocable;
 		vocableDetailChapterText.setText(vocable.getChapter());
 		vocableDetailTopicText.setText(vocable.getTopic());
@@ -100,5 +99,10 @@ public class VocableDetailBox extends JPanel implements VocableDeletedListener,
 			updateLearnLevel("");
 			updateTopic("");
 		}
+	}
+
+	@Override
+	public void selectedVocableInVocableTable(Vocable vocable) {
+		updateVocableDetails(vocable);
 	}
 }

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
 import java.awt.BorderLayout;
@@ -14,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.table.TableRowSorter;
 
-import manager.VocableManager;
 import net.miginfocom.swing.MigLayout;
 import dialogues.HelpDialogue;
 import dialogues.InfoDialogue;
@@ -196,7 +191,6 @@ public class DictionaryMainWindow extends JFrame {
 		getContentPane().add(bigCharacterBox, BorderLayout.EAST);
 	}
 	
-	
 	private void createTitleLabel() {
 		titleLabel = new JLabel("Dictionary", JLabel.CENTER);
 		titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
@@ -224,109 +218,7 @@ public class DictionaryMainWindow extends JFrame {
 		southJPanel.add(versionLabel, "cell 2 2");
 	}
 	
-	/*
-	public static void updateStatusLabel(String text) {
-		statusLabel.setText(text);		
-	}
-	*/
-	
-//	public static void updateVocableTable(ArrayList<Vocable> searchResult) {
-//		//currentSearchResult = searchResult;
-//		vocableTable.updateVocableTable(searchResult);
-//		TableColumnsAutofitter.autoResizeTable(vocableTable, true, 0, true, 175);
-//		
-//		/*
-//		int widthOfColumns =	vocableTable.getColumn(vocableTable.getColumnName(0)).getWidth() +
-//								vocableTable.getColumn(vocableTable.getColumnName(1)).getWidth() +
-//								vocableTable.getColumn(vocableTable.getColumnName(2)).getWidth() +
-//								vocableTable.getColumn(vocableTable.getColumnName(3)).getWidth();
-//		
-//		System.out.println("Containers: " + vocableTable.getParent());
-//		System.out.println("Breite des Containers: " + vocableTable.getParent().getWidth());
-//		System.out.println("Breite der Tabelle: " + vocableTable.getWidth());
-//		System.out.println("Breite der Spalten: " + widthOfColumns);
-//		
-//		if(vocableTable.getWidth() < widthOfColumns) {
-//			
-//		}
-//		*/
-//	}
-	
-	public void updateBigCharacterBox(String characters) {
-		bigCharacterBox.setCharacters(characters);
-	}
-	
-	/**
-	 * This method updates the VocableDetailBox below the shown search result
-	 * by searching through the current search result for the 3 parameters.
-	 * This is necessary because the user can sort the shown vocables and thus 
-	 * change the order of vocables shown so that a simple lookup in the current 
-	 * search result with the number of the selected row of the search result will 
-	 * most likely lead to using the from values.
-	 * 
-	 * @param firstLanguage the first language
-	 * @param phoneticScript the phonetic script
-	 * @param secondLanguage the second language
-	 */
-	public void updateVocableDetailsBox(String firstLanguage, String phoneticScript, String secondLanguage) {
-		
-		int row = -1;
-		
-		//Search for vocable and take it's values EDIT
-		for(int i = 0; i < VocableManager.getLastSearchResult().size(); i++) {
-			if(	VocableManager.getLastSearchResult().get(i).getFirstLanguage().equals(firstLanguage) &&
-				VocableManager.getLastSearchResult().get(i).getPhoneticScript().equals(phoneticScript) &&
-				VocableManager.getLastSearchResult().get(i).getSecondLanguage().equals(secondLanguage)) {
-				row = i;
-				break;
-			}
-		}
-		
-		//If vocable was found (should always be the case)
-		if(row != -1) {
-			vocableDetailBox.updateVocableDetails(VocableManager.getLastSearchResult().get(row));
-		}
-	}
-	
 	public SaveOnExitConfirmation getSaveOnExitConfirmation() {
 		return saveOnExitConfirmation;
 	}
-	
-//	public VocableTable getVocableTable() {
-//		return vocableTable;
-//	}
-	
-//	public static void updateLanguages(String newFirstLanguage, String newPhoneticScript, String newSecondLanguage) {
-//		//if(addVocableDialogue != null) addVocableDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		//if(changeVocableDialogue != null) changeVocableDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		//if(deleteVocableDialogue != null) deleteVocableDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		//if(deleteMultipleVocablesDialogue != null) deleteMultipleVocablesDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		//if(trainVocablesDialogue != null) trainVocablesDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		//SearchBox.updateSearchBoxLabels(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		//if(vocableTable != null) vocableTable.updateTableHeader(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//	}
-	
-	/**
-	 * This method updates the languages when the user closes the first run dialogue. 
-	 * It is different from the method that updates the languages used after the user closed the first run dialogue. 
-	 * When the user has closed the first run dialogue the user could have changed the order of the columns of the vocable table, 
-	 * which makes it necessary to access them using their headers, which are not available when the user starts the programm for the first time.
-	 * @param newFirstLanguage the new first language
-	 * @param newPhoneticScript the new phonetic script
-	 * @param newSecondLanguage the new second language
-	 */
-//	public static void updateLanguagesOnFirstRun(String newFirstLanguage, String newPhoneticScript, String newSecondLanguage) {
-//		if(addVocableDialogue != null) addVocableDialogue.changeVocabularyLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		if(changeVocableDialogue != null) changeVocableDialogue.changeVocabularyLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		if(deleteVocableDialogue != null) deleteVocableDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		if(deleteMultipleVocablesDialogue != null) deleteMultipleVocablesDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		if(trainVocablesDialogue != null) trainVocablesDialogue.updateLanguages(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		SearchBox.updateSearchBoxLabels(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//		if(vocableTable != null) vocableTable.setTableHeader(newFirstLanguage, newPhoneticScript, newSecondLanguage);
-//	}
-	
-//	public ArrayList<Vocable> getSearchResult() {
-//		return currentSearchResult;
-//	}
-	
 }

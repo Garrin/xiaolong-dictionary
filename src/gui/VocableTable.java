@@ -11,11 +11,19 @@ import java.util.ArrayList;
 import javax.swing.JTable;
 //import javax.swing.table.DefaultTableModel;
 
+
+
+
+
+
+
 import listener.search.SearchListener;
+import listener.settings.VocableTableFontSettingsListener;
 import listener.settings.VocabularyLanguagesChangeListener;
 import listener.vocables.VocableAddedListener;
 import listener.vocables.VocableChangedListener;
 import listener.vocables.VocableDeletedListener;
+import listener.vocabletable.VocableTableActionsListener;
 import manager.VocableManager;
 import dictionary.Settings;
 import dictionary.Vocable;
@@ -27,7 +35,7 @@ import factories.ObserveableFactory;
  * @author xiaolong
  */
 @SuppressWarnings("serial")
-public final class VocableTable extends JTable implements VocabularyLanguagesChangeListener, SearchListener, VocableChangedListener, VocableAddedListener, VocableDeletedListener {
+public final class VocableTable extends JTable implements VocabularyLanguagesChangeListener, SearchListener, VocableChangedListener, VocableAddedListener, VocableDeletedListener, VocableTableFontSettingsListener {
 	
 	private UneditableCellsTableModel tableModel;
 	
@@ -44,21 +52,20 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 	private final int COLUMN_MINIMUM_WIDTH = 50;
 	private final int COLUMN_PREFFERED_WIDTH = 50;
 	
+	private ArrayList<VocableTableActionsListener> vocableTableActionsListeners = new ArrayList<VocableTableActionsListener>();
+	
 	public VocableTable(UneditableCellsTableModel model) {
 		super(model);
 		
 		this.tableModel = model;
 		
 		initializeLayout();
-		setColumnsWidth();
 		addActionListeners();
-		updateFont(Settings.vocableTable_font, Settings.vocableTable_fontSize, Settings.vocableTable_fontWeight);
-		
 		registerListeners();
 	}
 	
 	/**
-	 * Registers all necessary listeners
+	 * Registers the {@link VocableTable} as listener for all necessary Observables.
 	 */
 	private void registerListeners() {
 		//Language Settings
@@ -71,11 +78,40 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 		
 		//Searches
 		ObserveableFactory.getSearchObservable().registerListener(this);
+		
+		//Fonts
+		ObserveableFactory.getVocableTableFontSettingsObservable().registerVocableTableFontSettingsListener(this);
+	}
+	
+	/**
+	 * This method registers a listener for selections of {@link Vocable}s in this {@link VocableTable}.
+	 * @param vocableTableActionsListener the listener, which will be registered
+	 */
+	public void registerVocableTableActionsListener(VocableTableActionsListener vocableTableActionsListener) {
+		vocableTableActionsListeners.add(vocableTableActionsListener);
+	}
+	
+	/**
+	 * This method notifies all registered listeners for selections of {@link Vocable}s of selections of {@link Vocable}s.
+	 */
+	private void notifyVocableTableActionsListeners(Vocable vocable) {
+		for(VocableTableActionsListener vocableTableActionsListener : vocableTableActionsListeners) {
+			vocableTableActionsListener.selectedVocableInVocableTable(vocable);
+		}
 	}
 	
 	private void initializeLayout() {
 		setPreferredScrollableViewportSize(new Dimension(PREFERRED_TABLE_WIDTH, PREFERRED_TABLE_HEIGHT));
 		setFillsViewportHeight(true);
+		setColumnsWidth();
+		
+		if(Settings.vocableTable_fontWeight.equals("plain")) {
+			updateFont(new Font(Settings.vocableTable_font, Font.PLAIN, Settings.vocableTable_fontSize));
+		} else if(Settings.vocableTable_fontWeight.equals("bold")) {
+			updateFont(new Font(Settings.vocableTable_font, Font.BOLD, Settings.vocableTable_fontSize));
+		} else if(Settings.vocableTable_fontWeight.equals("italic")) {
+			updateFont(new Font(Settings.vocableTable_font, Font.ITALIC, Settings.vocableTable_fontSize));
+		}
 	}
 	
 	/**
@@ -112,8 +148,7 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 			public void mouseClicked(MouseEvent e) {
 				int selectedRow = getSelectedRow();
 				if(selectedRow != -1) {
-					updateBigCharacterBox(selectedRow);
-					updateVocableDetailBox(selectedRow);
+					notifyVocableTableActionsListeners(getVocableForRow(selectedRow));
 				}
 			}
 
@@ -155,15 +190,13 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 				if (e.getKeyCode() == KeyEvent.VK_UP) {
 					int selectedRow = getSelectedRow();
 					if(selectedRow != -1) {
-						updateBigCharacterBox(selectedRow);
-						updateVocableDetailBox(selectedRow);
+						notifyVocableTableActionsListeners(getVocableForRow(selectedRow));
 					}
 				}
 				if (e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_ENTER) {
 					int selectedRow = getSelectedRow();
 					if(selectedRow != -1) {
-						updateBigCharacterBox(selectedRow);
-						updateVocableDetailBox(selectedRow);
+						notifyVocableTableActionsListeners(getVocableForRow(selectedRow));
 					}
 				}
 				
@@ -208,57 +241,21 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 		getColumn(Settings.languageOptions_secondLanguageName).setPreferredWidth(150);
 	}
 	
-	public void updateFont(String font, int fontSize, String fontWeight) {
-		//System.out.println("Font for Vocable Table: " + getFont().getName());
-		if(fontWeight.equals("plain"))
-			setFont(new Font(font, Font.PLAIN, fontSize));
-		else if(fontWeight.equals("bold"))
-			setFont(new Font(font, Font.BOLD, fontSize));
-		else if(fontWeight.equals("italic"))
-			setFont(new Font(font, Font.ITALIC, fontSize));
-		
-		setRowHeight((int)Math.floor(fontSize*1.5));
+	/**
+	 * This method updates the font which is used by the {@link VocableTable}.
+	 * @param font the new Font which will be used.
+	 */
+	public void updateFont(Font font) {
+		setFont(font);
+		setRowHeight((int)Math.floor(font.getSize()*1.5));
 	}
 	
-	/*
-	public void updateHeadings(String firstLanguage, String phoneticScript, String secondLanguage) {
-		//EDIT
-		getColumn(Settings.languageOptions_firstLanguageName).setHeaderValue(firstLanguage);
-		getColumn(Settings.languageOptions_phoneticScriptName).setHeaderValue(phoneticScript);
-		getColumn(Settings.languageOptions_secondLanguageName).setHeaderValue(secondLanguage);
-		
-		((DefaultTableModel) getModel()).setColumnIdentifiers(new Object[]{"#",Settings.languageOptions_firstLanguageName,Settings.languageOptions_phoneticScriptName,Settings.languageOptions_secondLanguageName});
-	}
-	*/
-	
-	private void updateBigCharacterBox(int selectedRow) {
-		int secondLanguageColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_secondLanguageName);
-		
-		FrameFactory.getDictionaryMainWindow().updateBigCharacterBox((String) getValueAt(selectedRow, secondLanguageColumnPos));
-	}
-	
-	private void updateVocableDetailBox(int selectedRow) {
-		int firstLanguageColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_firstLanguageName);
-		int phoneticScriptColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_phoneticScriptName);
-		int secondLanguageColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_secondLanguageName);
-		
-		String firstLanguage = ((String) getValueAt(selectedRow, firstLanguageColumnPos));
-		String phoneticScript = ((String) getValueAt(selectedRow, phoneticScriptColumnPos));
-		String secondLanguage = ((String) getValueAt(selectedRow, secondLanguageColumnPos));
-		
-		FrameFactory.getDictionaryMainWindow().updateVocableDetailsBox(firstLanguage, phoneticScript, secondLanguage);
-	}
-	
-//	public void updateTableHeader(String newFirstLanguage, String newPhoneticScript, String newSecondLanguage) {
-//		int firstLanguageColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_previousFirstLanguage);
-//		int phoneticScriptColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_previousPhoneticScript);
-//		int secondLanguageColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_previousSecondLanguage);
-//		getTableHeader().getColumnModel().getColumn(firstLanguageColumnPos).setHeaderValue(Settings.languageOptions_firstLanguageName);
-//		getTableHeader().getColumnModel().getColumn(phoneticScriptColumnPos).setHeaderValue(Settings.languageOptions_phoneticScriptName);
-//		getTableHeader().getColumnModel().getColumn(secondLanguageColumnPos).setHeaderValue(Settings.languageOptions_secondLanguageName);
-//		getTableHeader().repaint();
-//	}
-	
+	/**
+	 * This method set table headers (displayed as column names in the GUI) for the {@link VocableTable}.
+	 * @param newFirstLanguage the new header value for the first language attribute column of the {@link VocableTable}
+	 * @param newPhoneticScript the new header value for the phonetic script attribute column of the {@link VocableTable}
+	 * @param newSecondLanguage the new header value for the second language attribute column of the {@link VocableTable}
+	 */
 	public void setTableHeader(String newFirstLanguage, String newPhoneticScript, String newSecondLanguage) {
 		getTableHeader().getColumnModel().getColumn(FIRST_LANGUAGE_COLUMN).setHeaderValue(Settings.languageOptions_firstLanguageName);
 		getTableHeader().getColumnModel().getColumn(PHONETIC_SCRIPT_COLUMN).setHeaderValue(Settings.languageOptions_phoneticScriptName);
@@ -266,14 +263,26 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 		getTableHeader().repaint();
 	}
 	
+	/**
+	 * This method returns the index of the first language attribute value of a {@link Vocable} in the column model of the {@link VocableTable}.
+	 * @return the the index of the first language attribute value of a {@link Vocable} in the column model of the {@link VocableTable}.
+	 */
 	public int getNumberOfColumnOfFirstLanguage() {
 		return getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_firstLanguageName);
 	}
 	
+	/**
+	 * This method returns the index of the phonetic script attribute value of a {@link Vocable} in the column model of the {@link VocableTable}.
+	 * @return the the index of the phonetic script attribute value of a {@link Vocable} in the column model of the {@link VocableTable}.
+	 */
 	public int getNumberOfColumnOfPhoneticScript() {
 		return getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_phoneticScriptName);
 	}
 	
+	/**
+	 * This method returns the index of the second language attribute value of a {@link Vocable} in the column model of the {@link VocableTable}.
+	 * @return the the index of the second language attribute value of a {@link Vocable} in the column model of the {@link VocableTable}.
+	 */
 	public int getNumberOfColumnOfSecondLanguage() {
 		return getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_secondLanguageName);
 	}
@@ -297,6 +306,22 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * This method returns the {@link Vocable} displayed in the given row of the {@link VocableTable}.
+	 * @param row the row in which the {@link Vocable} is displayed
+	 */
+	private Vocable getVocableForRow(int row) {
+		int firstLanguageColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_firstLanguageName);
+		int phoneticScriptColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_phoneticScriptName);
+		int secondLanguageColumnPos = getTableHeader().getColumnModel().getColumnIndex(Settings.languageOptions_secondLanguageName);
+		
+		String firstLanguage = (String) getValueAt(row, firstLanguageColumnPos);
+		String phoneticScript = (String) getValueAt(row, phoneticScriptColumnPos);
+		String secondLanguage = (String) getValueAt(row, secondLanguageColumnPos);
+		
+		return VocableManager.getVocableFromSearchResultWith(firstLanguage, phoneticScript, secondLanguage);
 	}
 	
 	@Override
@@ -343,4 +368,11 @@ public final class VocableTable extends JTable implements VocabularyLanguagesCha
 		//TODO: Select it
 		//TODO: update the big character box
 	}
+
+	@Override
+	public void changeVocableTableFont(Font font) {
+		updateFont(font);
+	}
+	
+	
 }

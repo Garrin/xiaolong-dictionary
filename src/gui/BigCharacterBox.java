@@ -24,8 +24,11 @@ import javax.swing.text.StyleContext;
 import javax.swing.text.StyledDocument;
 
 import listener.search.SearchListener;
+import listener.vocables.VocableChangedListener;
+import listener.vocabletable.VocableTableActionsListener;
 import net.miginfocom.swing.MigLayout;
 import dictionary.Settings;
+import dictionary.Vocable;
 import factories.ObserveableFactory;
 
 /**
@@ -33,7 +36,7 @@ import factories.ObserveableFactory;
  * @author xiaolong
  */
 @SuppressWarnings("serial")
-public class BigCharacterBox extends JPanel implements SearchListener {
+public class BigCharacterBox extends JPanel implements SearchListener, VocableChangedListener, VocableTableActionsListener {
 
 	// private DictionaryMainWindow window;
 
@@ -64,6 +67,8 @@ public class BigCharacterBox extends JPanel implements SearchListener {
 
 	private void registerListeners() {
 		ObserveableFactory.getSearchObservable().registerListener(this);
+		ObserveableFactory.getVocablesObserveable().registerVocableChangedListener(this);
+		DictionaryMainWindow.vocableTable.registerVocableTableActionsListener(this);
 	}
 
 	private void addBorder() {
@@ -194,6 +199,19 @@ public class BigCharacterBox extends JPanel implements SearchListener {
 			addText(characters.substring(positionOfShownCharacter, positionOfShownCharacter + 1), mainStyle);	
 		}
 	}
+	
+	/**
+	 * This method sets a {@link Vocable} of which the second language is shown in the {@link BigCharacterBox}.
+	 * @param vocable the vocable, which will be set
+	 */
+	public void setVocable(Vocable vocable) {
+		this.characters = vocable.getSecondLanguage();
+		this.positionOfShownCharacter = 0;
+		textPane.setText("");
+		if(characters.length() != 0) {
+			addText(characters.substring(positionOfShownCharacter, positionOfShownCharacter + 1), mainStyle);	
+		}
+	}
 
 	/**
 	 * @return the previousButton
@@ -241,13 +259,9 @@ public class BigCharacterBox extends JPanel implements SearchListener {
 	}
 
 	/**
-	 * Adds text in a way that the text is styled as definded in AttributeSet
-	 * attrSet.
-	 * 
-	 * @param addedText
-	 *            the added text
-	 * @param attrSet
-	 *            the AttributeSet
+	 * Adds text in a way that the text is styled as definded in {@link AttributeSet} attrSet.
+	 * @param addedText the added text
+	 * @param attrSet the AttributeSet
 	 */
 	private void addText(String addedText, AttributeSet attrSet) {
 		try {
@@ -262,5 +276,16 @@ public class BigCharacterBox extends JPanel implements SearchListener {
 	@Override
 	public void searchPerformedAction() {
 		textPane.setText("");
+	}
+
+	@Override
+	public void vocableChangedActionPerformed(Vocable oldVocable, Vocable newVocable) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void selectedVocableInVocableTable(Vocable vocable) {
+		setCharacters(vocable.getSecondLanguage());
 	}
 }
