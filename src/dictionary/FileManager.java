@@ -56,8 +56,10 @@ public class FileManager {
 					String secondLanguage = tokenizer.nextToken();
 					String phoneticScript = tokenizer.nextToken();
 					String learnLevel = tokenizer.nextToken();
+					String importanceLevel = tokenizer.nextToken();
+					String description = tokenizer.nextToken();
 					//Dictionary.vocableList.add(new Vocable(topic, chapter, firstLanguage, secondLanguage, phoneticScript, learnLevel));
-					loadedVocableList.add(new Vocable(topic, chapter, firstLanguage, secondLanguage, phoneticScript, learnLevel));
+					loadedVocableList.add(new Vocable(topic, chapter, firstLanguage, secondLanguage, phoneticScript, learnLevel, importanceLevel, description));
 				}
 			}
 			VocableManager.setVocableList(loadedVocableList);
@@ -89,7 +91,7 @@ public class FileManager {
 			
 			//FileWriter fw = new FileWriter(Dictionary.vocabularyFilename);
 			for (Vocable voc : VocableManager.getVocableList()) {
-				String line = voc.getTopic() + ":" + voc.getChapter() + ":" + voc.getFirstLanguage() + ":" + voc.getSecondLanguage() + ":" + voc.getPhoneticScript() + ":" + voc.getLearnLevel() + System.getProperty("line.separator");
+				String line = voc.getTopic() + ":" + voc.getChapter() + ":" + voc.getFirstLanguage() + ":" + voc.getSecondLanguage() + ":" + voc.getPhoneticScript() + ":" + voc.getLearnLevel() + ":" + voc.getRelevance() + ":" + voc.getDescription() + System.getProperty("line.separator");
 				out.write(line);
 			}
 			out.close();

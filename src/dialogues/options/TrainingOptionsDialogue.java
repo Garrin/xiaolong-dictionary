@@ -17,13 +17,13 @@ import net.miginfocom.swing.MigLayout;
  */
 @SuppressWarnings("serial")
 public class TrainingOptionsDialogue extends JDialog {
-
-	//private final DictionaryMainWindow window;
 	
 	private ButtonGroup translationDirectionButtonGroup = new ButtonGroup();
 	private JRadioButton firstLanguageToSecondLanguageRadioButton = new JRadioButton(Settings.languageOptions_firstLanguageName + " --> " + Settings.languageOptions_secondLanguageName);
 	private JRadioButton secondLanguageToFirstLanguageRadioButton = new JRadioButton(Settings.languageOptions_secondLanguageName + " --> " + Settings.languageOptions_firstLanguageName);
 	private JCheckBox phoneticScriptCheckbox = new JCheckBox(Settings.languageOptions_phoneticScriptName + " enabled");
+//	private JCheckBox relevanceCheckbox = new JCheckBox("Relevance" + " enabled");
+//	private JCheckBox descriptionCheckbox = new JCheckBox("Description" + " enabled");
 	
 	private JPanel fontSettingsPanel = new JPanel(new MigLayout("wrap 2"));
 	private String[] fonts = {"WenQuanYi Zen Hei", "Dialog","Bitstream Cyberbit", "BitstreamCyberCJK"};
@@ -38,7 +38,6 @@ public class TrainingOptionsDialogue extends JDialog {
 	
 	public TrainingOptionsDialogue(DictionaryMainWindow parent, boolean modal) {
 		super(parent, modal);
-		//this.window = parent;
 		addComponents();
 		addActionListeners();
 	}
@@ -52,10 +51,14 @@ public class TrainingOptionsDialogue extends JDialog {
 		firstLanguageToSecondLanguageRadioButton.setSelected(Settings.trainingOptions_firstToSecond);
 		secondLanguageToFirstLanguageRadioButton.setSelected(Settings.trainingOptions_secondToFirst);
 		phoneticScriptCheckbox.setSelected(Settings.trainingOptions_phoneticScript_shown);
+//		relevanceCheckbox.setSelected(Settings.trainingOptions_relevance_shown);
+//		descriptionCheckbox.setSelected(Settings.trainingOptions_description_shown);
 		
 		add(firstLanguageToSecondLanguageRadioButton, "cell 0 0");
 		add(secondLanguageToFirstLanguageRadioButton, "cell 0 1");
 		add(phoneticScriptCheckbox, "cell 0 2");
+//		add(relevanceCheckbox, "cell 0 3");
+//		add(descriptionCheckbox, "cell 0 4");
 		
 		add(fontSettingsPanel, "cell 0 3");
 		fontSettingsPanel.add(fontLabel, "cell 0 0");
@@ -110,20 +113,10 @@ public class TrainingOptionsDialogue extends JDialog {
 		Settings.trainingOptions_firstToSecond = firstLanguageToSecondLanguageRadioButton.isSelected();
 		Settings.trainingOptions_phoneticScript_shown = phoneticScriptCheckbox.isSelected();
 		Settings.trainingOptions_secondToFirst = secondLanguageToFirstLanguageRadioButton.isSelected();
+//		Settings.trainingOptions_relevance_shown = relevanceCheckbox.isSelected();
+//		Settings.trainingOptions_description_shown = descriptionCheckbox.isSelected();
 		Settings.trainingOptions_font = (String) fontComboBox.getSelectedItem();
 		Settings.saveSettings();
-	}
-	
-	public boolean isFirstLanguageToSecondLanguageRadioButtonSelected() {
-		return firstLanguageToSecondLanguageRadioButton.isSelected();
-	}
-	
-	public boolean isSecondLanguageToFirstLanguageRadioButtonSelected() {
-		return secondLanguageToFirstLanguageRadioButton.isSelected();
-	}
-	
-	public boolean isPhoneticScriptCheckboxSelected() {
-		return phoneticScriptCheckbox.isSelected();
 	}
 	
 	private int getComboBoxIndexOf(String str, JComboBox<String> combobox) {

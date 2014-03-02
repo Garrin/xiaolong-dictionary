@@ -8,6 +8,8 @@ public class SearchCriteriaHistoryItem {
 	public boolean checkTopic;
 	public boolean checkChapter;
 	public boolean checkLearnLevel;
+	public boolean checkRelevance;
+	public boolean checkDescription;
 	public boolean checkCaseSensitive;
 	public boolean matchWholeWord;
 	
@@ -24,7 +26,9 @@ public class SearchCriteriaHistoryItem {
 			boolean checkTopic, 
 			boolean checkChapter, 
 			boolean checkLearnLevel, 
-			boolean checkCaseSensitive, 
+			boolean checkRelevance,
+			boolean checkDescription,
+			boolean checkCaseSensitive,
 			boolean matchWholeWord, 
 			boolean notSearch, 
 			boolean andSearch, 
@@ -36,6 +40,8 @@ public class SearchCriteriaHistoryItem {
 		this.checkTopic = checkTopic;
 		this.checkChapter = checkChapter;
 		this.checkLearnLevel = checkLearnLevel;
+		this.checkRelevance = checkRelevance;
+		this.checkDescription = checkDescription;
 		this.checkCaseSensitive = checkCaseSensitive;
 		this.matchWholeWord = matchWholeWord;
 		this.notSearch = notSearch;
@@ -43,5 +49,4 @@ public class SearchCriteriaHistoryItem {
 		this.orSearch = orSearch;
 		this.searchTerm = searchTerm;
 	}
-	
 }

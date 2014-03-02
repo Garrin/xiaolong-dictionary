@@ -6,6 +6,8 @@ import factories.ObserveableFactory;
 import gui.DictionaryMainWindow;
 import gui.JTextFieldWithContextMenu;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import listener.settings.VocabularyLanguagesChangeListener;
@@ -37,7 +40,9 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 	private JLabel secondLanguageLabel;
 	private JLabel topicLabel = new JLabel("Topic");
 	private JLabel chapterLabel = new JLabel("Chapter");
-	private JLabel levelLabel = new JLabel("Level");
+	private JLabel learnLevelLabel = new JLabel("Level");
+	private JLabel relevanceLabel = new JLabel("Relevance");
+	private JLabel descriptionLabel = new JLabel("Description");
 
 	private JTextFieldWithContextMenu firstLanguageTextField;
 	private JTextFieldWithContextMenu phoneticScriptTextField;
@@ -45,6 +50,9 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 	private JTextFieldWithContextMenu topicTextField;
 	private JTextFieldWithContextMenu chapterTextField;
 	private JTextFieldWithContextMenu learnLevelTextField;
+	private JTextFieldWithContextMenu relevanceTextField;
+	private JTextArea descriptionTextArea;
+	private JScrollPane descriptionScrollPane;
 	
 	private JPanel buttonPanel = new JPanel(new GridLayout(2, 3, 5, 5));
 	private JButton yesButton = new JButton("Yes");
@@ -99,6 +107,8 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 		topicTextField = new JTextFieldWithContextMenu("");
 		chapterTextField = new JTextFieldWithContextMenu("");
 		learnLevelTextField = new JTextFieldWithContextMenu("");
+		relevanceTextField = new JTextFieldWithContextMenu("");
+		descriptionTextArea = new JTextArea(4, 20);
 		
 		addComponents();
 		
@@ -125,7 +135,7 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 		warningTextArea.setLineWrap(true);
 		warningTextArea.setWrapStyleWord(true);
 		warningTextArea.setEditable(false);
-		warningTextArea.setBackground(getContentPane().getBackground());
+		warningTextArea.setBackground(new Color(240,240,240));
 		add(warningTextArea, "cell 0 0 2 1");
 		
 		add(firstLanguageLabel, "cell 0 1");
@@ -133,6 +143,7 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 		firstLanguageTextField.setColumns(20);
 		firstLanguageTextField.setText(vocables.get(currentVocableNumber).getFirstLanguage());
 		firstLanguageTextField.setEditable(false);
+		firstLanguageTextField.setBackground(new Color(240,240,240));
 		add(firstLanguageTextField, "cell 1 1");
 		
 		add(phoneticScriptLabel, "cell 0 2");
@@ -140,6 +151,7 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 		phoneticScriptTextField.setColumns(20);
 		phoneticScriptTextField.setText(vocables.get(currentVocableNumber).getPhoneticScript());
 		phoneticScriptTextField.setEditable(false);
+		phoneticScriptTextField.setBackground(new Color(240,240,240));
 		add(phoneticScriptTextField, "cell 1 2");
 		
 		add(secondLanguageLabel, "cell 0 3");
@@ -147,6 +159,7 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 		secondLanguageTextField.setColumns(20);
 		secondLanguageTextField.setText(vocables.get(currentVocableNumber).getSecondLanguage());
 		secondLanguageTextField.setEditable(false);
+		secondLanguageTextField.setBackground(new Color(240,240,240));
 		add(secondLanguageTextField, "cell 1 3");
 		
 		add(topicLabel, "cell 0 4");
@@ -154,6 +167,7 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 		topicTextField.setColumns(20);
 		topicTextField.setText(vocables.get(currentVocableNumber).getTopic());
 		topicTextField.setEditable(false);
+		topicTextField.setBackground(new Color(240,240,240));
 		add(topicTextField, "cell 1 4");
 		
 		add(chapterLabel, "cell 0 5");
@@ -161,16 +175,36 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 		chapterTextField.setColumns(20);
 		chapterTextField.setText(vocables.get(currentVocableNumber).getChapter());
 		chapterTextField.setEditable(false);
+		chapterTextField.setBackground(new Color(240,240,240));
 		add(chapterTextField, "cell 1 5");
 		
-		add(levelLabel, "cell 0 6");
+		add(learnLevelLabel, "cell 0 6");
 		learnLevelTextField = new JTextFieldWithContextMenu();
 		learnLevelTextField.setColumns(20);
 		learnLevelTextField.setText(vocables.get(currentVocableNumber).getLearnLevel());
 		learnLevelTextField.setEditable(false);
+		learnLevelTextField.setBackground(new Color(240,240,240));
 		add(learnLevelTextField, "cell 1 6");
 		
-		add(buttonPanel, "cell 0 7 2 1");
+		add(relevanceLabel, "cell 0 7");
+		relevanceTextField = new JTextFieldWithContextMenu();
+		relevanceTextField.setColumns(20);
+		relevanceTextField.setText(vocables.get(currentVocableNumber).getRelevance());
+		relevanceTextField.setEditable(false);
+		relevanceTextField.setBackground(new Color(240,240,240));
+		add(relevanceTextField, "cell 1 7");
+		
+		add(descriptionLabel, "cell 0 8");
+		descriptionTextArea.setText(vocables.get(currentVocableNumber).getDescription());
+		descriptionTextArea.setEditable(false);
+		descriptionTextArea.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 12));
+		descriptionTextArea.setLineWrap(true);
+		descriptionTextArea.setWrapStyleWord(true);
+		descriptionTextArea.setBackground(new Color(240,240,240));
+		descriptionScrollPane = new JScrollPane(descriptionTextArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		add(descriptionScrollPane, "cell 1 8");
+		
+		add(buttonPanel, "cell 0 9 2 1");
 		buttonPanel.add(yesButton);
 		buttonPanel.add(noButton);
 		buttonPanel.add(cancelButton);
@@ -257,6 +291,8 @@ public class DeleteMultipleVocablesDialogue extends JDialog implements Vocabular
 			topicTextField.setText(vocables.get(currentVocableNumber).getTopic());
 			chapterTextField.setText(vocables.get(currentVocableNumber).getChapter());
 			learnLevelTextField.setText(vocables.get(currentVocableNumber).getLearnLevel());
+			relevanceTextField.setText(vocables.get(currentVocableNumber).getRelevance());
+			descriptionTextArea.setText(vocables.get(currentVocableNumber).getDescription());
 		} else {
 			dispose();
 		}

@@ -7,12 +7,14 @@ import gui.DictionaryMainWindow;
 import gui.JTextFieldWithContextMenu;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import listener.settings.VocabularyLanguagesChangeListener;
@@ -40,14 +42,19 @@ public class DeleteVocableDialogue extends JDialog implements VocabularyLanguage
 	private JLabel secondLanguageLabel = new JLabel(Settings.languageOptions_secondLanguageName);
 	private JLabel topicLabel = new JLabel("Topic");
 	private JLabel chapterLabel = new JLabel("Chapter");
-	private JLabel levelLabel = new JLabel("Level");
+	private JLabel learnLevelLabel = new JLabel("Learn Level");
+	private JLabel relevanceLabel = new JLabel("Relevance");
+	private JLabel descriptionLabel = new JLabel("Description");
 
 	private JTextFieldWithContextMenu firstLanguageTextField = new JTextFieldWithContextMenu("");
 	private JTextFieldWithContextMenu phoneticScriptTextField = new JTextFieldWithContextMenu("");
 	private JTextFieldWithContextMenu secondLanguageTextField = new JTextFieldWithContextMenu("");
 	private JTextFieldWithContextMenu topicTextField = new JTextFieldWithContextMenu("");
 	private JTextFieldWithContextMenu chapterTextField = new JTextFieldWithContextMenu("");
-	private JTextFieldWithContextMenu levelTextField = new JTextFieldWithContextMenu("");
+	private JTextFieldWithContextMenu learnLevelTextField = new JTextFieldWithContextMenu("");
+	private JTextFieldWithContextMenu relevanceTextField = new JTextFieldWithContextMenu("");
+	private JTextArea descriptionTextArea = new JTextArea("");
+	private JScrollPane descriptionScrollPane;
 	
 	private JButton deleteVocableButton = new JButton("Delete vocable");
 	private JButton cancelButton = new JButton("Cancel");
@@ -97,6 +104,7 @@ public class DeleteVocableDialogue extends JDialog implements VocabularyLanguage
 		firstLanguageTextField.setColumns(20);
 		firstLanguageTextField.setText(vocable.getFirstLanguage());
 		firstLanguageTextField.setEditable(false);
+		firstLanguageTextField.setBackground(new Color(240,240,240));
 		add(firstLanguageTextField, "cell 1 1");
 		
 		add(phoneticScriptLabel, "cell 0 2");
@@ -104,6 +112,7 @@ public class DeleteVocableDialogue extends JDialog implements VocabularyLanguage
 		phoneticScriptTextField.setColumns(20);
 		phoneticScriptTextField.setText(vocable.getPhoneticScript());
 		phoneticScriptTextField.setEditable(false);
+		phoneticScriptTextField.setBackground(new Color(240,240,240));
 		add(phoneticScriptTextField, "cell 1 2");
 		
 		add(secondLanguageLabel, "cell 0 3");
@@ -111,6 +120,7 @@ public class DeleteVocableDialogue extends JDialog implements VocabularyLanguage
 		secondLanguageTextField.setColumns(20);
 		secondLanguageTextField.setText(vocable.getSecondLanguage());
 		secondLanguageTextField.setEditable(false);
+		secondLanguageTextField.setBackground(new Color(240,240,240));
 		add(secondLanguageTextField, "cell 1 3");
 		
 		add(topicLabel, "cell 0 4");
@@ -118,6 +128,7 @@ public class DeleteVocableDialogue extends JDialog implements VocabularyLanguage
 		topicTextField.setColumns(20);
 		topicTextField.setText(vocable.getTopic());
 		topicTextField.setEditable(false);
+		topicTextField.setBackground(new Color(240,240,240));
 		add(topicTextField, "cell 1 4");
 		
 		add(chapterLabel, "cell 0 5");
@@ -125,17 +136,38 @@ public class DeleteVocableDialogue extends JDialog implements VocabularyLanguage
 		chapterTextField.setColumns(20);
 		chapterTextField.setText(vocable.getChapter());
 		chapterTextField.setEditable(false);
+		chapterTextField.setBackground(new Color(240,240,240));
 		add(chapterTextField, "cell 1 5");
 		
-		add(levelLabel, "cell 0 6");
-		levelTextField = new JTextFieldWithContextMenu();
-		levelTextField.setColumns(20);
-		levelTextField.setText(vocable.getLearnLevel());
-		levelTextField.setEditable(false);
-		add(levelTextField, "cell 1 6");
+		add(learnLevelLabel, "cell 0 6");
+		learnLevelTextField = new JTextFieldWithContextMenu();
+		learnLevelTextField.setColumns(20);
+		learnLevelTextField.setText(vocable.getLearnLevel());
+		learnLevelTextField.setEditable(false);
+		learnLevelTextField.setBackground(new Color(240,240,240));
+		add(learnLevelTextField, "cell 1 6");
 		
-		add(deleteVocableButton, "cell 0 7");
-		add(cancelButton, "cell 1 7");
+		add(relevanceLabel, "cell 0 7");
+		relevanceTextField = new JTextFieldWithContextMenu();
+		relevanceTextField.setColumns(20);
+		relevanceTextField.setText(vocable.getRelevance());
+		relevanceTextField.setEditable(false);
+		relevanceTextField.setBackground(new Color(240,240,240));
+		add(relevanceTextField, "cell 1 7");
+		
+		add(descriptionLabel, "cell 0 8");
+		descriptionTextArea = new JTextArea(4, 20);
+		descriptionTextArea.setText(vocable.getDescription());
+		descriptionTextArea.setEditable(false);
+		descriptionTextArea.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 12));
+		descriptionTextArea.setLineWrap(true);
+		descriptionTextArea.setWrapStyleWord(true);
+		descriptionTextArea.setBackground(new Color(240,240,240));
+		descriptionScrollPane = new JScrollPane(descriptionTextArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		add(descriptionScrollPane, "cell 1 8");
+		
+		add(deleteVocableButton, "cell 0 9");
+		add(cancelButton, "cell 1 9");
 		this.getRootPane().setDefaultButton(cancelButton);
 	}
 	
@@ -157,9 +189,7 @@ public class DeleteVocableDialogue extends JDialog implements VocabularyLanguage
 	}
 	
 	private void deleteVocableButtonAction() {
-		//Dictionary.deleteVocable(vocable);
 		VocableManager.deleteVocable(vocable);
-		//Dictionary.vocabularyIsSavedToFile = false;
 		this.dispose();
 	}
 	

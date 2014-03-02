@@ -7,7 +7,6 @@ import dialogues.vocableactions.ChangeVocableFrame;
 import dialogues.vocableactions.DeleteMultipleVocablesDialogue;
 import dialogues.vocableactions.DeleteVocableDialogue;
 import dialogues.vocableactions.SetVocableLevelDialogue;
-import dialogues.vocableactions.TrainVocablesDialogueOLD;
 
 public class FrameFactory {
 	
@@ -33,10 +32,6 @@ public class FrameFactory {
 	
 	public static SetVocableLevelDialogue getSetVocableLevelDialogue() {
 		return SetVocableLevelDialogue.getInstance();
-	}
-	
-	public static TrainVocablesDialogueOLD getTrainVocablesFrame() {
-		return TrainVocablesDialogueOLD.getInstance();
 	}
 	
 	public static DictionaryMainWindow getDictionaryMainWindow() {

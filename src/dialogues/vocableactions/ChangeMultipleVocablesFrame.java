@@ -6,6 +6,7 @@ import gui.DictionaryMainWindow;
 import gui.JTextFieldWithContextMenu;
 import gui.TonenPopupDialogue;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Insets;
@@ -15,8 +16,6 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -27,6 +26,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import listener.settings.VocabularyLanguagesChangeListener;
 import manager.VocableManager;
@@ -52,7 +53,9 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 	private JLabel oldSecondLanguageLabel;
 	private JLabel oldTopicLabel = new JLabel("Topic");
 	private JLabel oldChapterLabel = new JLabel("Chapter");
-	private JLabel oldLevelLabel = new JLabel("Level");
+	private JLabel oldLearnLevelLabel = new JLabel("Level");
+	private JLabel oldRelevanceLabel = new JLabel("Relevance");
+	private JLabel oldDescriptionLabel = new JLabel("Description");
 	
 	private JLabel newFirstLanguageLabel;
 	private JLabel newPhoneticScriptLabel;
@@ -60,6 +63,8 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 	private JLabel newTopicLabel = new JLabel("Topic");
 	private JLabel newChapterLabel = new JLabel("Chapter");
 	private JLabel newLevelLabel = new JLabel("Level");
+	private JLabel newRelevanceLabel = new JLabel("Relevance");
+	private JLabel newDescriptionLabel = new JLabel("Description");
 	
 	private JTextFieldWithContextMenu oldFirstLanguageTextField;
 	private JTextFieldWithContextMenu oldPhoneticScriptTextField;
@@ -67,6 +72,9 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 	private JTextFieldWithContextMenu oldTopicTextField;
 	private JTextFieldWithContextMenu oldChapterTextField;
 	private JTextFieldWithContextMenu oldLearnLevelTextField;
+	private JTextFieldWithContextMenu oldRelevanceTextField;
+	private JTextArea oldDescriptionTextArea;
+	private JScrollPane oldDescriptionScrollPane;
 	
 	private JTextFieldWithContextMenu newFirstLanguageTextField;
 	private JTextFieldWithContextMenu newPhoneticScriptTextField;
@@ -74,7 +82,10 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 	private JTextFieldWithContextMenu newTopicTextField;
 	private JTextFieldWithContextMenu newChapterTextField;
 	private JTextFieldWithContextMenu newLearnLevelTextField;
-
+	private JTextFieldWithContextMenu newRelevanceTextField;
+	private JTextArea newDescriptionTextArea;
+	private JScrollPane newDescriptionScrollPane;
+	
 	private JPanel buttonPanel = new JPanel(new MigLayout());
 	
 	private JButton changeVocableButton = new JButton("Change");
@@ -135,6 +146,12 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		oldTopicTextField = new JTextFieldWithContextMenu(20);
 		oldChapterTextField = new JTextFieldWithContextMenu(20);
 		oldLearnLevelTextField = new JTextFieldWithContextMenu(20);
+		oldRelevanceTextField = new JTextFieldWithContextMenu(20);
+		oldDescriptionTextArea = new JTextArea(4, 20);
+		oldDescriptionTextArea.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 12));
+		oldDescriptionTextArea.setLineWrap(true);
+		oldDescriptionTextArea.setWrapStyleWord(true);
+		oldDescriptionScrollPane = new JScrollPane(oldDescriptionTextArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		newFirstLanguageTextField = new JTextFieldWithContextMenu(20);
 		newPhoneticScriptTextField = new JTextFieldWithContextMenu(20);
@@ -142,6 +159,40 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		newTopicTextField = new JTextFieldWithContextMenu(20);
 		newChapterTextField = new JTextFieldWithContextMenu(20);
 		newLearnLevelTextField = new JTextFieldWithContextMenu(20);
+		newRelevanceTextField = new JTextFieldWithContextMenu(20);
+		newDescriptionTextArea = new JTextArea(4, 20);
+		newDescriptionTextArea.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 12));
+		newDescriptionTextArea.setLineWrap(true);
+		newDescriptionTextArea.setWrapStyleWord(true);
+		newDescriptionScrollPane = new JScrollPane(newDescriptionTextArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		//make old attribute value input fields uneditable 
+		oldFirstLanguageTextField.setEditable(false);
+		oldPhoneticScriptTextField.setEditable(false);
+		oldSecondLanguageTextField.setEditable(false);
+		oldTopicTextField.setEditable(false);
+		oldChapterTextField.setEditable(false);
+		oldLearnLevelTextField.setEditable(false);
+		oldRelevanceTextField.setEditable(false);
+		oldDescriptionTextArea.setEditable(false);
+		
+		oldFirstLanguageTextField.setBackground(new Color(240,240,240));
+		oldPhoneticScriptTextField.setBackground(new Color(240,240,240));
+		oldSecondLanguageTextField.setBackground(new Color(240,240,240));
+		oldTopicTextField.setBackground(new Color(240,240,240));
+		oldChapterTextField.setBackground(new Color(240,240,240));
+		oldLearnLevelTextField.setBackground(new Color(240,240,240));
+		oldRelevanceTextField.setBackground(new Color(240,240,240));
+		oldDescriptionTextArea.setBackground(new Color(240,240,240));
+		
+		//set font for new attribute value components
+		newFirstLanguageTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
+		newPhoneticScriptTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
+		newSecondLanguageTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
+		newTopicTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
+		newChapterTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
+		newLearnLevelTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
+		newRelevanceTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
 		
 		for(int numberOfSelectedRow : numbersOfRows) {
 		
@@ -152,14 +203,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			String firstLanguage = (String) DictionaryMainWindow.vocableTable.getValueAt(numberOfSelectedRow, columnOfFirstLanguage);
 			String phoneticScript = (String) DictionaryMainWindow.vocableTable.getValueAt(numberOfSelectedRow, columnOfPhoneticScript);
 			String secondLanguage = (String) DictionaryMainWindow.vocableTable.getValueAt(numberOfSelectedRow, columnOfSecondLanguage);
-			
-			/*
-			System.out.println("---");
-			System.out.println("first language: " + firstLanguage);
-			System.out.println("phonetic script: " + phoneticScript);
-			System.out.println("second language: " + secondLanguage);
-			System.out.println("---");
-			*/
 			
 			//Search through the search result to get the right number of the selected vocable
 			for(int i = 0; i < VocableManager.getLastSearchResult().size(); i++) {
@@ -185,7 +228,7 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		//Important because it's a "singleton"
 		if(!ChangeMultipleVocablesFrame.listenersAdded) {
 			addActionListeners();
-			addWindowListeners();
+			//addWindowListeners();
 			addFocusListeners();
 			Helper.addEscapeListener(this);
 			ChangeMultipleVocablesFrame.listenersAdded = true;
@@ -195,78 +238,92 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 	private void addComponents() {
 		this.setLayout(new MigLayout("wrap 4",""));
 		
-		oldFirstLanguageTextField.setEditable(false);
-		oldPhoneticScriptTextField.setEditable(false);
-		oldSecondLanguageTextField.setEditable(false);
-		oldTopicTextField.setEditable(false);
-		oldChapterTextField.setEditable(false);
-		oldLearnLevelTextField.setEditable(false);
-		
-		add(oldLabel, "span 2");
-		add(newLabel, "span 2");
-		
-		add(oldFirstLanguageLabel, "cell 0 1");
-		add(oldPhoneticScriptLabel, "cell 0 2");
-		add(oldSecondLanguageLabel, "cell 0 3");
-		add(oldTopicLabel, "cell 0 4");
-		add(oldChapterLabel, "cell 0 5");
-		add(oldLevelLabel, "cell 0 6");
-		
+		//set text for old attribute value components
 		oldFirstLanguageTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getFirstLanguage());
-		add(oldFirstLanguageTextField, "cell 1 1");
 		oldPhoneticScriptTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getPhoneticScript());
-		add(oldPhoneticScriptTextField, "cell 1 2");
 		oldSecondLanguageTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getSecondLanguage());
-		add(oldSecondLanguageTextField, "cell 1 3");
 		oldTopicTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getTopic());
-		add(oldTopicTextField, "cell 1 4");
 		oldChapterTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getChapter());
-		add(oldChapterTextField, "cell 1 5");
 		oldLearnLevelTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getLearnLevel());
-		add(oldLearnLevelTextField, "cell 1 6");
-				
-		newFirstLanguageTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
-		newFirstLanguageTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getFirstLanguage());
-		newPhoneticScriptTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
-		newPhoneticScriptTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getPhoneticScript());
-		newSecondLanguageTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
-		newSecondLanguageTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getSecondLanguage());
-		newTopicTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
-		newTopicTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getTopic());
-		newChapterTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
-		newChapterTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getChapter());
-		newLearnLevelTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
-		newLearnLevelTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getLearnLevel());
+		oldRelevanceTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getRelevance());
+		oldDescriptionTextArea.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getDescription());
 		
+		//set text for new attribute value components
+		newFirstLanguageTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getFirstLanguage());
+		newPhoneticScriptTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getPhoneticScript());
+		newSecondLanguageTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getSecondLanguage());
+		newTopicTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getTopic());
+		newChapterTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getChapter());
+		newLearnLevelTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getLearnLevel());
+		newRelevanceTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getRelevance());
+		newDescriptionTextArea.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getDescription());
+		
+		//set caret positions for old attribute value components
 		oldFirstLanguageTextField.setCaretPosition(0);
 		oldPhoneticScriptTextField.setCaretPosition(0);
 		oldSecondLanguageTextField.setCaretPosition(0);
 		oldTopicTextField.setCaretPosition(0);
 		oldChapterTextField.setCaretPosition(0);
 		oldLearnLevelTextField.setCaretPosition(0);
+		oldRelevanceTextField.setCaretPosition(0);
+		oldDescriptionTextArea.setCaretPosition(0);
 		
+		//set caret postions for new attribute value components
 		newFirstLanguageTextField.setCaretPosition(0);
 		newPhoneticScriptTextField.setCaretPosition(0);
 		newSecondLanguageTextField.setCaretPosition(0);
 		newTopicTextField.setCaretPosition(0);
 		newChapterTextField.setCaretPosition(0);
 		newLearnLevelTextField.setCaretPosition(0);
+		newRelevanceTextField.setCaretPosition(0);
+		newDescriptionTextArea.setCaretPosition(0);
 		
+		//add headings
+		add(oldLabel, "span 2");
+		add(newLabel, "span 2");
+		
+		//add old attribute labels
+		add(oldFirstLanguageLabel, "cell 0 1");
+		add(oldPhoneticScriptLabel, "cell 0 2");
+		add(oldSecondLanguageLabel, "cell 0 3");
+		add(oldTopicLabel, "cell 0 4");
+		add(oldChapterLabel, "cell 0 5");
+		add(oldLearnLevelLabel, "cell 0 6");
+		add(oldRelevanceLabel, "cell 0 7");
+		add(oldDescriptionLabel, "cell 0 8");
+		
+		//add old attribute value components
+		add(oldFirstLanguageTextField, "cell 1 1");
+		add(oldPhoneticScriptTextField, "cell 1 2");
+		add(oldSecondLanguageTextField, "cell 1 3");
+		add(oldTopicTextField, "cell 1 4");
+		add(oldChapterTextField, "cell 1 5");
+		add(oldLearnLevelTextField, "cell 1 6");
+		add(oldRelevanceTextField, "cell 1 7");
+		add(oldDescriptionScrollPane, "cell 1 8");
+		
+		//add new attribute labels
 		add(newFirstLanguageLabel, "cell 2 1");
 		add(newPhoneticScriptLabel, "cell 2 2");
 		add(newSecondLanguageLabel, "cell 2 3");
 		add(newTopicLabel, "cell 2 4");
 		add(newChapterLabel, "cell 2 5");
 		add(newLevelLabel, "cell 2 6");
+		add(newRelevanceLabel, "cell 2 7");
+		add(newDescriptionLabel, "cell 2 8");
 		
+		//add new attribute value components
 		add(newFirstLanguageTextField, "cell 3 1");
 		add(newPhoneticScriptTextField, "cell 3 2");
 		add(newSecondLanguageTextField, "cell 3 3");
 		add(newTopicTextField, "cell 3 4");
 		add(newChapterTextField, "cell 3 5");
 		add(newLearnLevelTextField, "cell 3 6");
+		add(newRelevanceTextField, "cell 3 7");
+		add(newDescriptionScrollPane, "cell 3 8");
 		
-		add(buttonPanel, "cell 0 7 4 1");
+		//add buttons
+		add(buttonPanel, "cell 0 9 4 1");
 		buttonPanel.add(changeVocableButton, "cell 0 0");
 		buttonPanel.add(changeAllVocablesButton, "cell 1 0");
 		buttonPanel.add(clearTextFieldsButton, "cell 2 0");
@@ -319,26 +376,18 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-				
-				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
@@ -356,7 +405,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		previousButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//System.out.println("PREV");
 				previousButtonActionPerformed();
 			}
 		});
@@ -364,55 +412,7 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		nextButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//System.out.println("NEXT");
 				nextButtonActionPerformed();
-			}
-		});
-	}
-
-	private void addWindowListeners() {
-		addWindowListener(new WindowListener() {
-			
-			@Override
-			public void windowOpened(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowIconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowDeiconified(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowDeactivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
-				cancelButtonAction();
-			}
-			
-			@Override
-			public void windowClosed(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void windowActivated(WindowEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 		});
 	}
@@ -425,7 +425,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -436,7 +435,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -447,7 +445,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -458,7 +455,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -469,7 +465,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -480,7 +475,26 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
+			}
+        });
+		
+		newRelevanceTextField.addFocusListener(new FocusListener() {
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				focusedTextFieldName = "relevance";
+			}
+			@Override
+			public void focusLost(FocusEvent arg0) {
+			}
+        });
+		
+		newDescriptionTextArea.addFocusListener(new FocusListener() {
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				focusedTextFieldName = "description";
+			}
+			@Override
+			public void focusLost(FocusEvent arg0) {
 			}
         });
 	}
@@ -494,23 +508,21 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		String topic = newTopicTextField.getText();
 		String chapter = newChapterTextField.getText();
 		String learnLevel = newLearnLevelTextField.getText();
+		String relevance = newRelevanceTextField.getText();
+		String description = newDescriptionTextArea.getText();
 		
 		//Check for colons in input fields
-		if(!(topic.contains(":") || chapter.contains(":") || firstLanguage.contains(":") || secondLanguage.contains(":") || phoneticScript.contains(":") || learnLevel.contains(":"))) {
-			//Dictionary.changeVocable(vocables.get(numberOfCurrentlyDisplayedVocable), firstLanguage, phoneticScript, secondLanguage, topic, chapter, learnLevel);
-			VocableManager.changeVocable(vocables.get(numberOfCurrentlyDisplayedVocable), firstLanguage, phoneticScript, secondLanguage, topic, chapter, learnLevel);
-			//Dictionary.vocabularyIsSavedToFile = false;
-			
-			/*
-			if(numberOfCurrentlyDisplayedVocable == vocables.size()-1) { //Last vocable
-				Dictionary.changeVocable(vocables.get(numberOfCurrentlyDisplayedVocable), firstLanguage, phoneticScript, secondLanguage, topic, chapter, learnLevel);			
-				Dictionary.vocabularyIsSavedToFile = false;
-			} else { //Not last vocable
-				Dictionary.changeVocable(vocables.get(numberOfCurrentlyDisplayedVocable), firstLanguage, phoneticScript, secondLanguage, topic, chapter, learnLevel);			
-				Dictionary.vocabularyIsSavedToFile = false;
-			}
-			*/
-			
+		if(!(
+			topic.contains(":") ||
+			chapter.contains(":") ||
+			firstLanguage.contains(":") ||
+			secondLanguage.contains(":") ||
+			phoneticScript.contains(":") ||
+			learnLevel.contains(":")) ||
+			relevance.contains(":") ||
+			description.contains(":")
+		) {
+			VocableManager.changeVocable(vocables.get(numberOfCurrentlyDisplayedVocable), firstLanguage, phoneticScript, secondLanguage, topic, chapter, learnLevel, relevance, description);
 		} else {
 			JOptionPane.showMessageDialog(this, "Colons (:) are used to seperate the parts of a vocable. You cannot use them in parts of a vocable.", "Usage of Colons", JOptionPane.OK_OPTION);
 		}
@@ -526,12 +538,11 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			vocables.get(i).setTopic(changedVocables.get(i).getTopic());
 			vocables.get(i).setChapter(changedVocables.get(i).getChapter());
 			vocables.get(i).setLearnLevel(changedVocables.get(i).getLearnLevel());
+			vocables.get(i).setRelevance(changedVocables.get(i).getRelevance());
+			vocables.get(i).setDescription(changedVocables.get(i).getDescription());
 		}
 		
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
-		
-		//Dictionary.updateSearchResult(SearchBox.getSearchTerm());
-		//Dictionary.vocabularyIsSavedToFile = false;
 		cancelButtonAction();
 	}
 	
@@ -542,42 +553,31 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		newTopicTextField.setText("");
 		newChapterTextField.setText("");
 		newLearnLevelTextField.setText("");
+		newRelevanceTextField.setText("");
+		newDescriptionTextArea.setText("");
 	}
 	
 	private void cancelButtonAction() {
-		//ChangeMultipleVocablesFrame.numberOfCurrentlyDisplayedVocable = 0;
-		//vocables.clear();
-		//changedVocables.clear();
 		disposeTonenButtonDialog();
 		dispose();
 	}
 	
 	private void previousButtonActionPerformed() {
-		//System.out.println("Number of Elements in ArrayList changedVocables: " + changedVocables.size());
-		//System.out.println("Previously displayed vocable number: " + numberOfCurrentlyDisplayedVocable);
-		
 		storeCurrentlyDisplayedVocableChanges();
 		
 		if(numberOfCurrentlyDisplayedVocable - 1 >= 0) {
 			numberOfCurrentlyDisplayedVocable--;
 			updateVocableInformation();
 		}
-		
-		//System.out.println("Now displaying vocable number: " + numberOfCurrentlyDisplayedVocable);
 	}
 	
 	private void nextButtonActionPerformed() {
-		//System.out.println("Number of Elements in ArrayList changedVocables: " + changedVocables.size());
-		//System.out.println("Prviously displayed vocable number: " + numberOfCurrentlyDisplayedVocable);
-		
 		storeCurrentlyDisplayedVocableChanges();
 		
 		if(numberOfCurrentlyDisplayedVocable + 1 < vocables.size()) {
 			numberOfCurrentlyDisplayedVocable++;
 			updateVocableInformation();
 		}
-		
-		//System.out.println("Now displaying vocable number: " + numberOfCurrentlyDisplayedVocable);
 	}
 
 	private void disposeTonenButtonDialog() {
@@ -585,24 +585,6 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			tonenPopupDialogue.dispose();
 			setTonenPopupDialogueDisplayed(false);
 		}
-	}
-
-	/*public static Vocable getNewVocable() {
-		return newVocable;
-	}*/
-
-
-	/*public static void setNewVocable(Vocable newVocable) {
-		ChangeMultipleVocablesDialogue.newVocable = newVocable;
-	}*/
-	
-	public void updateLanguages(String newFirstLanguage, String newPhoneticScript, String newSecondLanguage) {
-		oldFirstLanguageLabel.setText(newFirstLanguage);
-		oldPhoneticScriptLabel.setText(newPhoneticScript);
-		oldSecondLanguageLabel.setText(newSecondLanguage);
-		newFirstLanguageLabel.setText(newFirstLanguage);
-		newPhoneticScriptLabel.setText(newPhoneticScript);
-		newSecondLanguageLabel.setText(newSecondLanguage);
 	}
 	
 	private void displayTonenPopupDialogue() {
@@ -630,6 +612,10 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 			Helper.insertCharacterIntoTextfield(newChapterTextField, specialCharacter);
 		} else if(focusedTextFieldName.equals("learnLevel")) {
 			Helper.insertCharacterIntoTextfield(newLearnLevelTextField, specialCharacter);
+		} else if(focusedTextFieldName.equals("relevance")) {
+			Helper.insertCharacterIntoTextfield(newRelevanceTextField, specialCharacter);
+		} else if(focusedTextFieldName.equals("description")) {
+			Helper.insertCharacterIntoTextArea(newDescriptionTextArea, specialCharacter);
 		}
 	}
 	
@@ -640,6 +626,8 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		oldChapterTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getChapter());
 		oldTopicTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getTopic());
 		oldLearnLevelTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getLearnLevel());
+		oldRelevanceTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getRelevance());
+		oldDescriptionTextArea.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getDescription());
 		
 		newFirstLanguageTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getFirstLanguage());
 		newPhoneticScriptTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getPhoneticScript());
@@ -647,6 +635,8 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		newChapterTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getChapter());
 		newTopicTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getTopic());
 		newLearnLevelTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getLearnLevel());
+		newRelevanceTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getRelevance());
+		newDescriptionTextArea.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getDescription());
 	}
 	
 	private void storeCurrentlyDisplayedVocableChanges() {
@@ -656,6 +646,8 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		changedVocables.get(numberOfCurrentlyDisplayedVocable).setTopic(newTopicTextField.getText());
 		changedVocables.get(numberOfCurrentlyDisplayedVocable).setChapter(newChapterTextField.getText());
 		changedVocables.get(numberOfCurrentlyDisplayedVocable).setLearnLevel(newLearnLevelTextField.getText());
+		changedVocables.get(numberOfCurrentlyDisplayedVocable).setRelevance(newRelevanceTextField.getText());
+		changedVocables.get(numberOfCurrentlyDisplayedVocable).setDescription(newDescriptionTextArea.getText());
 	}
 
 	@Override

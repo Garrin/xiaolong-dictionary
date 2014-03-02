@@ -193,13 +193,10 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		
 		vocableTrainingPanel.add(firstLanguageLabel);
 		vocableTrainingPanel.add(firstLanguageTextField);
-		
 		vocableTrainingPanel.add(phoneticScriptLabel);
 		vocableTrainingPanel.add(phoneticScriptLanguageTextField);
-		
 		vocableTrainingPanel.add(secondLanguageLabel);
 		vocableTrainingPanel.add(secondLanguageTextField);
-		
 		vocableTrainingPanel.add(learnLevelLabel);
 		vocableTrainingPanel.add(learnLevelLanguageTextField);
 		
@@ -207,25 +204,16 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		
 		add(vocableTrainingPanel, "cell 0 1 1 1");
 		
-		
-		
 		buttonPanel.add(showPhoneticScriptButton);
 		buttonPanel.add(showTranslationButton);
-		
 		buttonPanel.add(previousVocableButton);
 		buttonPanel.add(nextVocableButton);
-		
 		buttonPanel.add(restartTrainingButton);
 		buttonPanel.add(stopTrainingButton);
 		
-		//addBorder(buttonPanel, null);
-		
 		add(buttonPanel, "cell 0 2 2 1");
 		
-		
-		
 		bigCharacterBoxPanel = new JPanel();
-		
 		bigCharacterBoxPanel.add(bigCharacterBox);
 		
 		add(bigCharacterBoxPanel, "cell 1 1 1 1");
@@ -410,7 +398,7 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 				showTranslationButton.setText("Show " + Settings.languageOptions_firstLanguageName);
 				translationShown = false;
 			}
-			
+			this.getRootPane().setDefaultButton(showTranslationButton);
 		} else {
 			if(Settings.trainingOptions_firstToSecond) {
 				secondLanguageTextField.setText(trainingVocables.get(currentPositionInTrainingVocables).getSecondLanguage());
@@ -423,6 +411,7 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 				showTranslationButton.setText("Hide " + Settings.languageOptions_firstLanguageName);
 				translationShown = true;
 			}
+			this.getRootPane().setDefaultButton(nextVocableButton);
 		}
 	}
 	

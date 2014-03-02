@@ -37,7 +37,7 @@ import factories.ObserveableFactory;
  * @author xiaolong
  */
 @SuppressWarnings("serial")
-public class SearchBox extends JPanel implements VocabularyLanguagesChangeListener/*, VocableListChangedListener*/ {
+public class SearchBox extends JPanel implements VocabularyLanguagesChangeListener {
 
 	//Normal Search Components
 	private static JPanel normalSearchPanel;
@@ -47,6 +47,8 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 	private static JCheckBox topicCheckbox;
 	private static JCheckBox chapterCheckbox;
 	private static JCheckBox learnLevelCheckbox;
+	private static JCheckBox relevanceCheckbox;
+	private static JCheckBox descriptionCheckbox;
 	private static JCheckBox caseSensitivityCheckbox;
 	private static JCheckBox exactMatchCheckbox;
 	private static JCheckBox negateSearchCheckbox;
@@ -137,6 +139,14 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		SearchBox.learnLevelCheckbox.setSelected(Settings.searchOptions_learnLevelActivated);
 		SearchBox.normalSearchPanel.add(learnLevelCheckbox);
 		
+		SearchBox.relevanceCheckbox = new JCheckBox("Relevance");
+		SearchBox.relevanceCheckbox.setSelected(Settings.searchOptions_relevanceActivated);
+		SearchBox.normalSearchPanel.add(relevanceCheckbox);
+		
+		SearchBox.descriptionCheckbox = new JCheckBox("Description");
+		SearchBox.descriptionCheckbox.setSelected(Settings.searchOptions_descriptionActivated);
+		SearchBox.normalSearchPanel.add(descriptionCheckbox);
+		
 		SearchBox.caseSensitivityCheckbox = new JCheckBox("Case sensitive");
 		SearchBox.caseSensitivityCheckbox.setSelected(Settings.searchOptions_matchCaseActivated);
 		SearchBox.normalSearchPanel.add(caseSensitivityCheckbox);
@@ -187,8 +197,6 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 	}
 	
 	private void addSpecifySearchPanel() {
-		//TODO: Implement specifying search!
-		
 		//Initialize components
 		SearchBox.specifySearchPanel = new JPanel(new MigLayout("wrap 2"));
 		
@@ -230,7 +238,6 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		getSearchTermTextfield().addKeyListener(new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
-				//throw new UnsupportedOperationException("Not supported yet.");
 			}
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -241,7 +248,6 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 			}
 			@Override
 			public void keyReleased(KeyEvent e) {
-				//throw new UnsupportedOperationException("Not supported yet.");
 			}
 		});
 		
@@ -256,8 +262,6 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 			
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
@@ -268,14 +272,10 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 			
 			@Override
 			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
@@ -309,7 +309,6 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		specifySearchTextField.addKeyListener(new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
-				//throw new UnsupportedOperationException("Not supported yet.");
 			}
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -320,7 +319,6 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 			}
 			@Override
 			public void keyReleased(KeyEvent e) {
-				//throw new UnsupportedOperationException("Not supported yet.");
 			}
 		});
 		
@@ -344,35 +342,36 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 	public static void searchVocableButtonActionPerformed() {
 		
 		VocableManager.basicSearchVocableList(
-				searchTermTextfield.getText(), 
-				topicCheckbox.isSelected(), 
-				chapterCheckbox.isSelected(), 
-				firstLanguageCheckbox.isSelected(),	
-				secondLanguageCheckbox.isSelected(), 
-				phoneticScriptCheckbox.isSelected(), 
-				learnLevelCheckbox.isSelected(), 
-				caseSensitivityCheckbox.isSelected(), 
-				exactMatchCheckbox.isSelected(), 
-				negateSearchCheckbox.isSelected());
-		
-//		if(DictionaryMainWindow.trainVocablesDialogue != null) {
-//			DictionaryMainWindow.trainVocablesDialogue.resetMembers();
-//		}
+			searchTermTextfield.getText(), 
+			topicCheckbox.isSelected(), 
+			chapterCheckbox.isSelected(), 
+			firstLanguageCheckbox.isSelected(),	
+			secondLanguageCheckbox.isSelected(), 
+			phoneticScriptCheckbox.isSelected(), 
+			learnLevelCheckbox.isSelected(), 
+			relevanceCheckbox.isSelected(),
+			descriptionCheckbox.isSelected(),
+			caseSensitivityCheckbox.isSelected(), 
+			exactMatchCheckbox.isSelected(), 
+			negateSearchCheckbox.isSelected()
+		);
 		
 		SearchEntry searchHistoryEntry = new SearchEntry(
-				firstLanguageCheckbox.isSelected(), 
-				phoneticScriptCheckbox.isSelected(), 
-				secondLanguageCheckbox.isSelected(), 
-				topicCheckbox.isSelected(), 
-				chapterCheckbox.isSelected(), 
-				learnLevelCheckbox.isSelected(), 
-				caseSensitivityCheckbox.isSelected(), 
-				exactMatchCheckbox.isSelected(),
-				negateSearchCheckbox.isSelected(),
-				searchTermTextfield.getText());
+			firstLanguageCheckbox.isSelected(), 
+			phoneticScriptCheckbox.isSelected(), 
+			secondLanguageCheckbox.isSelected(), 
+			topicCheckbox.isSelected(), 
+			chapterCheckbox.isSelected(), 
+			learnLevelCheckbox.isSelected(), 
+			relevanceCheckbox.isSelected(),
+			descriptionCheckbox.isSelected(),
+			caseSensitivityCheckbox.isSelected(), 
+			exactMatchCheckbox.isSelected(),
+			negateSearchCheckbox.isSelected(),
+			searchTermTextfield.getText()
+		);
 		
 		SearchHistory.addEntry(searchHistoryEntry);
-		//SearchHistory.printSearchHistory();
 	}
 	
 	public static void specifySearchActionPerformed() {
@@ -382,6 +381,8 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		boolean checkTopic = topicCheckbox.isSelected(); 
 		boolean checkChapter = chapterCheckbox.isSelected(); 
 		boolean checkLearnLevel = learnLevelCheckbox.isSelected(); 
+		boolean checkRelevance = relevanceCheckbox.isSelected();
+		boolean checkDescription = descriptionCheckbox.isSelected();
 		boolean checkCaseSensitive = caseSensitivityCheckbox.isSelected(); 
 		boolean checkExactMatch = exactMatchCheckbox.isSelected();
 		
@@ -390,28 +391,42 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		boolean orSearch = specifySearchORRadioButton.isSelected();
 		String searched = specifySearchTextField.getText();
 		
-		VocableManager.performSpecifyingSearch(searched, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkCaseSensitive, checkExactMatch, notSearch, andSearch, orSearch);
+		VocableManager.performSpecifyingSearch(
+			searched,
+			checkTopic,
+			checkChapter,
+			checkFirstLanguage,
+			checkSecondLanguage,
+			checkPhoneticScript,
+			checkLearnLevel,
+			checkRelevance,
+			checkDescription,
+			checkCaseSensitive,
+			checkExactMatch,
+			notSearch,
+			andSearch,
+			orSearch
+		);
 	}
 	
+	/**
+	 * This method searches the vocable list without adding a new {@link SearchEntry} to the {@link SearchHistory}.
+	 */
 	public static void historyVocableSearch() {
 		VocableManager.basicSearchVocableList(
-				searchTermTextfield.getText(), 
-				topicCheckbox.isSelected(),	
-				chapterCheckbox.isSelected(), 
-				firstLanguageCheckbox.isSelected(),	
-				secondLanguageCheckbox.isSelected(), 
-				phoneticScriptCheckbox.isSelected(), 
-				learnLevelCheckbox.isSelected(), 
-				caseSensitivityCheckbox.isSelected(), 
-				exactMatchCheckbox.isSelected(), 
-				negateSearchCheckbox.isSelected());
-		
-		//DictionaryMainWindow.updateVocableTable(searchResult);
-		
-//		if(DictionaryMainWindow.trainVocablesDialogue != null) {
-//			DictionaryMainWindow.trainVocablesDialogue.resetMembers();
-//		}
-		//SearchHistory.printSearchHistory();
+			searchTermTextfield.getText(), 
+			topicCheckbox.isSelected(),	
+			chapterCheckbox.isSelected(), 
+			firstLanguageCheckbox.isSelected(),	
+			secondLanguageCheckbox.isSelected(), 
+			phoneticScriptCheckbox.isSelected(), 
+			learnLevelCheckbox.isSelected(),
+			relevanceCheckbox.isSelected(),
+			descriptionCheckbox.isSelected(),
+			caseSensitivityCheckbox.isSelected(), 
+			exactMatchCheckbox.isSelected(), 
+			negateSearchCheckbox.isSelected()
+		);
 	}
 	
 	private static void previousSearchButtonClicked() {
@@ -422,11 +437,12 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		topicCheckbox.setSelected(previousSearchEntry.topicSelected);
 		chapterCheckbox.setSelected(previousSearchEntry.chapterSelecter);
 		learnLevelCheckbox.setSelected(previousSearchEntry.learnLevelSelected);
+		relevanceCheckbox.setSelected(previousSearchEntry.relevanceSelected);
+		descriptionCheckbox.setSelected(previousSearchEntry.descriptionSelected);
 		caseSensitivityCheckbox.setSelected(previousSearchEntry.caseSensitiveSelected);
 		exactMatchCheckbox.setSelected(previousSearchEntry.exactMatchSelected);
 		searchTermTextfield.setText(previousSearchEntry.searchTerm);
 		historyVocableSearch();
-		//System.out.println("Previous Search Button Clicked!");
 	}
 	
 	private static void nextSearchButtonClicked() {
@@ -437,11 +453,12 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		topicCheckbox.setSelected(nextSearchEntry.topicSelected);
 		chapterCheckbox.setSelected(nextSearchEntry.chapterSelecter);
 		learnLevelCheckbox.setSelected(nextSearchEntry.learnLevelSelected);
+		relevanceCheckbox.setSelected(nextSearchEntry.relevanceSelected);
+		descriptionCheckbox.setSelected(nextSearchEntry.descriptionSelected);
 		caseSensitivityCheckbox.setSelected(nextSearchEntry.caseSensitiveSelected);
 		exactMatchCheckbox.setSelected(nextSearchEntry.exactMatchSelected);
 		searchTermTextfield.setText(nextSearchEntry.searchTerm);
 		historyVocableSearch();
-		//System.out.println("Next Search Button Clicked!");
 	}
 
 	/**
@@ -507,32 +524,6 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		return searchButton;
 	}
 	
-	public static void updateSearchBoxCheckboxes(boolean firstLanguageSelected,
-			boolean phoneticScriptSelected,
-			boolean secondLanguageSelected,
-			boolean topicSelected,
-			boolean chapterSelected,
-			boolean learnLevelSelected,
-			boolean caseSensitivySelected,
-			boolean exactMatchSelected,
-			boolean negateSearchSelect) {
-		SearchBox.firstLanguageCheckbox.setSelected(firstLanguageSelected);
-		SearchBox.phoneticScriptCheckbox.setSelected(phoneticScriptSelected);
-		SearchBox.secondLanguageCheckbox.setSelected(secondLanguageSelected);
-		SearchBox.topicCheckbox.setSelected(topicSelected);
-		SearchBox.chapterCheckbox.setSelected(chapterSelected);
-		SearchBox.learnLevelCheckbox.setSelected(learnLevelSelected);
-		SearchBox.caseSensitivityCheckbox.setSelected(caseSensitivySelected);
-		SearchBox.exactMatchCheckbox.setSelected(exactMatchSelected);
-		SearchBox.negateSearchCheckbox.setSelected(negateSearchSelect);
-	}
-	
-//	public static void updateSearchBoxLabels(String firstLanguageLabelText, String phoneticScriptLabelText, String secondLanguageLabelText) {
-//		SearchBox.firstLanguageCheckbox.setText(firstLanguageLabelText);
-//		SearchBox.phoneticScriptCheckbox.setText(phoneticScriptLabelText);
-//		SearchBox.secondLanguageCheckbox.setText(secondLanguageLabelText);
-//	}
-	
 	/**
 	 * This function updates the search term in the search term input field of the search box.
 	 * This is needed when deleting a SearchEntry from the SearchHistory, which is displayed at the moment of deletion.  
@@ -554,10 +545,12 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		try {
 			tonenPopupDialogue = new TonenPopupDialogue(this, false, specialCharacterButton);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Could not create TonenPopupDialogue!");
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 	public boolean isTonenPopupDialogueDisplayed() {
 		return tonenPopupDialogueDisplayed;
@@ -591,6 +584,14 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		return learnLevelCheckbox.isSelected();
 	}
 
+	public static boolean isRelevanceCheckboxSelected() {
+		return relevanceCheckbox.isSelected();
+	}
+	
+	public static boolean isDescriptionCheckboxSelected() {
+		return descriptionCheckbox.isSelected();
+	}
+	
 	public static boolean isExactMatchCheckboxSelected() {
 		return exactMatchCheckbox.isSelected();
 	}
@@ -614,9 +615,44 @@ public class SearchBox extends JPanel implements VocabularyLanguagesChangeListen
 		SearchBox.secondLanguageCheckbox.setText(newSecondLanguage);
 	}
 
-	
-//	@Override
-//	public void vocableListChangedActionPerformed() {
-//		searchVocableButtonActionPerformed();
-//	}
+	/**
+	 * This method updates selections of checkboxes in the {@link SearchBox}.
+	 * @param firstLanguageCheckboxSelected true if the first language checkbox shall be selected
+	 * @param phoneticScriptCheckboxSelected true if the phonetic script checkbox shall be selected
+	 * @param secondLanguageCheckboxSelected true if the second language checkbox shall be selected
+	 * @param topicCheckboxSelected true if the topic checkbox shall be selected
+	 * @param chapterCheckboxSelected true if the chapter checkbox shall be selected
+	 * @param learnLevelCheckboxSelected true if the learn level checkbox shall be selected
+	 * @param relevanceCheckboxSelected true if the relevance checkbox shall be selected
+	 * @param descriptionCheckboxSelected true if the description checkbox shall be selected
+	 * @param matchCaseCheckboxSelected true if the match case checkbox shall be selected
+	 * @param exactMatchCheckboxSelected true if the exact match checkbox shall be selected
+	 * @param negateSearchCheckboxSelected true if the negate search checkbox shall be selected
+	 */
+	public static void updateSearchBoxCheckboxes(
+		boolean firstLanguageCheckboxSelected,
+		boolean phoneticScriptCheckboxSelected,
+		boolean secondLanguageCheckboxSelected,
+		boolean topicCheckboxSelected,
+		boolean chapterCheckboxSelected,
+		boolean learnLevelCheckboxSelected,
+		boolean relevanceCheckboxSelected,
+		boolean descriptionCheckboxSelected,
+		boolean matchCaseCheckboxSelected,
+		boolean exactMatchCheckboxSelected,
+		boolean negateSearchCheckboxSelected
+	) {
+		SearchBox.firstLanguageCheckbox.setSelected(firstLanguageCheckboxSelected);
+		SearchBox.phoneticScriptCheckbox.setSelected(phoneticScriptCheckboxSelected);
+		SearchBox.secondLanguageCheckbox.setSelected(secondLanguageCheckboxSelected);
+		SearchBox.topicCheckbox.setSelected(topicCheckboxSelected);
+		SearchBox.chapterCheckbox.setSelected(chapterCheckboxSelected);
+		SearchBox.learnLevelCheckbox.setSelected(learnLevelCheckboxSelected);
+		SearchBox.relevanceCheckbox.setSelected(relevanceCheckboxSelected);
+		SearchBox.descriptionCheckbox.setSelected(descriptionCheckboxSelected);
+		SearchBox.caseSensitivityCheckbox.setSelected(matchCaseCheckboxSelected);
+		SearchBox.exactMatchCheckbox.setSelected(exactMatchCheckboxSelected);
+		SearchBox.negateSearchCheckbox.setSelected(negateSearchCheckboxSelected);
+	}
+
 }

@@ -1,0 +1,1023 @@
+Personalpronomen:PC01/LSC01/NPC01:Du:你:nǐ:2:---:---
+---:PC01/LSC01/NPC01:gut:好:hǎo:2:---:---
+Grammatik/Fragepartikel:PC02/LSC01/NPC01:---:吗:ma:2:---:---
+Grammatik/Personalpronomen:PC02/LSC01/NPC01:ich/mir/mich:我:wǒ:2:---:---
+Adjektive:PC02/LSC01/NPC01:sehr:很:hěn:2:---:---
+Grammatik/Modalpartikel:PC02/NPC01:---:呢:ne:2:---:---
+---:PC03/NPC02:beschaeftigt:忙:máng:2:---:---
+---:PC03/LSC01/NPC02:nein/nicht:不:bù:2:---:---
+Familie:PC03/NPC02:aelterer Bruder (der):哥哥:gēge:2:---:---
+Grammatik/Personalpronomen:PC03/LSC01/NPC02:er/ihm/ihn:他:tā:2:---:---
+Familie:PC03/NPC02:juengerer Bruder (der):弟弟:dìdi:2:---:---
+Grammatik/Personalpronomen:PC03/NPC02:sie/ihnen:他们:tāmen:2:---:---
+Personen:PC03/NPC02:alle:都:dōu:2:---:---
+Berufe:PC05/NPC03:der Arzt:大夫/医生:dàifu/yīsheng:2:---:---
+Grammatik/Strukturpartikel:PC05/LSC01/NPC04:(Attributpartikel):的:de:2:---:---
+Verkehr:PC05/NPC08Z:das Fahrzeug:车:chē:2:---:---
+grammatik/personalpronomen:PC05/LSC01/NPC03:sie/ihr:她:tā:2:---:---
+---:PC05/NPC03:jener/jene/jenes/das (dort):那:nà:2:---:---
+Literatur:PC05/NPC10:das Buch:书:shū:2:---:---
+---:PC05Z:das Papier:纸:zhǐ:2:---:---
+Schreibgeraete:PC05Z:das Lineal:尺:chǐ:2:---:---
+Grammatik/Fragepartikel:PC06/NPC03:welcher/welche/welches:哪:nǎ:2:---:---
+Laender:PC06/NPC03:das Land/das Reich:国:guó:2:---:---
+---:PC06/LSC01/NPC03:die Person/ der Mensch:人:rén:2:---:---
+Grammatik/Fragepartikel:PC06/NPC03:wer:谁:shéi:2:---:---
+Grammatik/Personalpronomen:PC06/NPC02:wir/uns:我们:wǒmen:2:---:---
+Berufe:PC06/NPC03:der Lehrer:老师:lǎoshī:2:---:---
+Sprachen:PC06/NPC04:das Chinesisch:汉语:hànyǔ:2:---:---
+Laender:PC06/LSC01/NPC03:China:中国:zhōngguó:2:---:---
+Laender:PC06Z/LSC01:Deutschland:德国:déguó:2:---:---
+Laender:PC06Z:Frankreich:法国:fǎguó:2:---:---
+Laender:PC06Z/NPC04:USA/Vereinigte Staaten von Amerika:美国:měiguó:2:---:---
+Laender:PC06Z:Japan:日本:rìběn:2:---:---
+Laender:PC06Z:Mali:马里:mǎlǐ:2:---:---
+---:PC04/LSC01/NPC03:dieser/diese/dieses:这:zhè:2:---:---
+---:PC04/LSC01/NPC03:sein/ja:是:shì:2:---:---
+Personen:PC04/LSC01/NPC02:der Freund:朋友:péngyou:2:---:---
+Familie:PC04/NPC02:der Vater/der Papa:爸爸:bàba:2:---:---
+Familie:PC04/NPC02:die Mutter/die Mama:妈妈:māma:2:---:---
+Grammatik/Personalpronomen:PC04/NPC06:ihr/euch:你们:nǐmen:2:---:---
+Grammatik/Fragepartikel:PC07/NPC04:was:什么:shénme:2:---:---
+Papierzeug:PC07:die Landkarte:地图:dìtú:0:---:---
+Wahrnehmung:PC07/NPC07:sehen/ansehen/lesen/schauen/anschauen:看:kàn:2:---:---
+Staedte:PC07/LSC01/NPC09:Beijing:北京:běijīng:2:---:---
+Staedte:PC07/LSC01:Shanghai:上海:shànghǎi:2:---:---
+Fluesse:PC07:Yangtze:长江:chángjiāng:0:---:---
+Fluesse:PC07:gelber Fluss:黄河:huánghé:0:---:---
+Sehenswuerdigkeiten:PC07:die chinesische Mauer:长城:chángchéng:0:---:---
+Geografie:PC07Z:die Welt:世界:shìjiè:0:---:---
+Geografie:PC07Z/NPC14:Europa:欧洲:ōuzhōu:2:---:---
+Geografie:PC07Z:Afrika:非洲:fēizhōu:0:---:---
+Geografie:PC07Z:Ozeanien:大洋洲:dàyángzhōu:0:---:---
+Geografie:PC07Z:Suedamerika:南美洲:nánměizhōu:0:---:---
+---:PC08/NPC04:bitte/bitten/einladen:请:qǐng:2:---:---
+Essen/Trinken:PC08/NPC02:trinken:喝:hē:2:---:---
+Getraenke:PC08/NPC09Z:der Tee:茶:chá:2:---:---
+Grammatik/Personalpronomen:PC08/LSC01/NPC03:Sie (Hoeflichkeitsform):您:nín:2:---:---
+---:PC08/NPC04:eintreten/hereinkommen:进:jìn:2:---:---
+Begrueßung:PC08:willkommen/willkommenheißen:欢迎:huānyíng:0:---:---
+---:PC08/LSC01/NPC05:danken:谢谢:xièxiè:2:---:---
+---:PC08:hoeflich:客气:kèqi:0:---:---
+---:PC08/NPC11Z:rauchen:吸烟:xīyān:0:---:---
+Getraenke:PC08Z/PC19/NPC09Z:das Bier:啤酒:píjiǔ:2:---:---
+Getraenke:PC08Z/PC25Z/NPC09Z:die Milch:牛奶:níunǎi:2:---:---
+Anrede:PC08Z/PC12/NPC04:der Herr:先生:xiānsheng/xiānshēng:2:---:---
+Anrede:PC08Z:die Frau:太太:tàitai:2:---:---
+Name:PC09/NPC04:werter Name:贵姓:guìxìng:2:---:---
+Floskeln:PC09/LSC01/NPC04:Darf ich fragen ... ?/Gestatten Sie mir die Frage, ... ?:请问:qǐngwèn:2:---:---
+Verben:PC09/NPC04/NPC05/NPC07:fragen:问:wèn:2:---:---
+Berufe:PC09/NPC14:Student, der im Ausland studiert/Auslandsstudent:留学生:liúxuésheng:2:---:---
+Name:PC09/LSC01/NPC04:heißen/Nachname:姓:xìng:2:---:---
+Verben/Name:PC09/LSC01/NPC04:heißen / jn. oder etw. rufen:叫:jiào:2:---:---
+Sprachen:PC09/NPC03:die Fremdsprache:外语:wàiyǔ:2:---:---
+Schule/Studium:PC09/NPC04:das Institut/die Hochschule:学院:xuéyuàn:2:---:---
+Berufe:PC09/NPC04:der Student/der Schueler:学生:xuéshēng:2:---:---
+Verben:PC09/NPC04:lernen/studieren:学习:xuéxí:2:---:---
+Verben:PC09/NPC07:lernen/studieren:学:xué:2:---:---
+Anrede:PC09Z/PC19/NPC05:das Fraeulein:小姐:xiǎojiě:2:---:---
+Anrede:PC09Z:hoefliche Form der Anrede einer Frau:女士:nǚshì:0:---:---
+Anrede:PC09Z:der Genosse:同志:tóngzhì:0:---:---
+Laender:PC09Z:Korea:朝鲜:cháoxiǎn:0:---:---
+Laender:PC09Z/PC13Z/NPC04:England:英国:yīngguó:2:---:---
+---:PC10/NPC05:(irgendwo) sein/in/an/auf:在:zài:2:---:---
+Verben:PC10/NPC05:sitzen/sich setzen:坐:zuò:2:---:---
+Grammatik/Fragepartikel:PC10/NPC05:wo:哪儿:nǎr:2:---:---
+Gebaeude:PC10/NPC05:das Wohnheim:宿舍:sùshè:2:---:---
+Verben:PC10/NPC14:wohnen:住:zhù:2:---:---
+Grammatik/Fragepartikel:PC10/NPC08:wie viele/wieviel:多少:duōshao:2:---:---
+Zeit:PC10/PC20/LSC01/NPC05:die Nummer/der Tag/das Datum/die Nummer:号:hào:2:---:---
+Zahlen:PC10/LSC01/NPC05:vier:四:sì:2:---:---
+ZEW:PC10/NPC05:der(das) Stock(werk):层:céng:2:---:---
+Zahlen:PC10/LSC01:Eins:一:yī:2:---:---
+Zahlen:PC10/LSC01/NPC05:Zwei:二:èr:2:---:---
+Zahlen:PC10/LSC01:Drei:三:sān:2:---:---
+Zahlen:PC10/LSC01:Fuenf:五:wǔ:2:---:---
+Zahlen:PC10/NPC05:Null:〇/零:líng:1:---:---
+Gebaeude/Gesundheit:PC10Z/NPC12:das Krankenhaus:医院:yīyuàn:2:---:---
+---:PC10Z/NPC13:die Toilette:厕所:cèsuǒ:2:---:---
+---:PC10Z/PC16/NPC05:hier:这儿:zhèr:2:---:---
+Verben:PC11:zurueckgeben:还:huán:2:---:---
+Literatur:PC11:die Illustrierte:画报:huàbào:2:---:---
+Literatur:PC11/NPC08Z:das Woerterbuch/das Lexikon:词典:cídiǎn:2:---:---
+Grammatik/Zeitwoerter:PC11/LSC01/NPC06:jetzt/heutzutage:现在:xiànzài:2:---:---
+Verben:PC11/NPC15:brauchen/gebrauchen:用:yòng:2:---:---
+Zeitangaben:PC11/NPC07:eine kurze Zeit/einmal/mal kurz:一下儿:yíxiàr:2:---:---
+Verabschiedung/Gruß:PC11/NPC05:Auf Wiedersehen:再见:zàijiàn:2:---:---
+Zahlen:PC11/LSC01:Sechs:六:liù:2:---:---
+Zahlen:PC11/LSC01:Sieben:七:qī:2:---:---
+Zahlen:PC11/LSC01:Acht:八:bā:2:---:---
+Zahlen:PC11/LSC01:Neun:九:jiǔ:2:---:---
+Zahlen:PC11/LSC01:Zehn:十:shí:2:---:---
+Literatur:PC11Z:die Zeitschrift/das Magazin:杂志:zázhì:0:---:---
+---:PC11Z/LSC01/NPC13:das Telefon/der Anruf:电话:diànhuà:2:---:---
+---:PC11Z:der Regenschirm:雨伞:yǔsǎn:0:---:---
+Geschlecht:PC12/NPC05:weiblich:女:nǚ:2:---:---
+Verben:PC12/LCS01/NPC04:jn. kennen/jn. erlernen/jn. kennenlernen:认识:rènshi:2:---:---
+Sprachen:PC12/NPC11:Englisch:英语:yīngyǔ:2:---:---
+Sprachen:PC12:Franzoesisch:法语:fǎyǔ:2:---:---
+---:PC12/NPC10:oft:常:cháng:2:---:---
+Verben:PC12/NPC06:gehen:去:qù:2:---:---
+Grammatik/Personalpronomen:PC12:sie/ihnen:她们:tāmen:2:---:---
+Name:PC13/LSC01/NPC07:der Name:名字:míngzi:2:---:---
+Gruß/Begrueßung:PC13/NPC13:(Ausruf) Hallo:喂:wèi:0:---:---
+---:PC13/NPC07:(Ausruf) ah!/(Ausruf) oh!:啊:à:2:---:---
+Gebaeude:PC13:der Laden:商店:shāngdiàn:1:---:---
+Verben:PC13/NPC09:etw. kaufen:买:mǎi:2:---:---
+---:PC13/NPC10Z:das Schreibgeraet/der Stift:笔:bǐ:2:---:---
+Papierzeug:PC13:das Papier:纸:zhǐ:2:---:---
+Verben:PC13/NPC04:kommen:来:lái:2:---:---
+Verben:PC13/NPC07:jemanden vorstellen/etwas vorstellen:介绍:jièshào:2:---:---
+Geschlecht:PC13/NPC02:maennlich:男:nán:2:---:---
+---:PC13/LSC01/NPC14:richtig:对:duì:2:---:---
+Grammatik/Zeitwoerter/Modalpartikel:PC13/NPC05:---:了:le:2:---:---
+---:PC13/NPC08:und/mit:和:hé:2:---:---
+Verben:PC13/NPC06:sprechen/sagen:说:shuō:2:---:---
+Papierzeug:PC13Z/NPC10:das Heft/das Schreibheft:本子:běnzi:2:---:---
+Gebaeude:PC13Z/NPC14:das Postamt:邮局:yóujú:2:---:---
+Papierzeug:PC13Z:die Briefmarke:邮票:yóupiào:0:---:---
+Berufe:PC13Z/NPC07:der Professor:教授:jiàoshòu:2:---:---
+Verben:PC14:tun/arbeiten:作:zuò:2:---:---
+Verben:PC14/NPC08:arbeiten/Arbeit:工作:gōngzuò:2:---:---
+Verben:PC14/NPC12:denken/vermissen/wollen:想:xiǎng:2:---:---
+---:PC14/NPC08:die Familie/das Haus/das Zuhause:家:jiā:2:---:---
+---:PC14/NPC06:haben/es gibt:有:yǒu:2:---:---
+---:PC14/NPC08:nicht:没:méi:2:---:---
+Familie:PC14/NPC08:die juengere Schwester:妹妹:mèimei:2:---:---
+Familie:PC14/NPC08:die aeltere Schwester:姐姐:jiějie:2:---:---
+Gebaeude:PC14/NPC15:die Bank/das Geldinstitut:银行:yínháng:0:---:---
+Familie:PC14:der Ehepartner:爱人:àiren:0:---:---
+Gebaeude:PC14/NPC10Z:der Buchladen/die Buchhandlung:书店:shūdiàn:2:---:---
+Familie:PC14/NPC08Z:das Kind:孩子:háizi:2:---:---
+---:PC14/NPC10:geben/fuer/zu/zu Gunsten von jemandem:给:gěi:2:---:---
+Verben:PC14/NPC11:schreiben:写:xiě:2:---:---
+Papierzeug:PC14/NPC15:der Brief:信:xìn:0:---:---
+Verben:PC14/NPC13:erzaehlen/jemanden etwas mitteilen:告诉:gàosu:2:---:---
+Berufe:PC14Z:der Angestellter:职员:zhíyuán:0:---:---
+Berufe:PC14Z/NPC08Z:der Ingenieur:工程师:gōngchéngshī:0:---:---
+Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:0:---:---
+---:PC14Z/LSC01/NPC13:die Firma/das Unternehmen:公司:gōngsī:2:---:---
+Sprachen:PC15/NPC07:das Chinesisch:中文:zhōngwén:2:---:---
+Studium:PC15/NPC07:die Fakultaet/der Fachbereich:系:xì:2:---:---
+ZEW:PC15/NPC08:(allgemeines ZEW):个:gè:2:---:---
+Grammatik/Fragepartikel/Anzahl:PC15/NPC08:wieviel/wie viele/einige:几:jǐ:2:---:---
+Studium:PC15/NPC07/NPC11:lehren/unterrichten:教:jiāo:2:---:---
+Grammatik:PC15/NPC14:die Grammatik:语法:yǔfǎ:2:---:---
+---:PC15/NPC11:chinesisches Schriftzeichen:汉字:hànzì:2:---:---
+---:PC15:die Schriftzeichen:字:zì:2:---:---
+---:PC15/NPC08/NPC11:noch/außerdem/dazu noch/immer noch:还:hái:2:---:---
+Sprachen:PC15/NPC14:gesprochene Sprache:口语:kǒuyǔ:2:---:---
+Wendungen:PC15:zu viel der Ehre:不敢当:bùgǎndāng:0:---:---
+---:PC15:gegenseitig:互相:hùxiāng:0:---:---
+---:PC15/NPC13Z:neu:新:xīn:2:---:---
+Raeume:PC15:der Lesesaal:阅览室:yuèlǎnshì:0:---:---
+Papierzeug:PC15:die Zeitschrift:杂志:zázhì:0:---:---
+Papierzeug:PC15/NPC10:die Zeitung:报:bào:2:---:---
+ZEW:PC15/NPC10Z:(ZEW fuer Buecher, Papierbloecke und Hefte):本:běn:2:---:---
+Raeume:PC15:die Bibliothek:图书馆:túshūguǎn:0:---:---
+---:PC15/NPC10:dort:那儿:nàr:2:---:---
+---:PC15Z:die Klasse/die Gruppe:班:bān:0:---:---
+Raeume:PC15Z:das Klassenzimmer:教室:jiàoshì:0:---:---
+Raeume:PC15Z:das Labor:实验室:shíyànshì:0:---:---
+---:PC15Z:sich etwas leihen:借:jiè:0:---:---
+---:PC15Z/PC24/NPC14:das neue Wort:生词:shēngcí:2:---:---
+ZEW:PC16:(lange Dinge/Hose/Straße):条:tiáo:2:---:---
+Kleidung:PC16:der Rock:裙子:qúnzi:0:---:---
+Zahlen:PC16/NPC08:zwei (vor ZEWs):两:liǎng:2:---:---
+Papierzeug:PC16:die Karte/das Billett:票:piào:0:---:---
+Gebaeude:PC16/NPC06:die Beijing-Oper:京剧:jīngjù:0:---:---
+Zeiten:PC16/NPC09Z:der Abend/abends:晚上:wǎnshang:2:---:---
+---:PC16/NPC06:zu/sehr/aeußerst:太:tài:2:---:---
+---:PC16/NPC15:von (irgendwo):从:cóng:2:---:---
+Verben:PC16/NPC10:suchen/jemanden rufen/jemandem Wechselgeld herausgeben:找:zhǎo:2:---:---
+---:PC16:alt:旧:jiù:0:---:---
+Kleidung:PC16/NPC12:anziehen/tragen:穿:chuān:2:---:---
+ZEW:PC16/NPC13:(ZEW Oberbekleidung, Arbeit, abstrakte Dinge):件:jiàn:1:---:---
+Kleidung:PC16:das Hemd/die Bluse:衬衫:chènshān:0:---:---
+Farben:PC16:gruen:绿色:lǜsè:0:---:---
+---:PC16/NPC08:groß/alt:大:dà:2:---:---
+Farben:PC16:weiß:白色:báisè:0:---:---
+Farben:PC16:blau:蓝色:lánsè:0:---:---
+Kleidung:PC16Z:die Jacke:上衣:shàngyī:0:---:---
+Kleidung:PC16Z:die Hose:裤子:kùzi:0:---:---
+Kleidung:PC16Z:der Mantel:大衣:dàyī:0:---:---
+Farben:PC16Z:schwarz:黑色:hēisè:0:---:---
+Gebaeude:PC16Z:das Theater:剧场:jùchǎng:0:---:---
+---:PC16Z:der Sitzplatz:座位:zuòwèi:0:---:---
+ZEW/Zeit:PC17/NPC11:Uhr:点:diǎn:2:---:---
+Raeume:PC17:der Speisesaal/die Mensa:食堂:shítáng:0:---:---
+---:PC17/NPC11:fehlen:差:chà:2:---:---
+Zeit:PC17:die Minute:分钟:fēnzhōng:0:---:---
+ZEW/Zeit:PC17/NPC11:Viertel (Stunde):刻:kè:2:---:---
+Schule:PC17/NPC11:Unterricht haben/Unterricht anfangen/zum Unterricht gehen:上课:shàngkè:2:---:---
+Schule:PC17/NPC09:Untericht/Vorlesung/Lektion:课:kè:2:---:---
+Schule:PC17/NPC11Z:Unterrichtsschluss haben/den Unterricht beenden:下课:xiàkè:2:---:---
+Zeit:PC17:spaeter/in Zukunft:以后:yǐhòu:2:---:---
+---:PC17/NPC13:Angelegenheit/Sache:事儿:shìr:2:---:---
+Verben:PC17/NPC11:zurueckgehen/zurueckkehren:回:huí:2:---:---
+Verben:PC17/NPC10:mit/folgen/begleiten/mit jemandem/jemandem folgen:跟:gēn:2:---:---
+---:PC17/NPC12:zusammen/gemeinsam:一起:yìqǐ:2:---:---
+---:PC17/NPC13:der Film:电影:diànyǐng:2:---:---
+Gebaeude:PC17:das Café:咖啡馆:kāfēiguǎn:0:---:---
+Getraenke:PC17/NPC13:der Kaffee:咖啡:kāfēi:2:---:---
+---:PC17/NPC11:halb/Haelfte:半:bàn:2:---:---
+Grammatik/Modalpartikel:PC17:---:啊:a:0:---:---
+Verben:PC17/NPC13:auf jn. warten/auf etw. warten:等:děng:2:---:---
+Verben:PC17:gehen:走:zǒu:0:---:---
+---:PC17:der Weg:路:lù:0:---:---
+Arbeit:PC17:zur Arbeit fahren/anfangen zu arbeiten:上班:shàngbān:0:---:---
+Arbeit:PC17Z:Feierabend machen:下班:xiàbān:0:---:---
+Gebaeude:PC17Z:das Kino:电影院:diànyǐngyuàn:0:---:---
+---:PC17Z/NPC11Z:die Armbanduhr:表:biǎo:0:---:---
+Zeit:PC17Z:Uhr:钟:zhōng:0:---:---
+Zeit:PC17Z:vor/vorher/frueher:以前:yǐqián:0:---:---
+ZEW/Zeit:PC17:die Minute:分:fēn:2:---:---
+Zeit:PC18/NPC06:der Tag:天:tiān:2:---:---
+---:PC18/NPC12:jedes/jede/jeder:每:měi:2:---:---
+Verben:PC18/NPC11:aufstehen:起床:qǐchuáng:2:---:---
+Verben:PC18/NPC11:sich erheben/aufstehen:起:qǐ:2:---:---
+Moebel:PC18/NPC11:das Bett:床:chuáng:2:---:---
+Zeit:PC18/NPC09:der Vormittag/vormittags:上午:shàngwǔ:2:---:---
+Essen:PC18/NPC09:essen:吃:chī:2:---:---
+Essen:PC18/NPC13:das Essen/das Mahl:饭:fàn:2:---:---
+Anzahl:PC18/PC21/NPC08:viele/viel:多:duō:2:---:---
+Zeit:PC18/NPC09:der Nachmittag/nachmittags:下午:xiàwǔ:2:---:---
+---:PC18/NPC12:sich ausruhen/eine Pause machen:休息:xiūxi:0:---:---
+Zeit:PC18:manchmal:有时候:yǒushíhou:0:---:---
+Zeit:PC18/NPC06:die Zeit (Zeitpunkt):时候:shíhou:2:---:---
+---:PC18/NPC11:die Frage/das Problem:问题:wèntí:2:---:---
+Verben:PC18/NPC11:schlafen:睡觉:shuìjiào:2:---:---
+Verben:PC19/NPC02:wollen/werden (Fut.)/muessen:要:yào:2:---:---
+Berufe:PC19:der Kellner/der Bedienstete:服务员:fúwùyuán:0:---:---
+ZEW:PC19/NPC10Z:die Tasse/der Becher/das Glas:杯:bēi:2:---:---
+Verben:PC19/LSC01/NPC08:moegen:喜欢:xǐhuan:0:---:---
+Getraenke:PC19:der Yasmintee:花茶:huāchá:0:---:---
+Getraenke:PC19:schwarzer Tee/roter Tee:红茶:hóngchá:0:---:---
+Farben:PC19:rot:红色:hóngsè:0:---:---
+---:PC19/NPC12:oder (nur bei Fragen):还是:háishì:2:---:---
+Getraenke:PC19:der Orangensaft:桔子水:júzishuǐ:0:---:---
+Obst:PC19:die Orange:桔子:júzi:0:---:---
+Getraenke/Elemente:PC19/NPC12:das Wasser:水:shuǐ:2:---:---
+ZEW:PC19/NPC09:die Flasche:瓶:píng:2:---:---
+Wahrnehmung:PC19/NPC13:hoeren/zuhoeren:听:tīng:2:---:---
+Musik:PC19:das Volkslied:民歌:míngē:0:---:---
+---:PC19:klassisch:古典:gǔdiǎn:0:---:---
+Musik:PC19/NPC07Z/NPC10:die Musik:音乐:yīnyuè:2:---:---
+---:PC19:modern:现代:xiàndài:0:---:---
+Musik:PC19:singen:唱:chàng:0:---:---
+Musik:PC19:das Lied:歌儿:gēr:0:---:---
+---:PC19/NPC13:lassen/jn. veranlassen/jn. erlauben etw. zu tun:让:ràng:2:---:---
+---:PC19:nicht (imperativ):别:bié:0:---:---
+ZEW:PC19Z:der Zweig:枝:zhī:0:---:---
+Obst:PC19Z/NPC10:der Apfel:苹果:píngguǒ:2:---:---
+Obst:PC19Z/NPC10:die Banane:香蕉:xiāngjiāo:2:---:---
+Obst:PC19Z/NPC09/NPC10:die Weintraube:葡萄:pútao:0:---:---
+Musik:PC19Z:die Schallplatte:唱片 :chàngpiàn:0:---:---
+---:PC19Z:der Zucker/die Sueßigkeit:糖:táng:0:---:---
+Getraenke:PC19Z:der gruene Tee:绿茶:lǜchá:0:---:---
+Zeit:PC20:der Monat/der Mond:月:yuè:2:---:---
+Zeit:PC20:der Tag/das Datum/die Sonne:日:rì:2:---:---
+Personendaten/Zeit:PC20/NPC09:der Geburtstag:生日:shēngri:2:---:---
+Zeit:PC20/NPC06:Heute:今天:jīntiān:2:---:---
+Schule:PC20:die Klasse/die Gruppe:班:bān:0:---:---
+Schule/Lernen/Studium:PC20:Nachhilfe geben:辅导:fǔdǎo:0:---:---
+Freizeit:PC20:die Freizeit:空(儿):kòng(r):0:---:---
+Zeit:PC20/NPC09:dieses Jahr/heuer:今年:jīnnián:2:---:---
+ZEW/Personendaten:PC20/NPC09:Jahre alt sein/Lebensjahr:岁:suì:2:---:---
+---:PC20/NPC09:gratulieren/beglueckwuenschen/Gratulation:祝贺:zhùhè:2:---:---
+---:PC20:der Ball/der Tanz:舞会:wǔhuì:0:---:---
+---:PC20/NPC09:teilnehmen/mitmachen:参加:cānjiā:0:---:---
+Schule/Studium:PC20:der Klassenkamerad/der Kommilitone/der Mitstudent:同学:tóngxué:0:---:---
+---:PC20:sicher/gewiss/sicherlich/bestimmt:一定:yídìng:0:---:---
+---:PC20/NPC06:interessant:有意思:yǒuyìsi:2:---:---
+Zeit:PC20/NPC09:die Woche:星期:xīngqī:2:---:---
+Zeit/Wochentage:PC20/NPC09:Sonntag:星期日:xīngqīrì:2:---:---
+Verben:PC20/NPC05:wissen/kennen:知道:zhīdào:0:---:---
+Personendaten/Ortsangaben:PC20/LSC01:die Adresse:地址:dìzhǐ:0:---:---
+Zeit:PC20/NPC09:das Jahr:年:nián:2:---:---
+Zeit:PC20Z:letztes Jahr:去年:qùnián:0:---:---
+Zeit:PC20Z:naechstes Jahr:明年:míngnián:0:---:---
+Veranstaltungen:PC20Z:das Konzert:音乐会:yīnyuèhuì:0:---:---
+Verben:PC20Z:heiraten:结婚:jiéhūn:0:---:---
+---:PC20Z/NPC05:Entschuldigung!/Verzeihung!:对不起:duìbuqǐ:2:---:---
+---:PC20Z:die Verabredung:约会:yuēhuì:0:---:---
+---:PC20Z/NPC05:macht nichts/kein Problem/schon gut:没关系:méiguānxi:2:---:---
+Verben:PC20Z:sich unterhalten/reden:谈:tán:0:---:---
+ZEW:PC21:der Strauß:束:shù:0:---:---
+Pflanzen:PC21:die Blume:花儿:huār:0:---:---
+---:PC21/NPC08:echt/wahr/wirklich:真:zhēn:0:---:---
+---:PC21:schoen:好看:hǎokàn:0:---:---
+---:PC21/NPC09:jm. etw. wuenschen:祝:zhù:2:---:---
+Geburtstag:PC21/NPC10:schenken/geben:送:sòng:2:---:---
+---:PC21/NPC15:aeußerst/außergewoehnlich/hoechst:非常:fēicháng:0:---:---
+Verben:PC21:danken:感谢:gǎnxiè:0:---:---
+---:PC21/NPC04:gluecklich/erfreut:高兴:gāoxìng:0:---:---
+Anrede:PC21:die Frau:太太:tàitai:0:---:---
+---:PC21:jung:年轻:niánqīng:0:---:---
+Verben:PC21/NPC11Z:tanzen:跳舞:tiàowǔ:0:---:---
+---:PC21/NPC13:das Fraeulein/die junge Frau:姑娘:gūniang:0:---:---
+Grammatik/Modalpartikel:PC21/NPC12:(Modalpartikel fuer den Imperativ):吧:ba:2:---:---
+---:PC21/NPC09:schoen/huebsch:漂亮:piàoliang:0:---:---
+---:PC21:noch (mehr/besser):更:gèng:0:---:---
+---:PC21:aehneln/gleichen:象:xiàng:0:---:---
+---:PC21/NPC07:oeffnen/beginnen:开:kāi:0:---:---
+---:PC21:die Tuer/das Tor:门:mén:0:---:---
+ZEW:PC21Z:(fuer Autos):辆:liàng:0:---:---
+---:PC21Z:sauber:干净:gānjing:0:---:---
+Zeit:PC21Z:das Neujahr:新年:xīnnián:0:---:---
+Personendaten:PC21Z:das Alter:岁数:suìshu:0:---:---
+Geburtstag:PC21Z/NPC11Z:das Geschenk:礼物:lǐwù:1:---:---
+Papierzeug:PC21Z/PC23/NPC08:das Foto:照片:zhàopiàn:0:---:---
+Familie:PC21Z:der Sohn:儿子:érzi:0:---:---
+Familie:PC21Z:die Tochter:女儿:nǚér:0:---:---
+Richtung:PC22:hinter/hinten:后边:hóubiān:0:---:---
+---:PC22/NPC08:klein/jung:小:xiǎo:0:---:---
+---:PC22:der Garten:花园:huāyuán:0:---:---
+Gebaeude:PC22/NPC13:das Haus/das Zimmer/dieWohnung:房子:fángzi:2:---:---
+Raeume:PC22/NPC13Z:das Wohnzimmer/der Salon:客厅:kètīng:2:---:---
+Richtung:PC22:seite/seitlich:旁边:pángbiān:0:---:---
+Raeume:PC22/NPC13Z:das Arbeitszimmer:书房:shūfáng:2:---:---
+Moebel:PC22:der Stuhl:椅子:yǐzi:0:---:---
+Anzahl:PC22/NPC08:wenige/wenig:少:shǎo:0:---:---
+Moebel:PC22:der Tisch:桌子:zhuōzi:0:---:---
+Richtung:PC22:oben/auf/ueber:上边:shàngbiān:0:---:---
+---:PC22:immer:总是:zǒngshì:0:---:---
+---:PC22:immer:总:zǒng:0:---:---
+Verben:PC22/NPC14Z:aufraeumen/ordnen/in Ordnung bringen/Ordnung schaffen/etwas in Ordnung bringen:整理:zhěnglǐ:0:---:---
+Raeume:PC22/NPC13:die Kueche:厨房:chúfáng:2:---:---
+Richtung:PC22:gegenueber:对面:duìmiàn:0:---:---
+Verben:PC22/NPC13:jm. helfen/jn. unterstuetzen:帮助:bāngzhu:1:---:---
+Verben:PC22:helfen:帮:bāng:0:---:---
+Raeume:PC22:der Speisesaal/das Restaurant:餐厅:cāntīng:0:---:---
+Richtung:PC22:links:左边:zuǒbiān:0:---:---
+Richtung:PC22:innen:里边:lǐbiān:0:---:---
+Raeume:PC22:das Zimmer:房间:fángjiān:0:---:---
+Raeume:PC22/NPC13Z:das Schlafzimmer:卧室:wòshì:0:---:---
+Raeume:PC22:das Badezimmer:洗澡间:xǐzǎojiān:0:---:---
+Verben:PC22:ein Bad nehmen:洗澡:xǐzǎo:0:---:---
+Grammatik/Fragepartikel:PC22/NPC06:wie:怎么样:zěnmeyàng:2:---:---
+Richtung:PC22Z:außen:外边:wàibiān:0:---:---
+Richtung:PC22Z:unten/unter:下边:xiàbiān:0:---:---
+Richtung:PC22Z:vorn/vor:前边:qiánbiān:0:---:---
+Richtung:PC22Z:rechts:右边:yòubiān:0:---:---
+Richtung:PC22Z:mitten:中间:zhōngjiān:0:---:---
+---:PC22Z:das Fenster:窗户:chuānghu:0:---:---
+ZEW:PC22Z/NPC13Z:(ZEW Wohnung)/Reihe/Set/Garnitur:套:tào:2:---:---
+Grammatik/Zeitwoerter:PC23:(zum Ausdruck einer momentanen Handlung):正在:zhèngzài:0:---:---
+---:PC23/NPC14Z:das Fernsehen:电视:diànshì:0:---:---
+---:PC23:ans Telefon gehen/ans Telefon kommen:接电话:jiēdiànhuà:0:---:---
+---:PC23:nicht:没(有):méi(you):0:---:---
+---:PC23/NPC14:wiederholen:复习:fùxí:0:---:---
+Literatur:PC23/NPC14:der Text/der Lektionstext:课文:kèwén:2:---:---
+---:PC23:die Nachrichten:新闻:xīnwén:0:---:---
+Charaktereigenschaften:PC23:freundlich:友好:yǒuhǎo:0:---:---
+---:PC23:die Delegation:代表团:dàibiǎotuán:0:---:---
+---:PC23:der Delegierte/der Vertreter/der Abgesandte:代表:dàibiǎo:0:---:---
+---:PC23/NPC15:besichtigen/einen Ort besuchen:参观:cānguān:0:---:---
+Gebaeude:PC23:die Fabrik:工厂:gōngchǎng:0:---:---
+Berufe:PC23:der Arbeiter:工人:gōngrén:0:---:---
+Verben:PC23:besuchen:访问:fǎngwèn:0:---:---
+Zeit:PC23/NPC06:morgen:明天:míngtiān:2:---:---
+Geografie:PC23:die Stadt:城:chéng:0:---:---
+Richtung:PC23:außen:外边:wàibiān:0:---:---
+---:PC23/NPC11:spielen/sich amuesieren:玩儿:wánr:2:---:---
+---:PC23:sich auf den Weg machen:出发:chūfā:0:---:---
+Verkehr:PC23/NPC11Z:Auto fahren:开车:kāichē:2:---:---
+---:PC23:jemanden abholen:接人:jiērén:0:---:---
+Gebaeude:PC23Z:die Telefonzentrale:总机:zǒngjī:0:---:---
+---:PC23Z:(Telefon-)Anschluss(-Nummer):分机:fēnjī:0:---:---
+---:PC23Z:besetzt (Telefon):占线:zhànxiàn:0:---:---
+---:PC23Z:falsch verbunden/verwaehlt:打错了:dǎcuòle:0:---:---
+---:PC23Z:die Nummer:号码:hàomǎ:0:---:---
+Literatur:PC23Z:die Volkszeitung:人民日报:rénmínrìbào:0:---:---
+Essen:PC24:die Torte/das Gebaeck:点心:diǎnxin:0:---:---
+Geografie:PC24:das Dorf/das Land:农村:nóngcūn:0:---:---
+Berufe:PC24:der Bauer:农民:nóngmín:0:---:---
+Verkehr:PC24:der Zug:火车:huǒchē:0:---:---
+Freizeit:PC24:Sport treiben:锻炼:duànliàn:0:---:---
+---:PC24/NPC11Z:antworten:回答:huídá:1:---:---
+ZEW:PC24:einige:些:xiē:0:---:---
+---:PC24/NPC11Z:schwierig:难:nán:2:---:---
+---:PC24/NPC14:das Wort:词:cí:2:---:---
+---:PC24:laut lesen:念:niàn:0:---:---
+---:PC24/NPC14:die Uebung/ueben:练习:liànxí:0:---:---
+---:PC24:ernsthaft:认真:rènzhēn:0:---:---
+---:PC24:verstehen:懂:dǒng:0:---:---
+Grammatik:PC25/NPC13/NPC15:(Strukturpartikel)/bekommen/erhalten:得:de:0:---:---
+Zeit:PC25/NPC05/NPC11:spaet:晚:wǎn:2:---:---
+---:PC25:anhalten:停:tíng:0:---:---
+Richtung:PC25:vor/vorn/Vordergrund:前边:qiánbiān:0:---:---
+Geografie:PC25:der Fluss:河:hé:0:---:---
+Freizeit:PC25/NPC06:schwimmen:游泳:yóuyǒng:2:---:---
+---:PC25:vorbereiten:准备:zhǔnbèi:0:---:---
+Freizeit:PC25:angeln:钓:diào:0:---:---
+Essen/Tiere:PC25:der Fisch:鱼:yú:0:---:---
+Essen:PC25:die Suppe:汤:tāng:0:---:---
+ZEW:PC25/NPC13:(ZEW hoeflich fuer Menschen):位:wèi:2:---:---
+---:PC25:schnell:快:kuài:0:---:---
+Wendungen:PC25/NPC11:Zu viel der Ehre/Aber ich bitte Sie/ach woher denn!:哪里:nǎli:2:---:---
+---:PC25:langsam:慢:màn:0:---:---
+Sport:PC25:der Trainer:教练:jiàoliàn:0:---:---
+---:PC25:nicht schlecht/ziemlich gut:不错:búcuò:0:---:---
+Essen:PC25/NPC09Z:das Brot:面包:miànbāo:0:---:---
+Essen:PC25:der Schinken:火腿:huǒtuǐ:0:---:---
+---:PC25/NPC11/NPC12:ein bisschen:一点儿:yìdiǎnr:2:---:---
+Essen:PC25:der Kaese:奶酪:nǎilào:0:---:---
+---:PC25/NPC05:nochmal/wieder:再:zài:2:---:---
+Getraenke:PC25:das Mineralwasser:矿泉水:kuàngquánshuǐ:0:---:---
+---:PC25Z:deutlich/klar:清楚:qīngchu:0:---:---
+---:PC25Z:fließend:流利:liúlì:0:---:---
+Essen:PC25Z:Speise/Gericht:菜:cài:0:---:---
+Essen:PC25z:die Ravioli:饺子:jiǎozi:0:---:---
+Essen:PC25Z:das Ei:鸡蛋:jīdàn:0:---:---
+---:PC25Z:im Vergleich/vergleichen:比较:bǐjiào:0:---:---
+---:PC25Z:ordentlich:整齐:zhěngqí:0:---:---
+---:PC26:forschen:研究:yánjiū:0:---:---
+Literatur:PC26:die Literatur:文学:wénxué:0:---:---
+Zeit:PC26/NPC15:frueh:早:zǎo:2:---:---
+---:PC26:reden:谈:tán:0:---:---
+---:PC26/NPC09:Treffen/Sitzung:会:huì:2:---:---
+---:PC26:als etwas dienen/als jemand dienen:当:dāng:0:---:---
+Berufe:PC26:der Dolmetscher/der Uebersetzer/dolmetschen/uebersetzen:翻译:fānyi:0:---:---
+---:PC26/NPC11:koennen/in der Lage sein:能:néng:2:---:---
+---:PC26:vertiefen/intensivieren:加深:jiāshēn:0:---:---
+---:PC26:das Volk:人民:rénmín:0:---:---
+---:PC26:verstehen/verstehen lernen:了解:liǎojiě:0:---:---
+---:PC26/NPC10:beruehmt/bekannt:有名:yǒumíng:2:---:---
+Berufe:PC26/NPC10Z:Schriftsteller:作家:zuòjiā:2:---:---
+---:PC26:oder (in einem Aussagesatz):或者:huòzhě:0:---:---
+Zeit:PC26:sofort:就:jiù:0:---:---
+---:PC26/NPC11:sollen/muessen:应该:yīnggāi:2:---:---
+ZEW/Zahlen:PC26:zwei/beide:俩:liǎ:0:---:---
+---:PC26/NPC04/NPC11:koennen/duerfen:可以:kěyǐ:2:---:---
+---:PC26:ideal/Ideal:理想:lǐxiǎng:0:---:---
+---:PC26/NPC13:aber/jedoch:可是:kěshì:2:---:---
+---:PC26:leicht:容易:róngyi:0:---:---
+Sprichwoerter:PC26:Wo ein Wille ist, ist auch ein Weg.:有志者事竟成:yǒuzhìzhěshìjìngchéng:0:---:---
+Sprichwoerter:PC26:das Sprichwort:成语:chéngyǔ:0:---:---
+Gebaeude:PC26Z:die Oper:歌剧:gējù:0:---:---
+Literatur:PC26Z:der Roman:小说:xiǎoshuō:0:---:---
+Literatur:PC26Z:das Gedicht:诗歌:shīgē:0:---:---
+---:PC26Z:malen/zeichnen:画:huà:0:---:---
+Kunst:PC26Z:das Gemaelde/die Zeichnung/das Bild:画儿:huàr:0:---:---
+Essen/Malzeiten:PC26Z:das Abendessen:晚饭:wǎnfàn:0:---:---
+---:PC26Z/NPC04:hereinkommen/eintreten:进来:jìnlái:2:---:---
+---:PC27:beginnen:开始:kāishǐ:0:---:---
+Gebaeude:PC27:die Botschaft:大使馆:dàshǐguǎn:0:---:---
+Berufe:PC27:der Botschafter:大使:dàshǐ:0:---:---
+---:PC27:der Empfang:招待会:zhāodàihuì:0:---:---
+Getraenke:PC27:der Wein/der Schnaps:酒:jiǔ:0:---:---
+---:PC27:probieren (essen usw.):尝:cháng:0:---:---
+Getraenke:PC27:Maotai (starker Schnaps):茅台酒:máotáijiǔ:0:---:---
+---:PC27/NPC11:wegen/fuer/zu:为:wèi:0:---:---
+---:PC27:die Gesundheit/gesund:健康:jiànkāng:0:---:---
+---:PC27:der Prost/prosten:干杯:gānbēi:0:---:---
+---:PC27:die Freundschaft:友谊:yǒuyì:0:---:---
+Getraenke:PC27:der Wein:葡萄酒:pútaojiǔ:0:---:---
+Essen:PC27:das Gericht/das Gemuese:菜:cài:0:---:---
+Essen/Besteck:PC27:die Essstaebchen:筷子:kuàizi:0:---:---
+---:PC27:versuchen:试:shì:0:---:---
+---:PC27/NPC07Z:die Kultur:文化:wénhuà:0:---:---
+---:PC27:der Rat:参赞:cānzàn:0:---:---
+---:PC27:die Frau/die Gattin:夫人:fūren:0:---:---
+---:PC27:wieder/dazu:又:yòu:0:---:---
+---:PC27/ShuoHanYu:alle/jeder:大家:dàjiā:2:---:---
+---:PC27/NPC11:gehen/ankommen/erreichen/eintreffen:到:dào:0:---:---
+Gebaeude:PC27:das Gebaeude/die Etage:楼:lóu:0:---:---
+Getraenke:PC27Z:der Weinbrand:白兰地:báilándì:0:---:---
+Getraenke:PC27Z:der Sekt:香槟酒:xiāngbīnjiǔ:0:---:---
+Titel:PC27Z:der Militaerattaché:武官:wǔguān:0:---:---
+Berufe:PC27Z:1.Sekretaer:一秘:yīmì:0:---:---
+---:PC27Z/NPC12:erkranken/Krankheit:病:bìng:2:---:---
+Berufe:PC27Z:der Schueler:小学生:xiǎoxuéshēng:0:---:---
+Sport:PC28:der Fußball:足球:zúqiú:0:---:---
+---:PC28:der Ball (rund):球:qiú:0:---:---
+Sport:PC28:der Wettkampf/das Spiel (mitmachen):赛:sài:0:---:---
+Zeit:PC28/NPC06/NPC11:gestern:昨天:zuótiān:2:---:---
+---:PC28/NPC13:tun/etwas erledigen/ausfuehren:办:bàn:0:---:---
+Reisen:PC28:das Visum:签证:qiānzhèng:0:---:---
+Essen/Malzeiten:PC28:das Mittagessen:午饭:wǔfàn:0:---:---
+Sport:PC28:die Mannschaft/das Team:队:duì:0:---:---
+---:PC28:gewinnen:赢:yíng:0:---:---
+---:PC28:verlieren:输:shū:0:---:---
+Grammatik/Komparativ:PC28:zu (eins zu zwei)/als:比:bǐ:0:---:---
+---:PC28:der Schiedsrichter (sein):裁判:cáipàn:0:---:---
+Charaktereigenschaften:PC28:fair:公平:gōngping:0:---:---
+---:PC28:schießen/treten:踢:tī:0:---:---
+---:PC28:jemanden aergern:气人:qìrén:0:---:---
+---:PC28:das Gepaeck:行李:xíngli:0:---:---
+---:PC28:der Koffer:箱子:xiāngzi:0:---:---
+ZEW:PC28:---:顶:dǐng:0:---:---
+Kleidung:PC28:der Hut/die Muetze:帽子:màozi:0:---:---
+ZEW:PC28:(Schuhe) ein Paar:双:shuāng:0:---:---
+Kleidung:PC28:die Schlittschuhe:鞋:xié:0:---:---
+Zeit/Jahreszeiten:PC28:der Winter:冬天:dōngtiān:0:---:---
+---:PC28:Schlittschuh laufen:滑冰:huábīng:0:---:---
+Essen/Malzeiten:PC28:das Fruehstueck:早饭:zǎofàn:0:---:---
+Gebaeude:PC28:das Stadion:体育场:tǐyùchǎng:0:---:---
+---:PC28:der Park:公园:gōngyuán:0:---:---
+Sport:PC28:das Tischtennis:乒乓球:pīngpāngqiú:0:---:---
+Sport:PC28:Sport (treiben):运动:yùndòng:0:---:---
+Sport:PC28:das Tennis:网球:wǎngqiú:0:---:---
+Sport:PC28:der Basketball:篮球:lánqiú:0:---:---
+Sport:PC28:der Volleyball:排球:páiqiú:0:---:---
+Sport:PC28:Ski (laufen):滑雪:huáxuě:0:---:---
+Verkehr:PC29:das Flugzeug:飞机:fēijī:0:---:---
+---:PC29:wollen/werden:要:yào:0:---:---
+Verkehr:PC29:abheben:起飞:qǐfēi:0:---:---
+Gebaeude:PC29:der Flugplatz:机场:jīchǎng:0:---:---
+---:PC29:sich verabschieden:分别:fěnbié:0:---:---
+---:PC29:gern wollen:愿意:yuànyì:0:---:---
+---:PC29:verlassen:离开:líkāi:0:---:---
+---:PC29:sich treffen:见面:jiànmiàn:0:---:---
+---:PC29:treffen/sehen:见:jiàn:0:---:---
+---:PC29:also/daher:所以:suǒyǐ:0:---:---
+---:PC29:der Fortschritt/Fortschritt machen:进步:jìnbù:0:---:---
+Charaktereigenschaften:PC29:fleißig:努力:nǔlì:0:---:---
+---:PC29:fotographieren/Bilder machen:照相:zhàoxiàng:0:---:---
+---:PC29:stehen:站:zhàn:0:---:---
+---:PC29:dicht/eng:紧:jǐn:0:---:---
+---:PC29/NPC09/NPC11:oben/letzt-/vergangen-/einsteigen/zu etwas hingehen:上:shàng:2:---:---
+---:PC29:beachten:注意:zhùyì:0:---:---
+Koerper:PC29/NPC12:der Koerper/die Gesundheit:身体:shēntǐ:0:---:---
+---:PC29:beruhigt sein:放心:fàngxīn:0:---:---
+---:PC29:vergessen:忘:wàng:0:---:---
+Stimmung:PC29:traurig:难过:nánguò:0:---:---
+Zeit:PC29:naechstes Jahr:明年:míngnián:0:---:---
+Zeit/Jahreszeiten:PC29:der Sommer:夏天:xiàtiān:0:---:---
+Zeit/Jahreszeiten:PC29:der Herbst:秋天:qiūtiān:0:---:---
+---:PC29:Gute Reise (haben):一路平安:yílùpíng'ān:0:---:---
+Verkehr:PC29Z:das Auto:汽车:qìchē:0:---:---
+Verkehr:PC29Z:das Schiff:船:chuán:0:---:---
+---:PC29Z:rufen/bestellen:叫:jiào:0:---:---
+---:PC29Z:einen Reisenden verabschieden:送行:sòngxíng:0:---:---
+Reisen:PC29Z/NPC14:reisen/verreisen:旅行:lǚxíng:2:---:---
+---:PC29Z:die Generalverwaltung der Chinesischen Zivilluftfahrt (CAAC):中国民航:zhōngguómínháng:0:---:---
+---:PC30:lachen/laecheln:笑:xiào:0:---:---
+Koerper:PC30:das Herz:心:xīn:0:---:---
+---:PC30:jemanden verabschieden/ (ein Stueck) bringen:送(人):sòngrén:0:---:---
+Familie:PC30:die Tochter:女儿:nǚér:0:---:---
+Zeit:PC30:letztes Jahr:去年:qùnián:0:---:---
+Geografie:PC30:das Land/der Staat:国家:guójiā:0:---:---
+---:PC30/NPC11:das Ding/die Sache:东西:dōngxi:2:---:---
+---:PC30:weinen:哭:kū:0:---:---
+---:PC30:von:离:lí:0:---:---
+---:PC30:weit/entfernt:远:yuǎn:0:---:---
+---:PC30:herzlich:热情:rèqíng:0:---:---
+---:PC30/NPC14:leben/(Zeit) verbringen/(Geburtstage oder Feiertage) verbringen:过:guò:2:---:---
+---:PC30:selbst:自己:zìjǐ:0:---:---
+Getraenke:NPC09Z:die Cola:可乐:kělè:2:---:---
+Getraenke:---:der Kakao:可可:kěkě:0:---:---
+Getraenke:---:der Apfelsaft:苹果汁:píngguǒzhī:0:---:---
+Essen/Besteck:---:der Loeffel:勺子:sháozi:0:---:---
+Essen/Besteck:---:die Gabel:叉子:chāzǐ:0:---:---
+Essen/Besteck:---:das Messer:餐刀:cāndāo:0:---:---
+Musik/Instrumente:---:die Floete:笛子:dízi:0:---:---
+Musik/Instrumente:---:klassische chinesische Griffbrettzither:古琴:gǔqín:0:---:---
+Musik/Instrumente:---:Xun:埙:xūn:0:---:---
+Moebel:---:der Schrank:柜子:guìzi:0:---:---
+Familie:NPC08Z:Großvater (vaeterlicherseits):爷爷/祖父:yéye/zǔfù:0:---:---
+Familie:NPC08Z:Großvater (muetterlicherseits):老爷/外公/外祖父:lǎoyé/wàigōng/wàizǔfù:0:---:---
+Familie:NPC03:Großmutter (muetterlicherseits)/Oma (muetterlicherseits):外婆:wàipó:2:---:---
+Familie:NPC03:Großmutter (vaeterlicherseits)/Oma (vaeterlicherseits):奶奶:nǎinai:0:---:---
+Laender:---:Spanien:西班牙:xībānyá:0:---:---
+Koerper:NPC12:der Kopf:头:tóu:2:---:---
+Koerper:---:der Hals:颈:jǐng:0:---:---
+Koerper:---:die Brust:臆/胸:yì/xiōng:0:---:---
+Koerper:---:der Bauch:腹:fù:0:---:---
+Koerper:---:die Huefte:髋:kuān:0:---:---
+Koerper:---:die Taille:腰:yāo:0:---:---
+Koerper:---:das Schienbein:胫骨:jìnggǔ:0:---:---
+Koerper:---:das Bein:腿:tuǐ:0:---:---
+Koerper:---:der Unterarm:小臂:xiǎobì:0:---:---
+Koerper:---:der Oberschenkel:大腿:dàtuǐ:0:---:---
+Koerper:---:der Fuß:脚:jiǎo:0:---:---
+Koerper:---:die Schulter:肩:jiān:0:---:---
+Koerper:---:der Arm:手臂:shǒubì:0:---:---
+Koerper:---:der Ellenbogen:肘:zhǒu:0:---:---
+Koerper:---:das Handgelenk:手腕:shǒuwàn:0:---:---
+Koerper:---:die Hand:手:shǒu:0:---:---
+Koerper:---:der Fußknoechel:脚踝:jiǎohuái:0:---:---
+Koerper:---:die Ferse:脚跟:jiǎogēn:0:---:---
+Koerper:---:die Wade:腿肚子:tuǐdùzi:0:---:---
+Koerper:---:das Gesaeß:臀:tún:0:---:---
+Koerper:---:die Achselhoehle:腋窝:yèwō:0:---:---
+Koerper:---:der Ruecken:脊背:jǐbèi:0:---:---
+Koerper:---:der Nacken:后颈:hòujǐng:0:---:---
+Koerper:---:der Zeh/die Zehe:脚趾:jiǎozhǐ:0:---:---
+Koerper:---:der Finger:手指:shǒuzhǐ:0:---:---
+Stimmung:NPC09:gluecklich/vergnuegt/froehlich:快乐:kuàilè:2:---:---
+Verkehr:---:das Fahrrad:脚踏车:jiǎotàchē:0:---:---
+Verkehr:---:die Straßenbahn:有轨电车:yǒuguǐdiànchē:0:---:---
+Verkehr:---:das Motorrad:摩托车:mótuōchē:0:---:---
+Verkehr:---:der Bus:公共汽车:gōnggòngqìchē:0:---:---
+Sport:---:das TaeKwonDo:跆拳道:táiquándào:0:---:---
+Getraenke:---:die Fanta:芬达:fēndá:0:---:---
+Richtung:---:der Norden:北:běi:0:---:---
+Richtung:---:der Osten:东:dōng:0:---:---
+Richtung:---:der Sueden:南:nán:0:---:---
+Richtung:NPC12:der Westen/westlich:西:xī:2:---:---
+Zeit/Wochentage:---:Montag:星期一/周一:xīngqīyī/zhōuyī:0:---:---
+Zeit/Wochentage:---:Dienstag:星期二/周二:xīngqīèr/zhōuèr:0:---:---
+Zeit/Wochentage:---:Mittwoch:星期三/周三:xīngqīsān/zhōusān:0:---:---
+Zeit/Wochentage:---:Donnerstag:星期四/周四:xīngqīsì/zhōusì:0:---:---
+Zeit/Wochentage:---:Freitag:星期五/周五:xīngqīwǔ/zhōuwǔ:0:---:---
+Zeit/Wochentage:---:Samstag:星期六/周六:xīngqīliù/zhōuliù:0:---:---
+Farben:---:Gelb:黄色:huángsè:0:---:---
+Floskeln:---:gern geschehen/keine Ursache:不客气:búkèqi:0:---:---
+Floskeln:---:Nichts zu danken!/Seien Sie nicht so foermlich!:别客气:biékèqi:0:---:---
+---:---:die Angelegenheit/die Sache (immateriell)/der Anlass:事情:shìqíng:0:---:---
+---:---:auf diese Weise/auf diese Art/so:这样:zhèyàng:0:---:---
+---:---:auf jene Art/auf jene Weise/so:那样:nàyàng:0:---:---
+---:---:der Eingang/das Tor:门口:ménkǒu:0:---:---
+---:---:deshalb/also/daher:所以:suǒyǐ:0:---:---
+---:---:dann/danach/nachher:然后:ránhòu:0:---:---
+---:---:weil:因为:yīnwèi:0:---:---
+---:---:falls/wenn:如果:rúguǒ:0:---:---
+---:---:aber:不过:búguò:0:---:---
+---:---:aber:但:dàn:0:---:---
+Grammatik/Fragepartikel:NPC11:warum:为什么:wèishénme:2:---:---
+---:---:deshalb/deswegen:之所以:zhīsuǒyǐ:0:---:---
+Koerper/Gesicht:---:die Haare:头发:tóufà:0:---:---
+Koerper/Gesicht:---:die Haut:皮肤:pífū:0:---:---
+Koerper/Gesicht:---:die Augenbraue:眉毛:méimáo:0:---:---
+Koerper/Gesicht:---:die Wimper:睫毛:jiémáo:0:---:---
+Koerper/Gesicht:---:das Ohr:耳朵:ěrduo:0:---:---
+Koerper/Gesicht:---:die Nase:鼻子:bízi:0:---:---
+Koerper/Gesicht:---:die Lippe:唇:chún:0:---:---
+Koerper/Gesicht:---:das Kinn:下巴:xiàba:0:---:---
+Koerper/Gesicht:---:der Mund:嘴:zuǐ:0:---:---
+Koerper/Gesicht:---:die Wange:脸颊:liǎnjiá:0:---:---
+Koerper/Gesicht:---:die Schlaefe:太阳穴:tàiyángxué:0:---:---
+Koerper/Gesicht:---:die Stirn:前额:qián'é:0:---:---
+Koerper/Gesicht:---:das Auge:眼睛:yǎnjing:0:---:---
+Koerper/Gesicht:---:das Gesicht:面部:miànbù:0:---:---
+Staedte:---:Chengdu:成都市:chéngdūshì:0:---:---
+Zeit:---:neulich:最近:zuìjìn:0:---:---
+Laender:---:Peru:秘鲁:bìlǔ:0:---:---
+Tiere:---:die Katze:猫:māo:0:---:---
+Tiere:NPC08:der Hund:狗:gǒu:0:---:---
+Tiere:---:der Panda:熊猫:xióngmāo:0:---:---
+Tiere:---:der rote Panda/der kleine Panda:小熊猫:xiǎoxióngmāo:0:---:---
+---:---:der Eingang:人口:rénkǒu:0:---:---
+Sport:NPC12:trainieren:锻炼:duànliàn:0:---:---
+Sport:---:das Training:训练:xùnliàn:0:---:---
+Tiere:---:der Drache:龙:lóng:0:---:---
+Getraenke:---:der Wodka:伏特加:fútèjiā:0:---:---
+Geburtstag:---:Alles Gute zum Geburtstag!/Herzlichen Glueckwunsch zum Geburtstag!:生日快乐:shēngrìkuàilè:0:---:---
+Geburtstag:---:Geburtstag feiern:过生日:guòshēngrì:0:---:---
+---:---:schon/bereits:就:jiù:0:---:---
+Floskeln:---:lange nicht mehr gesehen:好久不见了:hǎo jiǔ bù jiàn le:0:---:---
+Floskeln:---:Wie ist es dir in letzter Zeit ergangen?:你近来好吗？:Nǐ zuìjìn hǎo ma?:0:---:---
+Floskeln:---:Ich wuensche dir ein schoenes Wochenende.:祝你周末快乐.:Zhù nǐ zhōu mò kuài le.:0:---:---
+Floskeln:---:Kannst du mir deine Telefonnummer geben?:你能把你的电话号码告诉我吗？:Nǐ néng bǎ nǐ de diànhuà hàomǎ gàosǔ wǒ ma?:0:---:---
+Floskeln:---:Wie ist deine Telefonnummer?:你的电话号码是多少？:Nǐ de diànhuà hàomǎ shì duōshao?:0:---:---
+Floskeln:---:Ich rufe dich spaeter an.:以后给你打电话吧？:Yǐhòu gěi nǐ dǎ diànhuà ba.:0:---:---
+Floskeln:---:das heißt/das bedeutet:就是说:jiù shì shuō:0:---:---
+Floskeln:---:Ich spreche nur ein bisschen Chinesisch.:我只说一点儿汉语？:Wǒ zhǐ shuō yìdiǎnr hànyǔ.:0:---:---
+Floskeln:---:Alles wird gut.:一切都会好起来的:Yī qiē dōu huì hǎo qǐ lái de.:0:---:---
+Floskeln:---:Wie heißt das auf Chinesisch?:这个，中文叫什么？:Zhè ge, zhōngwén jiào shénme?:0:---:---
+Floskeln:---:Ich weiß nicht, wie ich es in Chinesisch sagen kann.:我不知道用汉语怎么说。:Wǒ bù zhīdao yòng hànyǔ zěnme shuō.:0:---:---
+Floskeln:---:Nochmals vielen Dank fuer eure Hilfe.:再次感谢你们的帮助。:Zàicì gǎnxiè nǐmen de bāngzhu.:0:---:---
+Floskeln:---:Wiederholen Sie bitte!:你在说一遍巴？:Nǐ zài shuō yíbiàn ba!:0:---:---
+Floskeln:---:leider/bedauerlicherweise/es tut mir leid:很抱歉:hěnbàoqiàn:0:---:---
+Floskeln:---:Heute ist es im Vergleich zu Gestern sehr kt.:今天比昨天更冷。:Jīntiān bǐ zuótiān gèng lěng.:0:---:---
+Floskeln:---:Koennen Sie bitte etwas langsamer sprechen?:你能说慢一点儿吗？:Nǐ néng shuō màn yìdiǎr ma?:0:---:---
+Floskeln:---:Ich bin Deutscher.:我是德国人。:Wǒ shì déguó rén.:0:---:---
+Floskeln:---:Ich lerne fast jeden Tag Chinesisch.:我差不多每天都学习汉语。:Wǒ chà bù duō měi tiān dōu xué xi hànyǔ.:0:---:---
+Floskeln:---:Mir ist nicht klar was du meinst.:我不明白你的意思。:Wǒ bù míngbai nǐ de yìsi.:0:---:---
+Floskeln:---:Das ist der die das groeßte ... Berlins.:这是在柏林的最大的。。。。:Zhè shì zài bólín de zuì dà de ....:0:---:---
+Floskeln:---:Rede keinen Unsinn!:别胡说了！:Bié hú shuō le.:0:---:---
+Floskeln:---:Bitte grueße sie von mir.:代我向她问好。:Dài wǒ xiàng tā wèn hǎo.:0:---:---
+Floskeln:---:Wie spaet ist es?:现在几点了？:Xiānzài jǐ diān le?:0:---:---
+Floskeln:---:Vielleicht habe ich einen Fehler gemacht.:也许我搞错了。:Yěxǔ wǒ gǎo cuò le.:0:---:---
+Floskeln:---:Ah, jetzt faellt es mir wieder ein!:啊，我想起来了！:À, wǒ xiǎng qǐ lái le!:0:---:---
+Floskeln:---:Ich denke darueber nach.:我考虑一下。:Wǒ kǎo lǜ yī xià.:0:---:---
+Floskeln:---:Pass auf dich auf!:照顾自己！:Zhào gu zì jǐ!:0:---:---
+Floskeln:---:Ich moechte mich mit dir unterhalten./Ich moechte mit dir plaudern.:我想找你聊聊。:Wǒ xiǎn zhǎo nǐ liáo liao.:0:---:---
+Floskeln:---:Was ist der Unterschied?:有什么不一样的？:Yǒu shén me bù yī yàng de?:0:---:---
+---:---:vielleicht:也许:yěxǔ:0:---:---
+Studium:---:das Auslandssemester/das Semester im Ausland studieren:在海外学习的学期:zàihǎiwàixuéxídexuéqī:0:---:---
+Essen:---:der Reis:米:mǐ:0:---:---
+---:---:warten auf/warten:等待:děngdài:0:---:---
+---:---:die Kalkulation/die Berechnung/rechnen/zaehlen:计算:jìsuàn:0:---:---
+Fragepartikel:---:wie:怎样:zěnyàng:0:---:---
+---:---:das Thema/der Titel:题:tí:0:---:---
+ZEW:---:die Handlungen/die Ereignisse/die Gelegenheiten:次:cì:0:---:---
+---:---:lesen/laut lesen:读:dú:0:---:---
+Anzahl:---:x-mal/x-fach:倍:bèi:0:---:---
+Laengenangaben:---:der Zentimeter/Hunderstel:釐米:límǐ:0:---:---
+Begrueßung:---:Hallo:你好:nǐhǎo:0:---:---
+Floskeln:---:Gern geschehen.:不客气:búkèqi:0:---:---
+---:---:nein:不是:búshì:0:---:---
+Floskeln:---:Entschuldigen Sie bitte! (um auf sich aufmerksam zu machen):劳驾:láojià:0:---:---
+Floskeln:---:Entschuldigen Sie bitte! (Um an jemandem vorbei zu kommen):借光:jièguāng:0:---:---
+Floskeln:---:Einen Moment bitte.:等一下:děngyīxià:0:---:---
+Floskeln:---:Wo sind die Toiletten?:请问厕所在哪儿？:Qǐng wèn, cèsuǒ zài nǎr?:0:---:---
+---:---:besuchen:玩:wán:0:---:---
+Verstaendigung in China:---:Sprechen Sie Englisch?:你会说英语吗？:Nǐ huì shuō yīngwén ma?:0:---:---
+Verstaendigung in China:---:Spricht hier jemand Englisch?:有谁会说英语吗？:Yǒu shéi huì shuō yīngyǔ ma?:0:---:---
+Verstaendigung in China:---:Verstehen Sie?:您明白吗？:Nín míngbai ma?:0:---:---
+Verstaendigung in China:---:Ich verstehe nicht. (Nicht nur vom Hoeren sondern auch wenn man alles akustisch versteht):我不明白。:Wǒ bù míngbai.:0:---:---
+Verstaendigung in China:---:Ich spreche ein wenig.:我会说一点。:Wǒ huì shuō yī diǎn.:0:---:---
+Verstaendigung in China:---:Koennten Sie mir das bitte in Pinyin aufschreiben?:请用拼音写。:Qǐng yìng pīnyīn xiě.:0:---:---
+Verstaendigung in China:---:Koennten Sie mir das bitte (in chinesischen Schriftzeichen) aufschreiben?:请用中文写下来。:Qǐng yòng zhōngwén xiěxiàlái.:0:---:---
+Verstaendigung in China:---:Ich verstehe.:我明白。:Wǒ míngbai.:0:---:---
+Verstaendigung in China:---:Ich verstehe nicht. (Akustisch):我没听懂。:Wǒ méi tīngdǒng.:0:---:---
+Brief:---:Liebe(r)... (Anrede im Brief fuer Familie, Freunde usw.):亲爱的。。。:Qīn'àide:0:---:---
+Familie:---:Tante (Vaterlicherseit, juenger als der Vater):姑姑:gūgu:0:---:---
+Familie:---:Tante (Vaeterlicherseits, aelter als der Vater):姑妈:gūma:0:---:---
+Familie:---:Mann der Tante:姑爷:gūyé:0:---:---
+---:---:auf sich aufpassen/sich in acht nehmen:保重:bǎozhòng:0:---:---
+---:---:erwarten/hoffen:希望:xīwàng:0:---:---
+---:---:Chance/Gelegenheit:机会:jīhuì:0:---:---
+---:---:außerdem/zusaetzlich:另外:lìngwài:0:---:---
+Studium:---:Informatik (Studium):计算机专业:jìsuànjīzhuānyè:0:---:---
+Studium:---:das Fach/die Fachrichtung:专业:zhuānyè:0:---:---
+Studium:---:das Semester:学期:xuéqī:0:---:---
+Kommunikationsmittel:LSC01:die eMail:电子邮件:diànzǐyóujiàn:0:---:---
+Schule:---:die Schule:学校:xuéxiào:0:---:---
+Ortsangaben:---:der Ort:地点:dìdiǎn:0:---:---
+Ortsangaben:---:die Straße:街:jiē:0:---:---
+Sprachen:NPC04:die Sprache:语言:yǔyán:2:---:---
+Verben:---:entgegennehmen/annehmen/empfangen:收:shōu:0:---:---
+Feste:NPC14Z:das Fruehlingsfest:春节:chūnjié:1:---:---
+Familie:---:die Ehefrau:妻子:qīzi:0:---:---
+Verben:---:rauchen:抽烟:chōuyān:0:---:---
+Verben:---:machen/tun:做:zuò:0:---:---
+Wetter:---:die Sonne:太阳:tàiyáng:0:---:---
+Verben:---:einkaufen:买东西:mǎidōngxi:0:---:---
+Anzahl:---:x-mal/x-fach:次:cì:0:---:---
+---:---:das Interesse:兴趣:xìngqù:0:---:---
+ZEW:---:das Kilogramm:公斤:gōngjīn:0:---:---
+---:---:schon/bereits:已经:yǐjīng:0:---:---
+---:NPC10:das Geld:钱:qián:2:---:---
+---:NPC10:Yuan (Umgangssprache)(chinesische Waehrung)/(Waehrungseinheit):块:kuài:2:---:---
+Farben:---:die Farbe:颜色:yánsè:0:---:---
+Kleidung:---:die Kleidung:衣服:yīfu:0:---:---
+---:---:kurz:短:duǎn:0:---:---
+Gebaeude:---:das Kaufhaus:商场:shāngchǎng:0:---:---
+Kleidung:---:der Schuh:鞋:xié:0:---:---
+Zeit:---:vorgestern:前天:qiántiān:0:---:---
+Zeit:---:uebermorgen:后天:hòutiān:0:---:---
+---:LSC01:die Technik:技术:jìshù:0:---:---
+Kommunikationsmittel:LSC01:das Mobiltelefon/das Handy:手机:shǒujī:0:---:---
+---:LSC01:verehrt/teuer:贵:guì:0:---:---
+Faecher:NPC07Z:die Mathematik:数学:shùxué:2:---:---
+Schule/Studium/lernen/Personen:---:der Klassenkamerad/der Mitschueler:同学:tóngxué:0:---:---
+Studium:---:die Universitaet/die Uni:大学:dàxué:2:---:---
+Namen:NPC01:(Name):陆雨平:Lù Yǔpíng:0:---:---
+Namen:NPC01:(Name):力波:Lìbō:0:---:---
+---:NPC01:auch:也:yě:2:---:---
+---:NPC01:(Name):林娜:Lín Nà:2:---:---
+Namen:NPC02:(Nachname):丁:Dīng:2:---:---
+Namen:NPC03/NPC11:(Nachname):陈:Chén:2:---:---
+Berufe:NPC04:der Journalist:记者:jìzhě:0:---:---
+Namen:NPC04:(Nachname):杨:Yáng:2:---:---
+Namen:NPC04:(Name):马大为:Mǎ Dàwéi:0:---:---
+Laender:NPC04:Kanada:加拿大:Jiānádà:0:---:---
+Laender:---:Russland(alter Begriff):俄国:éguó:2:---:---
+Berufe:---:Koch:厨师:chúshī:0:---:---
+Berufe:---:Sekretaer:秘书:mìshū:0:---:---
+Berufe:---:Gaertner:园丁:yuándīng:0:---:---
+Berufe:NPC11:Fahrer:司机:sījī:0:---:---
+Berufe:---:Bankhalter/Banker:银行家:yínhángjiā:0:---:---
+Berufe:---:Psychologe:心理学家:xīnlǐxuéjiā:0:---:---
+Berufe:---:Wissenschaftler:科学家:kēxuéjiā:0:---:---
+Berufe:---:Polizist:警察:jǐngchá:0:---:---
+Berufe:---:Mechaniker:---:jījièshī:0:---:---
+Berufe:---:Schreiner:木匠:mùjiàng:0:---:---
+Berufe:---:Ingenieur:工程师:gōngchéngshī:0:---:---
+Berufe:---:Maler:画家:huàjiā:0:---:---
+Berufe:---:Kindergaertner:幼儿园老师:yòu'éryuánlǎoshī:0:---:---
+Berufe:---:Feuerwehrmann:消防队员:xiāofángduìyuán:0:---:---
+Berufe:---:Schriftsteller:作家:zuòjiā:0:---:---
+Berufe:---:Angestellter:职员:zhíyuán:0:---:---
+Berufe:---:Beamter:官员:guānyuán:0:---:---
+Raeume:NPC05:der Speisesaal/Restaurant:餐厅:cāntīng:0:---:---
+Namen:NPC05:(Name):王小云:Wáng Xiǎoyún:2:---:---
+---:NPC05:nicht brauchen:不用:búyòng:2:---:---
+Namen:NPC05:(Name):宋华:Sòng Huá:0:---:---
+Wetter:NPC06:Wetter:天气:tiānqì:2:---:---
+Zeit:NPC06:Zeit:时间:shíjiān:2:---:---
+ZEW:NPC06:...mal:遍:biàn:2:---:---
+---:NPC06/NPC11Z:Ball spielen:打球:dǎ qiú:2:---:---
+---:NPC06:spielen/schlagen:打:dǎ:2:---:---
+---:NPC06:Ball/Kugel:球:qiú:0:---:---
+Floskeln:NPC06:bedauern/bedauerlicherweise/leider:抱歉:bàoqiàn:0:---:---
+---:NPC06:befuerchten/vielleicht:恐怕:kǒngpà:0:---:---
+---:NPC06:in Ordnung sein/es geht/es ist moeglich:行:xíng:2:---:---
+Schule/Studium:NPC07:mit der Schule beginnen/mit dem Semester beginnen:开学:kāixué:2:---:---
+---:NPC07:hoch/groß:高:gāo:0:---:---
+---:NPC07:Visitenkarte:名片:míngpiàn:0:---:---
+---:NPC07:(Nachname):张:Zhāng:0:---:---
+Schule/Studium:NPC07:Fachgebiet/Studienrichtung:专业:zhuānyè:0:---:---
+---:NPC07:bildende Kunst:美术:měishù:0:---:---
+Schule/Studium:NPC07Z:Geschichte:历史:lìshǐ:0:---:---
+Schule/Studium:NPC07Z:die Philosophie:哲学:zhéxué:0:---:---
+---:NPC07Z:die Wirtschaft:经济:jīngjì:0:---:---
+Schule/Studium:NPC07Z:die Physik:物理:wùlǐ:0:---:---
+Schule/Studium:NPC07Z:die Chemie:化学:huàxué:0:---:---
+---:NPC07Z:die Erziehung:教育:jiàoyù:0:---:---
+Schule/Studium:NPC07Z:etwas als Wahlfach studieren:选修:xuǎnxiū:0:---:---
+ZEW:NPC08:(ZEW fuer Familienmitglieder):口:kǒu:0:---:---
+---:NPC08:insgesamt:一共:yígòng:0:---:---
+ZEW:NPC08:(ZEW fuer flache Gegenstaende):张:zhāng:0:---:---
+---:NPC08:selbstverstaendlich/natuerlich:当然:dāngrán:0:---:---
+---:NPC08:niedlich/liebenswert:可爱:kě'ài:0:---:---
+---:NPC08:lieben/gern haben:爱:ài:0:---:---
+---:NPC08:tun:做:zuò:0:---:---
+Namen:NPC08:(Name):贝贝:bèibei:0:---:---
+---:NPC08:außen/außerhalb:外:wài:0:---:---
+---:NPC08:Sprache:语:yǔ:0:---:---
+Laender:NPC08:Ausland:外国:wàiguó:0:---:---
+---:NPC08:hundert:百:bǎi:0:---:---
+---:NPC08Z:Computer:电脑:diànnǎo:0:---:---
+---:NPC08Z:Dekan:系主任:xìzhǔrèn:0:---:---
+Berufe:NPC08Z:wissenschaftlicher Assistent:助教:zhùjiào:0:---:---
+Berufe:NPC08Z:Anwalt/Rechtsanwalt:律师:lǜshī:0:---:---
+---:NPC09:unten/naechst-:下:xià:2:---:---
+---:NPC09/NPC14:geboren werden/fremd/unbekannt:生:shēng:2:---:---
+---:NPC09:wie alt:多大:duōdà:2:---:---
+---:NPC09:geboren werden:出生:chūshēng:2:---:---
+---:NPC09:herauskommen/rausgehen:出:chū:2:---:---
+---:NPC09:im Tierkreiszeichen ... geboren sein:属:shǔ:0:---:---
+---:NPC09:das Treffen/die Party/die Feier:聚会:jùhuì:0:---:---
+---:NPC09:Kuchen:蛋糕:dàngāo:2:---:---
+---:NPC09:das Ei:蛋:dàn:2:---:---
+---:NPC09:Kuchen:糕:gāo:2:---:---
+Getraenke:NPC09:Rotwein:红葡萄酒:hóngpútaojiǔ:0:---:---
+Farben:NPC09:rot:红:hóng:2:---:---
+Getraenke:NPC09:Alkohol/Wein/Schnapps:酒:jiǔ:2:---:---
+Essen:NPC09:gebratene Ente:烤鸭:kǎoyā:0:---:---
+Tiere:NPC09:Ente:鸭:yā:0:---:---
+---:NPC09:wieder:再:zài:2:---:---
+Essen:NPC09:Geburtstagsnudeln:寿面:shòumiàn:0:---:---
+Essen:NPC09:Nudeln:面:miàn:0:---:---
+Essen:NPC09Z:die chinesische Kueche:中餐:zhōngcān:0:---:---
+Getraenke:NPC09Z:die Sprite:雪碧:xuěbì:0:---:---
+Essen:NPC09Z:der Hamburger:汉堡:hànbǎo:0:---:---
+Essen:NPC09Z:der Hotdog:热狗:règǒu:0:---:---
+Essen:NPC09Z:der gekochte Reis:米饭:mǐfàn:0:---:---
+Personendaten:ShuoHanYu:eMail-Adresse:邮件地址:yóujiàndìzhǐ:0:---:---
+---:ShuoHanYu:weitergeben/weiterleiten:传给:chuán‘gěi:0:---:---
+---:ShuoHanYu:alle/saemtlich:所有:suǒyǒu:0:---:---
+---:ShuoHanYu:einige:一些:yìxiē:0:---:---
+---:ShuoHanYu:fotografieren/Film drehen:拍摄:pāishè:0:---:---
+---:ShuoHanYu:bedauernswert:遗憾:yíhàn:0:---:---
+---:ShuoHanYu:Es ist sehr bedauernswert, dass ...:非常 遗憾 的是 ...:fēicháng yíhàn de shì ...:0:---:---
+---:ShuoHanYu:Gruppenfoto:合影:héyǐng:0:---:---
+ZEW:ShuoHanYu/NPC15:(ZEW fuer Handlungen):次:cì:0:---:---
+---:ShuoHanYu:sich treffen/sich sehen/sich wiedertreffen:见面:jiànmiàn:0:---:---
+---:ShuoHanYu:Gruppe (Leistungssport):队:duì:0:---:---
+Laender:---:Indonesien:印度尼西亚:yìndùníxīyá:0:---:---
+Laender:---:Russland:俄罗斯:éluósī:0:---:---
+---:ShuoHanYu:Gruppe:小组:xiǎozǔ:0:---:---
+---:ShuoHanYu:Programm/Verantstaltungsprogramm/Sendung:节目:jiémù:0:---:---
+---:ShuoHanYu:In unserer Gruppe gibt es auch Chinesen.:我们小组里也有中国人。:Wǒmen xiǎozǔlǐ yěyǒu zhōngguórén.:0:---:---
+---:NPC10:CD:光盘:guāngpán:0:---:---
+---:NPC10:Markthalle/Kaufhaus:商场:shāngchǎng:2:---:---
+---:NPC10:Handel/Geschaeft:商:shāng:2:---:---
+---:NPC10:oft/haeufig:常常:chǎngchǎng:2:---:---
+---:NPC10:(Titel eines chinesischen Violinkonzert)):梁祝:Liáng Zhù:0:---:---
+---:NPC10:Meister/Chef (als Anrede):师傅:shīfu:2:---:---
+---:NPC10:Apfel mit Bananengeschmack:香蕉苹果:xiāngjiāopíngguǒ:2:---:---
+Fragewoerter:NPC10:wie/auf welche Weise:怎么:zěnme:2:---:---
+---:NPC10:einfach:容易:róngyì:2:---:---
+ZEW:NPC10:Pfund/500g (Gewichtseinheit):斤:jīn:2:---:---
+ZEW:NPC10:ein Zehntel Yuan (Waehrungseinheit, umgangssprachlich):毛:máo:2:---:---
+ZEW:NPC10:ein Hundertstel Yuan (Waehrungseinheit, umgangssprachlich):分:fēn:2:---:---
+---:NPC10Z:Yuan (Waehrung):元:yuán:2:---:---
+ZEW:NPC10Z:(ZEW fuer laengliche Gegenstaende wie Stifte):支:zhī:0:---:---
+ZEW:NPC10Z:(ZEW fuer Zeitungen oder Zeitschriften):份:fèn:2:---:---
+---:NPC10Z:Verkaeufer:售货员:shòuhuòyuán:1:---:---
+---:NPC10Z:billig/preisguenstig:便宜:piányi:0:---:---
+---:NPC10Z:die Sporthalle:体育馆:tǐyùguǎn:0:---:---
+---:NPC10Z:verkaufen:卖:mài:2:---:---
+---:---:Schriftzeichen mit mehreren Aussprachen:多音字:duōyīnzì:0:---:---
+Zeitangabe:---:vorheriges Wochenende:上周末:shàngzhōumò:0:---:---
+Zeitangabe:---:dieses Wochenende:这个周末:zhègezhōumò:0:---:---
+Zeitangabe:---:naechstes Wochenende:下周末:xiàzhōumò:0:---:---
+---:NPC11:koennen/faehig sein/eine Faehigkeit erlangt haben:会:huì:2:---:---
+---:NPC11:Zahl/Anzahl:数:shù:2:---:---
+---:NPC11:Tschueß/Bye bye:拜拜:báibái:1:---:---
+---:NPC11/NPC15:sollen/an der Reihe sein etwas zu tun:该:gāi:2:---:---
+---:NPC11Z/NPC13:essen:吃饭:chīfàn:2:---:---
+---:NPC11Z:ein Lied singen:唱歌:chànggē:0:---:---
+---:NPC11Z:mit dem Taxi fahren:打的:dǎdī:2:---:---
+---:---:lange (fuer Zeitraeume):很久:hěnjiǔ:0:---:---
+Verabschiedung:---:Bis bald!/Auf Wiedersehen!:回头见:huítóujiàn:0:---:---
+Wuensche:---:Gute Besserung!:早日康复:zǎorìkāngfù:0:---:---
+Gesundheit:NPC12:am ganzen Koerper/ganzer Koerper:全身:quánshēn:2:---:---
+---:NPC12:ganz/gesamt/vollstaendig:全:quán:2:---:---
+Gesundheit:NPC12:Koerper:身:shēn:2:---:---
+Gesundheit:NPC12:behaglich/angenehm/sich wohl fuehlen:舒服:shūfu:0:---:---
+Gesundheit:NPC12:schmerzhaft/etwas schmerzt:疼:téng:0:---:---
+Koerper:NPC12:Kehle/Stimme:嗓子:sǎngzi:0:---:---
+Gesundheit:NPC12:zum Arzt gehen:看病:kànbìng:2:---:---
+Wetter:NPC12:kalt:冷:lěng:0:---:---
+Kleidung:NPC12:Kleidung:衣服:yīfu:0:---:---
+---:NPC12:sich anmelden (im Krankenhaus eine Nummer ziehen)/etwas registrieren lassen:挂号:guàhào:0:---:---
+Gesundheit:NPC12:sich entzuenden/entzuendet sein:发炎:fāyán:0:---:---
+Gesundheit:NPC12:Fieber haben:发烧:fāshāo:0:---:---
+---:NPC12:verbrennen:烧:shāo:0:---:---
+Gesundheit:NPC12:sich erkaelten/die Erklaeltung:感冒:gǎnmào:0:---:---
+Gesundheit:NPC12:im Krankenhaus liegen:住院:zhùyuàn:2:---:---
+Gesundheit:NPC12:die Medizin:药:yào:2:---:---
+---:NPC12:etwas tun wollen/bereit sein/gewillt sein:愿意:yuànyì:0:---:---
+Gesundheit:NPC12:traditionelle chinesische Medizin:中药:zhōngyào:2:---:---
+Gesundheit:NPC12:westliche Medizin:西药:xīyào:2:---:---
+Koerper:NPC12Z:der Zahn:牙:yá:0:---:---
+Koerper:NPC12Z:der Bauch/der Magen:肚子:dùzi:0:---:---
+Gesundheit:NPC12Z:jemanden operieren:开刀:kāidāo:0:---:---
+---:NPC12Z:im Labor untersuchen:化验:huàyàn:0:---:---
+Koerper:NPC12Z:das Blut:血:xiě:0:---:---
+---:NPC12Z:Stuhlgang:大便:dàbiàn:0:---:---
+---:NPC12Z:Urin:小便:xiǎobiàn:0:---:---
+---:NPC12Z:jemandem eine Spritze geben:打针:dǎzhēn:0:---:---
+Temperatur:NPC12Z:heiß:热:rè:0:---:---
+Temperatur:NPC12Z:(angenehm) kuehl:凉快:liángkuai:0:---:---
+---:NPC12Z:das Leben:生活:shēnghuó:0:---:---
+Sprachen:NPC12Z:Englisch (Schriftsprache):英文:yīngwén:2:---:---
+---:---:tolerierbar/fair/so lala/:马马虎虎:mamahǔhǔ:0:---:---
+---:PC23/NPC13:anrufen/telefonieren:打电话:dǎdiànhuà:2:---:---
+---:---:hauptsaechlich/wesentlich:主要:zhǔyào:0:---:---
+Gebaeude:---:Hotel:旅馆:lǚguǎn:0:---:---
+Gebaeude:---:Amtsgericht:裁判司署:cáipànsīshǔ:0:---:---
+Studium:---:Bauingenieurswesen:建筑工程:jiànzhúgōngchéng:0:---:---
+---:---:andere Menschen:别人:biéren:0:---:---
+---:---:sich wuenschen:希望:xīwàng:0:---:---
+Studium:---:Informatik:信息学:xìnxīxué:0:---:---
+---:NPC13:von etwas gehoert haben/gesprochenes hoeren:听说:tīngshuō:2:---:---
+---:NPC13:spazieren gehen:散步:sànbù:0:---:---
+---:NPC13:Tritt/Schritt:步:bù:0:---:---
+---:NPC13:Elektrizitaet/Elektro-:电:diàn:0:---:---
+---:NPC13:Schatten:影:yǐng:0:---:---
+---:NPC13:mieten/vermieten:租:zū:0:---:---
+ZEW:NPC13:(ZEW fuer Raeume):间:jiān:2:---:---
+---:NPC13:die Miete:房租:fángzū:0:---:---
+---:NPC13:vielleicht/moeglicherweise:可能:kěnéng:0:---:---
+---:NPC13:(Name einer Immobilienfirma):家美:jiāměi:0:---:---
+---:NPC13Z:angenehm/bequem:方便:fāngbiàn:0:---:---
+---:NPC13Z:zufaellig/ausgerechnet:巧:qiǎo:0:---:---
+---:NPC13Z:passend/geeignet:合适:héshì:0:---:---
+---:NPC13Z:eifrig/bereitwillig/hilfsbereit:热心:rèxīn:0:---:---
+---:NPC13Z:beinhalten/umfassen:包括:bāokuò:0:---:---
+---:NPC13Z:Strom- und Wasserkosten:水电费:shuǐdiànfèi:0:---:---
+---:NPC13Z:Antwortschreiben/einen Brief beantworten:回信:huíxìn:0:---:---
+Zeitangaben:NPC14:Mittag/mittags:中午:zhōngwǔ:2:---:---
+Zeitangaben:NPC14:gerade (eben)/soeben/vorhin:刚才:gāngcái:0:---:---
+---:NPC14:etwas mit der Post verschicken:邮:yóu:0:---:---
+---:NPC14:Amt:局:jú:0:---:---
+---:NPC14:verschicken/senden:寄:jì:0:---:---
+---:NPC14:sauber machen/putzen:打扫:dǎsǎo:0:---:---
+---:NPC14:fegen/kehren:扫:sǎo:0:---:---
+---:NPC14:schmutzig/dreckig:脏:zāng:0:---:---
+---:NPC14:beschaemt/verlegen sein/sich genieren etwas zu tun:不好意思:bùhǎoyìsi:2:---:---
+---:NPC14:waschen:洗:xǐ:2:---:---
+---:NPC14:Mittelschule:中学:zhōngxué:2:---:---
+---:NPC14:jobben:打工:dǎgōng:2:---:---
+---:NPC14:Sueden:南方:nánfāng:0:---:---
+---:NPC14:das Gebaeude:楼:lóu:0:---:---
+---:NPC14:vorlesen:念:niàn:0:---:---
+---:NPC14:ueben/trainieren:练:liàn:0:---:---
+---:NPC14:Fest/Feiertag:节:jié:2:---:---
+---:NPC14:Weihnachten:圣诞:shèngdàn:0:---:---
+---:NPC14Z:durcheinander/unaufgeraeumt:乱:luàn:0:---:---
+---:NPC14Z:das Tagebuch:日记:rìjì:0:---:---
+---:NPC14Z:klar/heiter:晴:qíng:0:---:---
+---:NPC14Z:Paket:包裹:bāoguǒ:0:---:---
+---:NPC14Z:angenehme Ueberraschung:惊喜:jīngxǐ:0:---:---
+---:NPC14Z:der Weihnachtsmann:圣诞老人:shèngdànlǎorén:2:---:---
+---:NPC14Z:Neujahr:元旦:yuándàn:0:---:---
+---:NPC14Z:Thanksgiving Day (amerikanisches Erntedankfest):感恩节:gǎn'ēnjié:0:---:---
+---:NPC14Z:Ostern:复活节:fùhuójié:0:---:---
+Staedte:---:Potsdam:波茨坦:bōcítǎn:0:---:---
+---:---:einladen:邀请:yāoqǐng:0:---:---
+---:---:Artikel/Essay/Geschriebenes/Text:文章:wénzhāng:0:---:---
+---:---:Essay/Schreiben:作文:zuòwén:0:---:---
+Schule/Studium:---:Pruefung/Klausur:考试:kǎoshì:0:---:---
+---:---:Erfolg:成功:chénggōng:0:---:---
+---:---:der Nachbar:邻居:línjū:0:---:---
+---:---:nehmen/bekommen/auswaehlen/zuordnen:取:qǔ:0:---:---
+---:---:Wettbewerb/Turnier:竞技:jìngjì:0:---:---
+---:---:alles:一切:yīqiè:0:---:---
+Provinzen/China:---:Sichuan:四川:sìchuān:0:---:---
+---:NPC15:eine Reihe bilden/sich einreihen:排队:páiduì:0:---:---
+---:NPC15:anordnen/in Ordnung bringen:排:pái:0:---:---
+---:NPC15:eine Reihe von Leuten/eine Schlange von Leuten:队:duì:0:---:---
+---:NPC15:austauschen/wechseln:换:huàn:0:---:---
+Waehrungen:NPC15:Pfund Sterling (Waehrung):英镑:yīngbàng:0:---:---
+Waehrungen:NPC15:Renminbi/Waehrung der VR China:人民币:rénmínbì:0:---:---
+---:NPC15:Person/Volk:人民:rénmín:0:---:---
+---:NPC15:muessen/gezwungen sein:得:děi:0:---:---
+Zeitangaben:NPC15:gerade/nur vor Kurzem/gerade eben:刚:gāng:0:---:---
+Sehenswuerdigkeiten:NPC15:Terrakottaarmee:兵马俑:bīngmǎyǒng:0:---:---
+---:NPC15:Soldat/Kaempfer:兵:bīng:0:---:---
+Papierkram:NPC15:die Postkarte:明信片:míngxìnpiàn:0:---:---
+Berufe:NPC15:das Arbeitspersonal/der Stab:工作人员:gōngzuòrényuán:0:---:---
+Berufe:NPC15:das Personal/der Stab:人员:rényuán:0:---:---
+---:NPC15:Tausend:千:qiān:0:---:---
+---:NPC15:zaehlen:数:shǔ:0:---:---
+Orte:NPC15:(Name eines beruehmten kommerziellen Bereichs in Běijīng):王府井:wángfǔjǐng:0:---:---
+Orte:NPC15:(Name d. Hauptstadt d. Prov. Shaanxi):西安:xī'ān:0

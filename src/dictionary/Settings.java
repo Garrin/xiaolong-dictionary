@@ -24,6 +24,8 @@ public class Settings implements VocabularyLanguagesChangeListener {
 	public static boolean trainingOptions_firstToSecond;
 	public static boolean trainingOptions_secondToFirst;
 	public static boolean trainingOptions_phoneticScript_shown;
+	public static boolean trainingOptions_relevance_shown;
+	public static boolean trainingOptions_description_shown;
 	public static String trainingOptions_font;
 	public static final String TRAINING_OPTIONS_DEFAULT_FONT = "Dialog";
 	
@@ -37,6 +39,8 @@ public class Settings implements VocabularyLanguagesChangeListener {
 	public static boolean searchOptions_matchCaseActivated;
 	public static boolean searchOptions_chapterActivated;
 	public static boolean searchOptions_learnLevelActivated;
+	public static boolean searchOptions_relevanceActivated;
+	public static boolean searchOptions_descriptionActivated;
 	public static boolean searchOptions_exactMatchActivated;
 	public static boolean searchOptions_negateSearchActivated;
 
@@ -144,6 +148,10 @@ public class Settings implements VocabularyLanguagesChangeListener {
 			out.write(line);
 			line = "SEARCH_OPTION_LEARN_LEVEL_ACTIVATED=" + Boolean.toString(searchOptions_learnLevelActivated) + System.getProperty("line.separator");
 			out.write(line);
+			line = "SEARCH_OPTION_RELEVANCE_ACTIVATED=" + Boolean.toString(searchOptions_relevanceActivated) + System.getProperty("line.separator");
+			out.write(line);
+			line = "SEARCH_OPTION_DESCRIPTION_ACTIVATED=" + Boolean.toString(searchOptions_descriptionActivated) + System.getProperty("line.separator");
+			out.write(line);
 			line = "SEARCH_OPTION_MATCH_CASE_ACTIVATED=" + Boolean.toString(searchOptions_matchCaseActivated) + System.getProperty("line.separator");
 			out.write(line);
 			line = "SEARCH_OPTION_EXACT_MATCH_ACTIVATED=" + Boolean.toString(searchOptions_exactMatchActivated) + System.getProperty("line.separator");
@@ -179,6 +187,10 @@ public class Settings implements VocabularyLanguagesChangeListener {
 			line = "TRAINING_OPTIONS_SECOND_TO_FIRST=" + Boolean.toString(trainingOptions_secondToFirst) + System.getProperty("line.separator");
 			out.write(line);
 			line = "TRAINING_OPTIONS_PHONETIC_SCRIPT=" + Boolean.toString(trainingOptions_phoneticScript_shown) + System.getProperty("line.separator");
+			out.write(line);
+			line = "TRAINING_OPTIONS_RELEVANCE_SHOWN=" + Boolean.toString(trainingOptions_relevance_shown) + System.getProperty("line.separator");
+			out.write(line);
+			line = "TRAINING_OPTIONS_DESCRIPTION_SHOWN=" + Boolean.toString(trainingOptions_description_shown) + System.getProperty("line.separator");
 			out.write(line);
 			line = "TRAINING_OPTIONS_FONT=" + trainingOptions_font + System.getProperty("line.separator");
 			out.write(line);
@@ -221,6 +233,8 @@ public class Settings implements VocabularyLanguagesChangeListener {
 				line += entry.topicSelected + ":";
 				line += entry.chapterSelecter + ":";
 				line += entry.learnLevelSelected + ":";
+				line += entry.relevanceSelected + ":";
+				line += entry.descriptionSelected + ":";
 				line += entry.caseSensitiveSelected + ":";
 				line += entry.exactMatchSelected + ":";
 				line += entry.negateSearchSelected+ ":";
@@ -298,6 +312,12 @@ public class Settings implements VocabularyLanguagesChangeListener {
 					if(name.equals("SEARCH_OPTION_LEARN_LEVEL_ACTIVATED") && value.equals("true")) {
 						Settings.searchOptions_learnLevelActivated = true;
 					}
+					if(name.equals("SEARCH_OPTION_RELEVANCE_ACTIVATED") && value.equals("true")) {
+						Settings.searchOptions_relevanceActivated= true;
+					}
+					if(name.equals("SEARCH_OPTION_DESCRIPTION_ACTIVATED") && value.equals("true")) {
+						Settings.searchOptions_descriptionActivated = true;
+					}
 					if(name.equals("SEARCH_OPTION_MATCH_CASE_ACTIVATED") && value.equals("true")) {
 						Settings.searchOptions_matchCaseActivated = true;
 					}
@@ -351,6 +371,12 @@ public class Settings implements VocabularyLanguagesChangeListener {
 					}
 					if(name.equals("TRAINING_OPTIONS_PHONETIC_SCRIPT") && value.equals("true")) {
 						Settings.trainingOptions_phoneticScript_shown = true;
+					}
+					if(name.equals("TRAINING_OPTIONS_RELEVANCE_SHOWN") && value.equals("true")) {
+						Settings.trainingOptions_relevance_shown = true;
+					}
+					if(name.equals("TRAINING_OPTIONS_DESCRIPTION_SHOWN") && value.equals("true")) {
+						Settings.trainingOptions_description_shown = true;
 					}
 					if(name.equals("TRAINING_OPTIONS_FONT")) {
 						Settings.trainingOptions_font = value;
@@ -415,11 +441,7 @@ public class Settings implements VocabularyLanguagesChangeListener {
 	private void testSettings() {
 		System.out.println("windowWidth: " + Settings.WINDOW_WIDTH);
 		System.out.println("windowHeight: " + Settings.WINDOW_HEIGHT);
-		/*
-		System.out.println("firstLanguageColumnWidth: " + Settings.firstLanguageColumnWidth);
-		System.out.println("phoneticScriptColumnWidth: " + Settings.phoneticScriptColumnWidth);
-		System.out.println("secondLanguageColumnWidth: " + Settings.secondLanguageColumnWidth);
-		*/
+		
 		System.out.println("firstTimeRun: " + firstTimeRun);
 		
 		System.out.println("vocableOptions_translationSeperator: " + vocableOptions_translationsSeperator);
@@ -430,6 +452,8 @@ public class Settings implements VocabularyLanguagesChangeListener {
 		System.out.println("searchOptions_topicActivated: " + searchOptions_topicActivated);
 		System.out.println("searchOptions_chapterActivated: " + searchOptions_chapterActivated);
 		System.out.println("searchOptions_learnLevelActivated: " + searchOptions_learnLevelActivated);
+		System.out.println("searchOptions_relevanceActivated: " + searchOptions_relevanceActivated);
+		System.out.println("searchOptions_descriptionActivated: " + searchOptions_descriptionActivated);
 		System.out.println("searchOptions_matchCaseActivated: " + searchOptions_matchCaseActivated);
 		System.out.println("searchOptions_exactMatchActivated: " + searchOptions_exactMatchActivated);
 		System.out.println("searchOptions_negateSearchActivated: " + searchOptions_negateSearchActivated);
@@ -446,6 +470,8 @@ public class Settings implements VocabularyLanguagesChangeListener {
 		System.out.println("trainingOptions_firstToSecond: " + trainingOptions_firstToSecond);
 		System.out.println("trainingOptions_phoneticScript_shown: " + trainingOptions_phoneticScript_shown);
 		System.out.println("trainingOptions_secondToFirst: " + trainingOptions_secondToFirst);
+		System.out.println("trainingOptions_relevance_shown: " + trainingOptions_relevance_shown);
+		System.out.println("trainingOptions_description_shown: " + trainingOptions_description_shown);
 		System.out.println("trainingOptions_font: " + trainingOptions_font);
 		
 		System.out.println("bigCharacterBoxOptions_font: " + bigCharacterBoxOptions_font);

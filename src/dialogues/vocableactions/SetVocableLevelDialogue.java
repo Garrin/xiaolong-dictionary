@@ -116,7 +116,6 @@ public class SetVocableLevelDialogue extends JDialog {
 	private void setLevelButtonAction() {
 		if(!learnLevelTextField.getText().contains(":")) {
 			VocableManager.setLevelForVocables(VocableManager.getLastSearchResult(), learnLevelTextField.getText());
-			//Dictionary.vocabularyIsSavedToFile = false;
 			this.dispose();
 		} else {
 			JOptionPane.showMessageDialog(this, "Colons (:) are used to seperate the parts of a vocable. You cannot use them in parts of a vocable.", "Usage of Colons", JOptionPane.OK_OPTION);

@@ -25,6 +25,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import listener.settings.VocabularyLanguagesChangeListener;
 import manager.VocableManager;
@@ -43,18 +45,25 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 	private static AddVocableFrame instance = null;
 	
 	private JPanel inputPanel = new JPanel(new MigLayout("wrap 2", "[right][left]"));
+	
 	private JLabel firstLanguageLabel = new JLabel(Settings.languageOptions_firstLanguageName);
 	private JLabel phoneticScriptLabel = new JLabel(Settings.languageOptions_phoneticScriptName);
 	private JLabel secondLanguageLabel = new JLabel(Settings.languageOptions_secondLanguageName);
 	private JLabel topicLabel = new JLabel("Topic");
 	private JLabel chapterLabel = new JLabel("Chapter");
-	private JLabel levelLabel = new JLabel("Learn level");
+	private JLabel learnLevelLabel = new JLabel("Learn level");
+	private JLabel relevanceLabel = new JLabel("Relevance");
+	private JLabel descriptionLabel = new JLabel("Description");
+	
 	private JTextFieldWithContextMenu firstLanguageTextField = new JTextFieldWithContextMenu(20);
 	private JTextFieldWithContextMenu phoneticScriptTextField = new JTextFieldWithContextMenu(20);
 	private JTextFieldWithContextMenu secondLanguageTextField = new JTextFieldWithContextMenu(20);
 	private JTextFieldWithContextMenu topicTextField = new JTextFieldWithContextMenu(20);
 	private JTextFieldWithContextMenu chapterTextField = new JTextFieldWithContextMenu(20);
 	private JTextFieldWithContextMenu learnLevelTextField = new JTextFieldWithContextMenu(20);
+	private JTextFieldWithContextMenu relevanceTextField = new JTextFieldWithContextMenu(20);
+	private JTextArea descriptionTextArea;
+	private JScrollPane descriptionScrollPane;
 		
 	private String focusedTextFieldName = "firstLanguage";
 	
@@ -102,7 +111,9 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 		inputPanel.add(secondLanguageLabel, "cell 0 2");
 		inputPanel.add(topicLabel, "cell 0 3");
 		inputPanel.add(chapterLabel, "cell 0 4");
-		inputPanel.add(levelLabel, "cell 0 5");
+		inputPanel.add(learnLevelLabel, "cell 0 5");
+		inputPanel.add(relevanceLabel, "cell 0 6");
+		inputPanel.add(descriptionLabel, "cell 0 7");
 
 		firstLanguageTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
 		inputPanel.add(firstLanguageTextField, "cell 1 0");
@@ -116,6 +127,16 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 		inputPanel.add(chapterTextField, "cell 1 4");
 		learnLevelTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
 		inputPanel.add(learnLevelTextField, "cell 1 5");
+		relevanceTextField.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 20));
+		inputPanel.add(relevanceTextField, "cell 1 6");
+		
+		descriptionTextArea = new JTextArea(4, 30);
+		descriptionTextArea.setFont(new Font(Settings.addVocable_font, Font.PLAIN, 14));
+		descriptionTextArea.setLineWrap(true);
+		descriptionTextArea.setWrapStyleWord(true);
+		
+		descriptionScrollPane = new JScrollPane(descriptionTextArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		inputPanel.add(descriptionScrollPane, "cell 1 7");
 		
 		add(buttonPanel, "cell 0 1");
 		buttonPanel.add(addButton, "cell 0 0");
@@ -144,23 +165,18 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 		addWindowListener(new WindowListener() {
 			@Override
 			public void windowOpened(WindowEvent e) {
-				// TODO Auto-generated method stub
 			}
 			@Override
 			public void windowIconified(WindowEvent e) {
-				// TODO Auto-generated method stub
 			}
 			@Override
 			public void windowDeiconified(WindowEvent e) {
-				// TODO Auto-generated method stub
 			}
 			@Override
 			public void windowDeactivated(WindowEvent e) {
-				// TODO Auto-generated method stub
 			}
 			@Override
 			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
 				if(tonenPopupDialogueDisplayed) {
 					tonenPopupDialogue.dispose();
 					setTonenPopupDialogueDisplayed(false);
@@ -169,11 +185,9 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			}
 			@Override
 			public void windowClosed(WindowEvent e) {
-				// TODO Auto-generated method stub
 			}
 			@Override
 			public void windowActivated(WindowEvent e) {
-				// TODO Auto-generated method stub
 			}
 		});
 		
@@ -198,6 +212,13 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 				cancelButtonAction();
 			}
 		});
+		
+		clearButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				clearAllTextFields();
+			}
+		});
 	}
 	
 	private void addFocusListeners(){
@@ -208,7 +229,6 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -219,7 +239,6 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -230,7 +249,6 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -241,7 +259,6 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -252,7 +269,6 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
 			}
         });
 		
@@ -263,14 +279,27 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			}
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// TODO Auto-generated method stub
+
 			}
         });
 		
-		clearButton.addActionListener(new ActionListener() {
+		relevanceTextField.addFocusListener(new FocusListener() {
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				clearAllTextFields();
+			public void focusLost(FocusEvent e) {
+			}
+			@Override
+			public void focusGained(FocusEvent e) {
+				focusedTextFieldName = "relevance";
+			}
+		});
+		
+		descriptionTextArea.addFocusListener(new FocusListener() {
+			@Override
+			public void focusLost(FocusEvent e) {	
+			}
+			@Override
+			public void focusGained(FocusEvent e) {
+				focusedTextFieldName = "description";
 			}
 		});
 	}
@@ -280,7 +309,6 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
 				
 			}
 			
@@ -292,13 +320,11 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			
 			@Override
 			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
 				
 			}
 			
 			@Override
 			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
 				
 			}
 			
@@ -317,14 +343,9 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 	
 	// This button's action is simply to dispose of the JDialog.
 	private void addButtonAction() {
-		if(!(topicTextField.getText().contains(":") || chapterTextField.getText().contains(":") || firstLanguageTextField.getText().contains(":") || secondLanguageTextField.getText().contains(":") || phoneticScriptTextField.getText().contains(":") || learnLevelTextField.getText().contains(":"))) {
+		if(!isColonInInput()) {
 			//No empty fields allowed
-			if(	firstLanguageTextField.getText().isEmpty() ||
-				phoneticScriptTextField.getText().isEmpty() ||
-				secondLanguageTextField.getText().isEmpty() ||
-				topicTextField.getText().isEmpty() ||
-				chapterTextField.getText().isEmpty() ||
-				learnLevelTextField.getText().isEmpty()) {
+			if(isAnInputFieldIsEmpty()) {
 				JOptionPane.showMessageDialog(this, "No field can be empty! You can fill empty fields with \"---\" for example.", "Empty fields", JOptionPane.OK_OPTION);
 			} else {
 				//If the vocable is already in the dictionary, it should not be added again
@@ -333,8 +354,17 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 				} else {
 					addedVocablesCounter++;
 					updateStatusLabel();
-					VocableManager.addVocable(new Vocable(topicTextField.getText(), chapterTextField.getText(), firstLanguageTextField.getText(), secondLanguageTextField.getText(), phoneticScriptTextField.getText(), learnLevelTextField.getText()));
-					deleteTexts();
+					VocableManager.addVocable(new Vocable(
+						topicTextField.getText(),
+						chapterTextField.getText(),
+						firstLanguageTextField.getText(),
+						secondLanguageTextField.getText(),
+						phoneticScriptTextField.getText(),
+						learnLevelTextField.getText(),
+						relevanceTextField.getText(),
+						descriptionTextArea.getText()
+					));
+					resetTexts();
 					firstLanguageTextField.requestFocusInWindow();
 				}
 			}
@@ -355,12 +385,17 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 		statusLabel.setText("Vocables added: " + addedVocablesCounter);
 	}
 	
-	private void deleteTexts() {
+	private void resetTexts() {
 		firstLanguageTextField.setText("");
 		phoneticScriptTextField.setText("");
 		secondLanguageTextField.setText("");
+		descriptionTextArea.setText("---");
 	}
 	
+	/**
+	 * This method inserts a special character into a textarea or textfield at the currently marked position.
+	 * @param specialCharacter the special character which will be inserted
+	 */
 	public void addSpecialCharacterToTextField(String specialCharacter) {
 		if(focusedTextFieldName.equals("firstLanguage")) {
 			Helper.insertCharacterIntoTextfield(firstLanguageTextField, specialCharacter);
@@ -374,6 +409,10 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 			Helper.insertCharacterIntoTextfield(chapterTextField, specialCharacter);
 		} else if(focusedTextFieldName.equals("learnLevel")) {
 			Helper.insertCharacterIntoTextfield(learnLevelTextField, specialCharacter);
+		} else if(focusedTextFieldName.equals("relevance")) {
+			Helper.insertCharacterIntoTextfield(relevanceTextField, specialCharacter);
+		} else if(focusedTextFieldName.equals("description")) {
+			Helper.insertCharacterIntoTextArea(descriptionTextArea, specialCharacter);
 		}
 	}
 	
@@ -384,14 +423,10 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 		topicTextField.setText("");
 		chapterTextField.setText("");
 		learnLevelTextField.setText("");
+		relevanceTextField.setText("");
+		descriptionTextArea.setText("");
 		firstLanguageTextField.requestFocusInWindow();
 	}
-	
-//	public void updateLanguages(String newFirstLanguage, String newPhoneticScript, String newSecondLanguage) {
-//		firstLanguageLabel.setText(newFirstLanguage);
-//		phoneticScriptLabel.setText(newPhoneticScript);
-//		secondLanguageLabel.setText(newSecondLanguage);
-//	}
 	
 	private void displayTonenPopupDialogue() {
 		tonenPopupDialogue = new TonenPopupDialogue(this, false, specialCharacterButton, "Add Vocable Dialog - Special Characters");
@@ -414,5 +449,31 @@ public class AddVocableFrame extends JFrame implements VocabularyLanguagesChange
 		firstLanguageLabel.setText(newFirstLanguage);
 		phoneticScriptLabel.setText(newPhoneticScript);
 		secondLanguageLabel.setText(newSecondLanguage);
+	}
+	
+	private boolean isColonInInput() {
+		return (
+			topicTextField.getText().contains(":") ||
+			chapterTextField.getText().contains(":") ||
+			firstLanguageTextField.getText().contains(":") ||
+			secondLanguageTextField.getText().contains(":") ||
+			phoneticScriptTextField.getText().contains(":") ||
+			learnLevelTextField.getText().contains(":") ||
+			relevanceTextField.getText().contains(":") ||
+			descriptionTextArea.getText().contains(":")
+		);
+	}
+	
+	private boolean isAnInputFieldIsEmpty() {
+		return (
+			firstLanguageTextField.getText().isEmpty() ||
+			phoneticScriptTextField.getText().isEmpty() ||
+			secondLanguageTextField.getText().isEmpty() ||
+			topicTextField.getText().isEmpty() ||
+			chapterTextField.getText().isEmpty() ||
+			learnLevelTextField.getText().isEmpty() ||
+			relevanceTextField.getText().isEmpty() ||
+			descriptionTextArea.getText().isEmpty()
+		);
 	}
 }

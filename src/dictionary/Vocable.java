@@ -13,7 +13,7 @@ public class Vocable implements Cloneable {
 	private String secondLanguage;
 	private String phoneticScript;
 	private String learnLevel;
-	private String importanceLevel;
+	private String relevance;
 	private String description;
 	
 	public Vocable(String topic, String chapter, String firstLanguage, String secondLanguage, String phoneticScript, String learnLevel){
@@ -23,7 +23,7 @@ public class Vocable implements Cloneable {
 		this.secondLanguage = secondLanguage;
 		this.phoneticScript = phoneticScript;
 		this.learnLevel = learnLevel;
-		this.importanceLevel = "";
+		this.relevance = "";
 		this.description = "";
 	}
 	
@@ -34,7 +34,7 @@ public class Vocable implements Cloneable {
 		this.secondLanguage = secondLanguage;
 		this.phoneticScript = phoneticScript;
 		this.learnLevel = learnLevel;
-		this.importanceLevel = importanceLevel;
+		this.relevance = importanceLevel;
 		this.description = description;
 	}
 
@@ -124,18 +124,18 @@ public class Vocable implements Cloneable {
 	
 	
 	/**
-	 * @return the importanceLevel of this vocable
+	 * @return the relevance of this vocable
 	 */
-	public String getImportanceLevel() {
-		return this.importanceLevel;
+	public String getRelevance() {
+		return this.relevance;
 	}
 	
 	
 	/**
-	 * @param importanceLevel the importanceLevel to set
+	 * @param relevance the relevance to set
 	 */
-	public void setImportanceLevel(String importanceLevel) {
-		this.importanceLevel = importanceLevel;
+	public void setRelevance(String relevance) {
+		this.relevance = relevance;
 	}
 	
 	/**

@@ -27,6 +27,8 @@ public class SearchOptionsDialogue extends JDialog {
 	private JCheckBox topicCheckbox = new JCheckBox("Topic");
 	private JCheckBox chapterCheckbox = new JCheckBox("Chapter");
 	private JCheckBox learnLevelCheckbox = new JCheckBox("Learn level");
+	private JCheckBox relevanceCheckbox = new JCheckBox("Relevance");
+	private JCheckBox descriptionCheckbox = new JCheckBox("Description");
 	private JCheckBox matchCaseCheckbox = new JCheckBox("Case sensitive");
 	private JCheckBox exactMatchCheckbox = new JCheckBox("Exact match");
 	private JCheckBox negateSearchCheckbox = new JCheckBox("Negate search"); 
@@ -58,6 +60,8 @@ public class SearchOptionsDialogue extends JDialog {
 		topicCheckbox.setSelected(Settings.searchOptions_topicActivated);
 		chapterCheckbox.setSelected(Settings.searchOptions_chapterActivated);
 		learnLevelCheckbox.setSelected(Settings.searchOptions_learnLevelActivated);
+		relevanceCheckbox.setSelected(Settings.searchOptions_relevanceActivated);
+		descriptionCheckbox.setSelected(Settings.searchOptions_descriptionActivated);
 		matchCaseCheckbox.setSelected(Settings.searchOptions_matchCaseActivated);
 		exactMatchCheckbox.setSelected(Settings.searchOptions_exactMatchActivated);
 		negateSearchCheckbox.setSelected(Settings.searchOptions_negateSearchActivated);
@@ -69,9 +73,11 @@ public class SearchOptionsDialogue extends JDialog {
 		standardSearchCriteriaPanel.add(topicCheckbox, "cell 0 3");
 		standardSearchCriteriaPanel.add(chapterCheckbox, "cell 0 4");
 		standardSearchCriteriaPanel.add(learnLevelCheckbox, "cell 0 5");
-		standardSearchCriteriaPanel.add(matchCaseCheckbox, "cell 0 6");
-		standardSearchCriteriaPanel.add(exactMatchCheckbox, "cell 0 7");
-		standardSearchCriteriaPanel.add(negateSearchCheckbox, "cell 0 8");
+		standardSearchCriteriaPanel.add(relevanceCheckbox, "cell 0 6");
+		standardSearchCriteriaPanel.add(descriptionCheckbox, "cell 0 7");
+		standardSearchCriteriaPanel.add(matchCaseCheckbox, "cell 0 8");
+		standardSearchCriteriaPanel.add(exactMatchCheckbox, "cell 0 9");
+		standardSearchCriteriaPanel.add(negateSearchCheckbox, "cell 0 10");
 		
 		add(standardSearchCriteriaPanel, "cell 0 0");
 		
@@ -119,15 +125,19 @@ public class SearchOptionsDialogue extends JDialog {
 	}
 	
 	private void updateSearchBox() {
-		SearchBox.updateSearchBoxCheckboxes(firstLanguageCheckbox.isSelected(),
-			   phoneticScriptCheckbox.isSelected(),
-			   secondLanguageCheckbox.isSelected(),
-			   topicCheckbox.isSelected(),
-			   chapterCheckbox.isSelected(),
-			   learnLevelCheckbox.isSelected(),
-			   matchCaseCheckbox.isSelected(),
-			   exactMatchCheckbox.isSelected(),
-			   negateSearchCheckbox.isSelected());
+		SearchBox.updateSearchBoxCheckboxes(
+			firstLanguageCheckbox.isSelected(),
+			phoneticScriptCheckbox.isSelected(),
+			secondLanguageCheckbox.isSelected(),
+			topicCheckbox.isSelected(),
+			chapterCheckbox.isSelected(),
+			learnLevelCheckbox.isSelected(),
+			relevanceCheckbox.isSelected(),
+			descriptionCheckbox.isSelected(),
+			matchCaseCheckbox.isSelected(),
+			exactMatchCheckbox.isSelected(),
+			negateSearchCheckbox.isSelected()
+		);
 	}
 	
 	private void saveSettings() {
@@ -137,6 +147,8 @@ public class SearchOptionsDialogue extends JDialog {
 		Settings.searchOptions_topicActivated = topicCheckbox.isSelected();
 		Settings.searchOptions_chapterActivated = chapterCheckbox.isSelected();
 		Settings.searchOptions_learnLevelActivated = learnLevelCheckbox.isSelected();
+		Settings.searchOptions_relevanceActivated= relevanceCheckbox.isSelected();
+		Settings.searchOptions_descriptionActivated= descriptionCheckbox.isSelected();
 		Settings.searchOptions_matchCaseActivated = matchCaseCheckbox.isSelected();
 		Settings.searchOptions_exactMatchActivated = exactMatchCheckbox.isSelected();
 		Settings.searchOptions_negateSearchActivated = negateSearchCheckbox.isSelected();

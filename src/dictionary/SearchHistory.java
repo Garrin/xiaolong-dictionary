@@ -107,13 +107,16 @@ public class SearchHistory {
 					Boolean topicCheckboxSelected = new Boolean(searchHistoryItemMembers[4]);
 					Boolean chapterCheckboxSelected = new Boolean(searchHistoryItemMembers[5]);
 					Boolean learnLevelCheckboxSelected = new Boolean(searchHistoryItemMembers[6]);
-					Boolean caseSensitiveCheckboxSelected = new Boolean(searchHistoryItemMembers[7]);
-					Boolean exactMatchCheckboxSelected = new Boolean(searchHistoryItemMembers[8]);
-					Boolean negateSearchCheckboxSelected = new Boolean(searchHistoryItemMembers[9]);
+					Boolean relevanceCheckboxSelected = new Boolean(searchHistoryItemMembers[7]);
+					Boolean descriptionCheckboxSelected = new Boolean(searchHistoryItemMembers[8]);
+					Boolean caseSensitiveCheckboxSelected = new Boolean(searchHistoryItemMembers[9]);
+					Boolean exactMatchCheckboxSelected = new Boolean(searchHistoryItemMembers[10]);
+					Boolean negateSearchCheckboxSelected = new Boolean(searchHistoryItemMembers[11]);
 					
-					SearchEntry newEntry = new SearchEntry(firstLanguageCheckboxSelected, phoneticScriptCheckboxSelected, secondLanguageCheckboxSelected, topicCheckboxSelected, chapterCheckboxSelected, learnLevelCheckboxSelected, caseSensitiveCheckboxSelected, exactMatchCheckboxSelected, negateSearchCheckboxSelected, searchTerm);
+					addEntry(
+						new SearchEntry(firstLanguageCheckboxSelected, phoneticScriptCheckboxSelected, secondLanguageCheckboxSelected, topicCheckboxSelected, chapterCheckboxSelected, learnLevelCheckboxSelected, relevanceCheckboxSelected, descriptionCheckboxSelected, caseSensitiveCheckboxSelected, exactMatchCheckboxSelected, negateSearchCheckboxSelected, searchTerm)
+					);
 					
-					addEntry(newEntry);
 				} catch (Exception ex) {
 					ex.printStackTrace();
 				}

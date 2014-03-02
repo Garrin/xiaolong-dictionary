@@ -42,6 +42,8 @@ public class VocableManager {
 				lastSearchCriterias.get(0).checkPhoneticScript, 
 				lastSearchCriterias.get(0).checkLearnLevel, 
 				lastSearchCriterias.get(0).checkCaseSensitive, 
+				lastSearchCriterias.get(0).checkRelevance,
+				lastSearchCriterias.get(0).checkDescription,
 				lastSearchCriterias.get(0).matchWholeWord, 
 				lastSearchCriterias.get(0).notSearch, 
 				VocableManager.getVocableList()
@@ -63,6 +65,8 @@ public class VocableManager {
 						lastSearchCriterias.get(i).checkSecondLanguage, 
 						lastSearchCriterias.get(i).checkPhoneticScript, 
 						lastSearchCriterias.get(i).checkLearnLevel, 
+						lastSearchCriterias.get(0).checkRelevance,
+						lastSearchCriterias.get(0).checkDescription,
 						lastSearchCriterias.get(i).checkCaseSensitive, 
 						lastSearchCriterias.get(i).matchWholeWord, 
 						lastSearchCriterias.get(i).notSearch
@@ -78,6 +82,8 @@ public class VocableManager {
 						lastSearchCriterias.get(i).checkSecondLanguage, 
 						lastSearchCriterias.get(i).checkPhoneticScript, 
 						lastSearchCriterias.get(i).checkLearnLevel, 
+						lastSearchCriterias.get(0).checkRelevance,
+						lastSearchCriterias.get(0).checkDescription,
 						lastSearchCriterias.get(i).checkCaseSensitive, 
 						lastSearchCriterias.get(i).matchWholeWord, 
 						lastSearchCriterias.get(i).notSearch
@@ -93,9 +99,7 @@ public class VocableManager {
 
 	/**
 	 * deletes a vocable from the vocableList
-	 * 
-	 * @param vocable
-	 *            the vocable, which will be deleted
+	 * @param vocable the vocable, which will be deleted
 	 */
 	public static void deleteVocable(Vocable vocable) {
 		//delete vocable from list of vocables
@@ -116,19 +120,14 @@ public class VocableManager {
 
 	/**
 	 * removes the vocable with the given attributes from the vocableList
-	 * 
-	 * @param topic
-	 *            topic of the vocable which will be deleted
-	 * @param chapter
-	 *            chapter of the vocable which will be deleted
-	 * @param firstLanguage
-	 *            first language of the vocable which will be deleted
-	 * @param secondLanguage
-	 *            second language of the vocable which will be deleted
-	 * @param phoneticScript
-	 *            phonetic script of the vocable which will be deleted
-	 * @param learnLevel
-	 *            learn level of the vocable which will be deleted
+	 * @param topic topic of the {@link Vocable} which will be deleted
+	 * @param chapter chapter of the {@link Vocable} which will be deleted
+	 * @param firstLanguage first language of the {@link Vocable} which will be deleted
+	 * @param secondLanguage second language of the {@link Vocable} which will be deleted
+	 * @param phoneticScript phonetic script of the {@link Vocable} which will be deleted
+	 * @param learnLevel learn level of the {@link Vocable} which will be deleted
+	 * @param relevance relevance of the {@link Vocable} which will be deleted
+	 * @param description description of the {@link Vocable} which will be deleted
 	 */
 	public static void deleteVocable(
 			String topic, 
@@ -136,19 +135,25 @@ public class VocableManager {
 			String firstLanguage, 
 			String secondLanguage, 
 			String phoneticScript,
-			String learnLevel) {
+			String learnLevel,
+			String relevance,
+			String description) {
 		
 		Vocable vocabletoDelete = null;
 		
 		//delete vocable from list of vocables
 		for (int i = 0; i < vocableList.size(); i++) {
 
-			if (vocableList.get(i).getTopic().equals(topic)
-					&& vocableList.get(i).getChapter().equals(chapter)
-					&& vocableList.get(i).getFirstLanguage().equals(firstLanguage)
-					&& vocableList.get(i).getSecondLanguage().equals(secondLanguage)
-					&& vocableList.get(i).getPhoneticScript().equals(phoneticScript)
-					&& vocableList.get(i).getLearnLevel().equals(learnLevel)) {
+			if (
+				vocableList.get(i).getTopic().equals(topic)
+				&& vocableList.get(i).getChapter().equals(chapter)
+				&& vocableList.get(i).getFirstLanguage().equals(firstLanguage)
+				&& vocableList.get(i).getSecondLanguage().equals(secondLanguage)
+				&& vocableList.get(i).getPhoneticScript().equals(phoneticScript)
+				&& vocableList.get(i).getLearnLevel().equals(learnLevel)
+				&& vocableList.get(i).getRelevance().equals(relevance)
+				&& vocableList.get(i).getDescription().equals(description)
+			) {
 
 				vocabletoDelete = vocableList.get(i);
 				vocableList.remove(i);
@@ -157,12 +162,16 @@ public class VocableManager {
 		
 		//delete vocable from last search result
 		for(Vocable vocable : lastSearchResult) {
-			if (vocable.getTopic().equals(topic) &&
+			if (
+				vocable.getTopic().equals(topic) &&
 				vocable.getChapter().equals(chapter) &&
 				vocable.getFirstLanguage().equals(firstLanguage) &&
 				vocable.getSecondLanguage().equals(secondLanguage) &&
 				vocable.getPhoneticScript().equals(phoneticScript) &&
-				vocable.getLearnLevel().equals(learnLevel)) {
+				vocable.getLearnLevel().equals(learnLevel) &&
+				vocable.getRelevance().equals(relevance) &&
+				vocable.getDescription().equals(description)
+			) {
 				lastSearchResult.remove(vocable);
 			}
 		}
@@ -204,16 +213,28 @@ public class VocableManager {
 			String newSecondLanguage,
 			String newTopic, 
 			String newChapter, 
-			String newLearnLevel) {
+			String newLearnLevel,
+			String newRelevance,
+			String newDescription
+	) {
 		
-		Vocable newVocable = new Vocable(newTopic, newChapter, newFirstLanguage, newSecondLanguage, newPhoneticScript, newLearnLevel);
+		Vocable newVocable = new Vocable(
+			newTopic, 
+			newChapter,
+			newFirstLanguage,
+			newSecondLanguage,
+			newPhoneticScript,
+			newLearnLevel,
+			newRelevance,
+			newDescription
+		);
 		
 		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
 		
+		//Replace the old Vocable with the new one
 		if(lastSearchResult.contains(oldVocable)) {
-			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable); //TODO: Causes error when the user searches while in training!
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
 		}
-		
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
 		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
@@ -226,13 +247,12 @@ public class VocableManager {
 	 * @param newFirstLanguage the new first language
 	 */
 	public static void changeVocableFirstLanguage(Vocable oldVocable, String newFirstLanguage) {
-		//Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
-		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), newFirstLanguage, oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
+		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), newFirstLanguage, oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel(), oldVocable.getRelevance(), oldVocable.getDescription());
 		
 		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
 		
 		if(lastSearchResult.contains(oldVocable)) {
-			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable); //TODO: Causes error when the user searches while in training!
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
 		}
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
@@ -246,13 +266,12 @@ public class VocableManager {
 	 * @param newPhoneticScript the new phonetic script
 	 */
 	public static void changeVocablePhoneticScript(Vocable oldVocable, String newPhoneticScript) {
-		//Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
-		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), newPhoneticScript, oldVocable.getLearnLevel());
+		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), newPhoneticScript, oldVocable.getLearnLevel(), oldVocable.getRelevance(), oldVocable.getDescription());
 		
 		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
 		
 		if(lastSearchResult.contains(oldVocable)) {
-			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable); //TODO: Causes error when the user searches while in training!
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
 		}
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
@@ -266,13 +285,12 @@ public class VocableManager {
 	 * @param newSecondLanguage the new second language
 	 */
 	public static void changeVocableSecondLanguage(Vocable oldVocable, String newSecondLanguage) {
-		//Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
-		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), newSecondLanguage, oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
+		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), newSecondLanguage, oldVocable.getPhoneticScript(), oldVocable.getLearnLevel(), oldVocable.getRelevance(), oldVocable.getDescription());
 		
 		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
 		
 		if(lastSearchResult.contains(oldVocable)) {
-			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable); //TODO: Causes error when the user searches while in training!
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
 		}
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
@@ -286,13 +304,12 @@ public class VocableManager {
 	 * @param newChapter the new chapter
 	 */
 	public static void changeVocableChapter(Vocable oldVocable, String newChapter) {
-		//Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
-		Vocable newVocable = new Vocable(oldVocable.getTopic(), newChapter, oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
+		Vocable newVocable = new Vocable(oldVocable.getTopic(), newChapter, oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel(), oldVocable.getRelevance(), oldVocable.getDescription());
 		
 		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
 		
 		if(lastSearchResult.contains(oldVocable)) {
-			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable); //TODO: Causes error when the user searches while in training!
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
 		}
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
@@ -306,13 +323,12 @@ public class VocableManager {
 	 * @param newTopic the new topic
 	 */
 	public static void changeVocableTopic(Vocable oldVocable, String newTopic) {
-		//Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
-		Vocable newVocable = new Vocable(newTopic, oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
+		Vocable newVocable = new Vocable(newTopic, oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel(), oldVocable.getRelevance(), oldVocable.getDescription());
 		
 		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
 		
 		if(lastSearchResult.contains(oldVocable)) {
-			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable); //TODO: Causes error when the user searches while in training!
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
 		}
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
@@ -326,13 +342,12 @@ public class VocableManager {
 	 * @param newLearnLevel the new learn level
 	 */
 	public static void changeVocableLearnLevel(Vocable oldVocable, String newLearnLevel) {
-		//Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel());
-		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), newLearnLevel);
+		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), newLearnLevel, oldVocable.getRelevance(), oldVocable.getDescription());
 		
 		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
 		
 		if(lastSearchResult.contains(oldVocable)) {
-			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable); //TODO: Causes error when the user searches while in training!
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
 		}
 		
 		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
@@ -340,131 +355,43 @@ public class VocableManager {
 		FileManager.vocabularyIsSavedToFile = false;
 	}
 	
+	/**
+	 * Changes the relevance of a given vocable
+	 * @param oldVocable the vocable which will be changed
+	 * @param newLearnLevel the new relevance
+	 */
+	public static void changeVocableRelevance(Vocable oldVocable, String newRelevance) {
+		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel(), newRelevance, oldVocable.getDescription());
+		
+		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
+		
+		if(lastSearchResult.contains(oldVocable)) {
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
+		}
+		
+		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
+		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
+		FileManager.vocabularyIsSavedToFile = false;
+	}
 	
 	/**
-	 * Searches through the whole vocableList for vocables matching the search criteria
-	 * 
-	 * @param searched the searched string
-	 * @param checkTopic true if the topic attribute of a vocable shall be considered
-	 * @param checkChapter true if the chapter attribute of a vocable shall be considered
-	 * @param checkFirstLanguage true if the first language attribute of a vocable shall be considered
-	 * @param checkSecondLanguage true if the second language attribute of a vocable shall be considered
-	 * @param checkPhoneticScript true if the phonetic script attribute of a vocable shall be considered
-	 * @param checkLevel true if the level attribute of a vocable shall be considered
-	 * @param checkCaseSensitive true if the search shall be case sensitive
-	 * @param checkExactMatch true if the search shall only look for whole word matches
-	 * @return a list of vocables matching the search criteria
+	 * Changes the description of a given vocable
+	 * @param oldVocable the vocable which will be changed
+	 * @param newLearnLevel the new description
 	 */
-//	public static ArrayList<Vocable> searchVocable(String searched,
-//			boolean checkTopic, boolean checkChapter,
-//			boolean checkFirstLanguage, boolean checkSecondLanguage,
-//			boolean checkPhoneticScript, boolean checkLevel,
-//			boolean checkCaseSensitive, boolean checkExactMatch) {
-//		ArrayList<Vocable> result = new ArrayList<Vocable>();
-//
-//		if (!checkCaseSensitive) {
-//			searched = searched.toUpperCase();
-//		}
-//
-//		// SEARCH
-//		for (int i = 0; i < VocableManager.getVocableList().size(); i++) {
-//
-//			String topic = VocableManager.getVocableList().get(i).getTopic();
-//			String chapter = VocableManager.getVocableList().get(i)
-//					.getChapter();
-//			String learnLevel = VocableManager.getVocableList().get(i)
-//					.getLearnLevel();
-//			String firstLanguage = VocableManager.getVocableList().get(i)
-//					.getFirstLanguage();
-//			String phoneticScript = VocableManager.getVocableList().get(i)
-//					.getPhoneticScript();
-//			String secondLanguage = VocableManager.getVocableList().get(i)
-//					.getSecondLanguage();
-//			boolean alreadyAddedToSearchResult = false;
-//
-//			if (checkTopic) {
-//				final String[] parts = topic
-//						.split(Settings.vocableOptions_translationsSeperator);
-//				for (String part : parts) {
-//					if (isSearchedStringInAttributeOfVocable(checkExactMatch,
-//							checkCaseSensitive, searched, part)) {
-//						result.add(VocableManager.getVocableList().get(i));
-//						alreadyAddedToSearchResult = true;
-//						break;
-//					}
-//				}
-//			}
-//
-//			if (checkChapter && !alreadyAddedToSearchResult) {
-//				final String[] parts = chapter
-//						.split(Settings.vocableOptions_translationsSeperator);
-//				for (String part : parts) {
-//					if (isSearchedStringInAttributeOfVocable(checkExactMatch,
-//							checkCaseSensitive, searched, part)) {
-//						result.add(VocableManager.getVocableList().get(i));
-//						alreadyAddedToSearchResult = true;
-//						break;
-//					}
-//				}
-//			}
-//
-//			if (checkFirstLanguage && !alreadyAddedToSearchResult) {
-//				final String[] parts = firstLanguage
-//						.split(Settings.vocableOptions_translationsSeperator);
-//				for (String part : parts) {
-//					if (isSearchedStringInAttributeOfVocable(checkExactMatch,
-//							checkCaseSensitive, searched, part)) {
-//						result.add(VocableManager.getVocableList().get(i));
-//						alreadyAddedToSearchResult = true;
-//						break;
-//					}
-//				}
-//			}
-//
-//			if (checkSecondLanguage && !alreadyAddedToSearchResult) {
-//				final String[] parts = secondLanguage
-//						.split(Settings.vocableOptions_translationsSeperator);
-//				for (String part : parts) {
-//					if (isSearchedStringInAttributeOfVocable(checkExactMatch,
-//							checkCaseSensitive, searched, part)) {
-//						result.add(VocableManager.getVocableList().get(i));
-//						alreadyAddedToSearchResult = true;
-//						break;
-//					}
-//				}
-//			}
-//
-//			if (checkPhoneticScript && !alreadyAddedToSearchResult) {
-//				final String[] parts = phoneticScript
-//						.split(Settings.vocableOptions_translationsSeperator);
-//				for (String part : parts) {
-//					if (isSearchedStringInAttributeOfVocable(checkExactMatch,
-//							checkCaseSensitive, searched, part)) {
-//						result.add(VocableManager.getVocableList().get(i));
-//						alreadyAddedToSearchResult = true;
-//						break;
-//					}
-//				}
-//			}
-//
-//			if (checkLevel && !alreadyAddedToSearchResult) {
-//				final String[] parts = learnLevel
-//						.split(Settings.vocableOptions_translationsSeperator);
-//				for (String part : parts) {
-//					if (isSearchedStringInAttributeOfVocable(checkExactMatch,
-//							checkCaseSensitive, searched, part)) {
-//						result.add(VocableManager.getVocableList().get(i));
-//						alreadyAddedToSearchResult = true;
-//						break;
-//					}
-//				}
-//			}
-//		}
-//
-//		VocableManager.lastSearchResult = result;
-//		ObserveableFactory.getSearchObservable().fireSearchNotification();
-//		return result;
-//	}
+	public static void changeVocableDescription(Vocable oldVocable, String newDescription) {
+		Vocable newVocable = new Vocable(oldVocable.getTopic(), oldVocable.getChapter(), oldVocable.getFirstLanguage(), oldVocable.getSecondLanguage(), oldVocable.getPhoneticScript(), oldVocable.getLearnLevel(), oldVocable.getRelevance(), newDescription);
+		
+		VocableManager.getVocableList().set(VocableManager.getVocableList().indexOf(oldVocable), newVocable);
+		
+		if(lastSearchResult.contains(oldVocable)) {
+			lastSearchResult.set(lastSearchResult.indexOf(oldVocable), newVocable);
+		}
+		
+		ObserveableFactory.getVocablesObserveable().fireChangeVocableNotification(oldVocable, newVocable);
+		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
+		FileManager.vocabularyIsSavedToFile = false;
+	}
 
 	/**
 	 * Checks if a searched string is part of a vocable
@@ -505,7 +432,22 @@ public class VocableManager {
 		return result;
 	}
 
-	
+	/**
+	 * This method performs a basic search on the vocable list
+	 * @param searchTerm search term
+	 * @param checkTopic true if the topic attribute of {@link Vocable}s shall be considered
+	 * @param checkChapter true if the chapter attribute of {@link Vocable}s shall be considered
+	 * @param checkFirstLanguage true if the first language attribute of {@link Vocable}s shall be considered
+	 * @param checkSecondLanguage true if the second language attribute of {@link Vocable}s shall be considered
+	 * @param checkPhoneticScript true if the phonetic script attribute of {@link Vocable}s shall be considered
+	 * @param checkLearnLevel true if the learn level attribute of {@link Vocable}s shall be considered
+	 * @param checkRelevance true if the relevance attribute of {@link Vocable}s shall be considered
+	 * @param checkDescription true if the description attribute of {@link Vocable}s shall be considered
+	 * @param checkCaseSensitive true if the search shall be case sensitive
+	 * @param matchWholeWord true if the search shall only allow whole word matches
+	 * @param notSearch true if the search shall be an inverted search
+	 * @return a list of {@link Vocable}s matching the given search criteria
+	 */
 	public static ArrayList<Vocable> basicSearchVocableList(
 			String searchTerm,
 			boolean checkTopic, 
@@ -514,6 +456,8 @@ public class VocableManager {
 			boolean checkSecondLanguage,
 			boolean checkPhoneticScript, 
 			boolean checkLearnLevel,
+			boolean checkRelevance,
+			boolean checkDescription,
 			boolean checkCaseSensitive, 
 			boolean matchWholeWord,
 			boolean notSearch) {
@@ -522,15 +466,15 @@ public class VocableManager {
 		lastSearchCriterias.clear();
 		//add new item to search criteria list
 		lastSearchCriterias.add(
-				new SearchCriteriaHistoryItem(checkFirstLanguage, checkPhoneticScript, checkSecondLanguage, checkTopic, checkChapter, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch, false, false, searchTerm)
+				new SearchCriteriaHistoryItem(checkFirstLanguage, checkPhoneticScript, checkSecondLanguage, checkTopic, checkChapter, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch, false, false, searchTerm)
 		);
 		
-		lastSearchResult = VocableManager.searchVocableList(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch, VocableManager.getVocableList()); 
+		lastSearchResult = VocableManager.searchVocableList(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch, VocableManager.getVocableList()); 
 		ObserveableFactory.getSearchObservable().fireSearchNotification();
 		
 		return lastSearchResult;
 	}
-	
+
 	/**
 	 * Searches through the whole vocableList for vocables matching the search
 	 * criteria
@@ -542,6 +486,8 @@ public class VocableManager {
 	 * @param checkSecondLanguage true if the second language attribute of a vocable shall be considered
 	 * @param checkPhoneticScript true if the phonetic script attribute of a vocable shall be considered
 	 * @param checkLevel true if the level attribute of a vocable shall be considered
+	 * @param checkRelevance true if the relevance attribute of a vocable shall be considered
+	 * @param checkDescription true if the description attribute of a vocable shall be considered
 	 * @param checkCaseSensitive true if the search shall be case sensitive
 	 * @param checkExactMatch true if the search shall only look for whole word matches
 	 * @param negateSearch true if the search shall be negated
@@ -556,6 +502,8 @@ public class VocableManager {
 			boolean checkSecondLanguage,
 			boolean checkPhoneticScript, 
 			boolean checkLevel,
+			boolean checkRelevance,
+			boolean checkDescription,
 			boolean checkCaseSensitive, 
 			boolean checkExactMatch,
 			boolean negateSearch, 
@@ -576,6 +524,9 @@ public class VocableManager {
 			String firstLanguage = listOfVocables.get(i).getFirstLanguage();
 			String phoneticScript = listOfVocables.get(i).getPhoneticScript();
 			String secondLanguage = listOfVocables.get(i).getSecondLanguage();
+			String relevance = listOfVocables.get(i).getRelevance();
+			String description = listOfVocables.get(i).getDescription();
+			
 			boolean alreadyAddedToSearchResult = false;
 
 			if (checkTopic) {
@@ -662,7 +613,35 @@ public class VocableManager {
 					}
 				}
 			}
+			
+			//check for relevance
+			if(checkRelevance && !alreadyAddedToSearchResult) {
+				final String[] parts = relevance.split(Settings.vocableOptions_translationsSeperator);
+				for (String part : parts) {
+					if (isSearchedStringInAttributeOfVocable(checkExactMatch,checkCaseSensitive, searched, part)) {
+						if (!negateSearch) {
+							result.add(listOfVocables.get(i));
+						}
+						alreadyAddedToSearchResult = true;
+						break;
+					}
+				}
+			}
 
+			//check for description
+			if(checkDescription && !alreadyAddedToSearchResult) {
+				final String[] parts = description.split(Settings.vocableOptions_translationsSeperator);
+				for (String part : parts) {
+					if (isSearchedStringInAttributeOfVocable(checkExactMatch,checkCaseSensitive, searched, part)) {
+						if (!negateSearch) {
+							result.add(listOfVocables.get(i));
+						}
+						alreadyAddedToSearchResult = true;
+						break;
+					}
+				}
+			}
+			
 			if (checkLevel && !alreadyAddedToSearchResult) {
 				final String[] parts = learnLevel
 						.split(Settings.vocableOptions_translationsSeperator);
@@ -690,7 +669,7 @@ public class VocableManager {
 
 		return result;
 	}
-
+	
 	/**
 	 * performs a specifying search
 	 * @param searched
@@ -715,6 +694,8 @@ public class VocableManager {
 			boolean checkSecondLanguage,
 			boolean checkPhoneticScript, 
 			boolean checkLearnLevel,
+			boolean checkRelevance,
+			boolean checkDescription,
 			boolean checkCaseSensitive, 
 			boolean matchWholeWord,
 			boolean notSearch, 
@@ -725,14 +706,14 @@ public class VocableManager {
 		
 		if(andSearch) { //AND Search
 			lastSearchCriterias.add(
-					new SearchCriteriaHistoryItem(checkFirstLanguage, checkPhoneticScript, checkSecondLanguage, checkTopic, checkChapter, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch, true, false, searchTerm)
+					new SearchCriteriaHistoryItem(checkFirstLanguage, checkPhoneticScript, checkSecondLanguage, checkTopic, checkChapter, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch, true, false, searchTerm)
 			);
-			result = performANDSearch(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch); 
+			result = performANDSearch(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch); 
 		} else { //OR Search
 			lastSearchCriterias.add(
-					new SearchCriteriaHistoryItem(checkFirstLanguage, checkPhoneticScript, checkSecondLanguage, checkTopic, checkChapter, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch, false, true, searchTerm)
+					new SearchCriteriaHistoryItem(checkFirstLanguage, checkPhoneticScript, checkSecondLanguage, checkTopic, checkChapter, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch, false, true, searchTerm)
 			);
-			result = performORSearch(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch);
+			result = performORSearch(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch);
 		}
 		
 		//(wrote already the lastSearchResult in called functions, so don't need to do this here again using the result array (performANDSearch and performORSearch work on the lastSearchResult))
@@ -762,11 +743,13 @@ public class VocableManager {
 			boolean checkSecondLanguage,
 			boolean checkPhoneticScript, 
 			boolean checkLearnLevel,
+			boolean checkRelevance,
+			boolean checkDescription,
 			boolean checkCaseSensitive, 
 			boolean matchWholeWord,
 			boolean notSearch) {
 		
-		lastSearchResult = searchVocableList(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch, lastSearchResult);
+		lastSearchResult = searchVocableList(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch, lastSearchResult);
 		ObserveableFactory.getSearchObservable().fireSearchNotification();
 		
 		return lastSearchResult;
@@ -793,7 +776,9 @@ public class VocableManager {
 			boolean checkFirstLanguage, 
 			boolean checkSecondLanguage, 
 			boolean checkPhoneticScript, 
-			boolean checkLearnLevel, 
+			boolean checkLearnLevel,
+			boolean checkRelevance,
+			boolean checkDescription, 
 			boolean checkCaseSensitive, 
 			boolean matchWholeWord, 
 			boolean notSearch) {
@@ -804,7 +789,7 @@ public class VocableManager {
 		lastSearchResultCopy = VocableManager.copyVocableList(lastSearchResult); 
 		
 		//sets a new list of vocables for lastSearchResult ...
-		lastSearchResult = VocableManager.searchVocableList(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkCaseSensitive, matchWholeWord, notSearch, vocableList);
+		lastSearchResult = VocableManager.searchVocableList(searchTerm, checkTopic, checkChapter, checkFirstLanguage, checkSecondLanguage, checkPhoneticScript, checkLearnLevel, checkRelevance, checkDescription, checkCaseSensitive, matchWholeWord, notSearch, vocableList);
 		ObserveableFactory.getSearchObservable().fireSearchNotification();
 		
 		//If a vocable is in the result but is not already in the last search result, it needs to be added to the lastSearchResult (OR operation requires it in only one list) 
@@ -846,9 +831,13 @@ public class VocableManager {
 			return false;
 		} else if(!a.getLearnLevel().equals(b.getLearnLevel())) {
 			return false;
-		} else {
-			return true;
+		} else if(!a.getRelevance().equals(b.getRelevance())) {
+			return false;
+		} else if(!a.getDescription().equals(b.getDescription())) {
+			return false;
 		}
+		//If none of the above returned false, true is returned
+		return true;
 	}
 
 	/**
@@ -893,39 +882,29 @@ public class VocableManager {
 	 * standard vocable file. If none of these exist, it will create a new
 	 * vocable file.
 	 * 
-	 * @param loadedVocableList
-	 *            the list of vocables which will be used in the dictionary
-	 *            application. If a new vocable file is loaded this list will
-	 *            change.
+	 * @param loadedVocableList the list of vocables which will be used in the dictionary 
+	 * application. If a new vocable file is loaded this list will change.
 	 */
 	public static void setVocableList(ArrayList<Vocable> loadedVocableList) {
 		vocableList = loadedVocableList;
-		ObserveableFactory.getVocablesObserveable()
-				.fireVocableListLoadedNotification();
+		ObserveableFactory.getVocablesObserveable().fireVocableListLoadedNotification();
 	}
 
 	/**
 	 * Sets a learn level for all vocables in the vocable list
-	 * 
-	 * @param newLevel
-	 *            the new learn level
+	 * @param newLevel the new learn level
 	 */
 	public static void setLevelForAllVocables(String newLevel) {
 		for (Vocable voc : VocableManager.getVocableList()) {
 			voc.setLearnLevel(newLevel);
 		}
-		ObserveableFactory.getVocablesObserveable()
-				.fireVocableListChangedNotification();
+		ObserveableFactory.getVocablesObserveable().fireVocableListChangedNotification();
 	}
 
 	/**
 	 * Sets the learn level for all vocables in the given vocable list
-	 * 
-	 * @param vocables
-	 *            the vocable list which contains the vocables which will be
-	 *            changed
-	 * @param newLevel
-	 *            the new learn level
+	 * @param vocables the vocable list which contains the vocables which will be changed
+	 * @param newLevel the new learn level
 	 */
 	public static void setLevelForVocables(ArrayList<Vocable> vocables,
 			String newLevel) {
@@ -939,9 +918,7 @@ public class VocableManager {
 	/**
 	 * Updates the lastSearchResult by searching the vocable list for the
 	 * current search criteria and a given string
-	 * 
-	 * @param searched
-	 *            the searched string
+	 * @param searched the searched string
 	 */
 	public static void updateSearchResult() {
 		String searched = SearchBox.getSearchTerm();
@@ -951,22 +928,28 @@ public class VocableManager {
 		boolean checkPhoneticScript = SearchBox.isPhoneticScriptCheckboxSelected();
 		boolean checkSecondLanguage = SearchBox.isSecondLanguageCheckboxSelected();
 		boolean checkLearnLevel = SearchBox.isLearnLevelCheckboxSelected();
+		boolean checkRelevance = SearchBox.isRelevanceCheckboxSelected();
+		boolean checkDescription = SearchBox.isDescriptionCheckboxSelected();
 		boolean checkCaseSensitive = SearchBox.isCaseSensitiveCheckboxSelected();
 		boolean checkExactMatch = SearchBox.isExactMatchCheckboxSelected();
 		boolean negateSearch = SearchBox.isNegateSearchCheckboxSelected();
 
 		lastSearchResult = VocableManager.searchVocableList(
-				searched, 
-				checkTopic, 
-				checkChapter,
-				checkFirstLanguage, 
-				checkSecondLanguage, 
-				checkPhoneticScript,
-				checkLearnLevel, 
-				checkCaseSensitive, 
-				checkExactMatch,
-				negateSearch, 
-				VocableManager.getVocableList());
+			searched, 
+			checkTopic, 
+			checkChapter,
+			checkFirstLanguage, 
+			checkSecondLanguage, 
+			checkPhoneticScript,
+			checkLearnLevel,
+			checkRelevance,
+			checkDescription,
+			checkCaseSensitive, 
+			checkExactMatch,
+			negateSearch, 
+			VocableManager.getVocableList()
+		);
+		
 		ObserveableFactory.getSearchObservable().fireSearchNotification();
 	}
 
@@ -982,9 +965,11 @@ public class VocableManager {
 	 */
 	public static boolean isVocableAlreadyInVocableList(String firstLanguage, String phoneticScript, String secondLanguage) {
 		for(Vocable vocable : VocableManager.getVocableList()) {
-			if(	vocable.getFirstLanguage().equals(firstLanguage) &&
+			if(
+				vocable.getFirstLanguage().equals(firstLanguage) &&
 				vocable.getPhoneticScript().equals(phoneticScript) &&
-				vocable.getSecondLanguage().equals(secondLanguage)) {
+				vocable.getSecondLanguage().equals(secondLanguage)
+			) {
 				return true;
 			}
 		}
@@ -993,7 +978,6 @@ public class VocableManager {
 	
 	/**
 	 * Returns the current vocableList.
-	 * 
 	 * @return the current vocableList.
 	 */
 	public static ArrayList<Vocable> getVocableList() {
@@ -1030,9 +1014,11 @@ public class VocableManager {
 	 */
 	public static Vocable getVocableWith(String firstLanguage, String phoneticScript, String secondLanguage) {
 		for(Vocable vocable : VocableManager.getVocableList()) {
-			if(	vocable.getFirstLanguage().equals(firstLanguage) &&
+			if(
+				vocable.getFirstLanguage().equals(firstLanguage) &&
 				vocable.getPhoneticScript().equals(phoneticScript) &&
-				vocable.getSecondLanguage().equals(secondLanguage)) {
+				vocable.getSecondLanguage().equals(secondLanguage)
+			) {
 				return vocable;
 			}
 		}
@@ -1049,35 +1035,15 @@ public class VocableManager {
 	 */
 	public static Vocable getVocableFromSearchResultWith(String firstLanguage, String phoneticScript, String secondLanguage) {
 		for(Vocable vocable : VocableManager.getLastSearchResult()) {
-			if(	vocable.getFirstLanguage().equals(firstLanguage) &&
+			if(
+				vocable.getFirstLanguage().equals(firstLanguage) &&
 				vocable.getPhoneticScript().equals(phoneticScript) &&
-				vocable.getSecondLanguage().equals(secondLanguage)) {
+				vocable.getSecondLanguage().equals(secondLanguage)
+			) {
 				return vocable;
 			}
 		}
 		return null;
 	}
-//	/**
-//	 * Checks if a vocable is in the last search result
-//	 * @return
-//	 */
-//	private static boolean isVocableInSearchresult(Vocable vocable) {
-//		return lastSearchResult.contains(vocable);
-//	}
-//	
-//	/**
-//	 * Checks if a vocable, which has been added while a search result is displayed is in that search result
-//	 * @return
-//	 */
-//	private static boolean isAddedVocableInSearchResult() {
-//		
-//		boolean result = false;
-//		
-//		for(SearchCriteriaHistoryItem item : lastSearchCriterias) {
-//			
-//		}
-//		
-//		return result;
-//	}
 
 }
