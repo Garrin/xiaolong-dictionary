@@ -48,6 +48,7 @@ public class FileManager {
 			//Dictionary.vocableList = new ArrayList<Vocable>();
 			String line;
 			while ((line = in.readLine()) != null) {
+				System.out.println("Line: " + line);
 				StringTokenizer tokenizer = new StringTokenizer(line, ":");
 				for (int i = 0; i < tokenizer.countTokens(); i++) {
 					String topic = tokenizer.nextToken();
@@ -56,10 +57,10 @@ public class FileManager {
 					String secondLanguage = tokenizer.nextToken();
 					String phoneticScript = tokenizer.nextToken();
 					String learnLevel = tokenizer.nextToken();
-					String importanceLevel = tokenizer.nextToken();
+					String relevance = tokenizer.nextToken();
 					String description = tokenizer.nextToken();
 					//Dictionary.vocableList.add(new Vocable(topic, chapter, firstLanguage, secondLanguage, phoneticScript, learnLevel));
-					loadedVocableList.add(new Vocable(topic, chapter, firstLanguage, secondLanguage, phoneticScript, learnLevel, importanceLevel, description));
+					loadedVocableList.add(new Vocable(topic, chapter, firstLanguage, secondLanguage, phoneticScript, learnLevel, relevance, description));
 				}
 			}
 			VocableManager.setVocableList(loadedVocableList);

@@ -637,6 +637,26 @@ public class ChangeMultipleVocablesFrame extends JFrame implements VocabularyLan
 		newLearnLevelTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getLearnLevel());
 		newRelevanceTextField.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getRelevance());
 		newDescriptionTextArea.setText(changedVocables.get(numberOfCurrentlyDisplayedVocable).getDescription());
+		
+		//set caret positions for old attribute value components
+		oldFirstLanguageTextField.setCaretPosition(0);
+		oldPhoneticScriptTextField.setCaretPosition(0);
+		oldSecondLanguageTextField.setCaretPosition(0);
+		oldTopicTextField.setCaretPosition(0);
+		oldChapterTextField.setCaretPosition(0);
+		oldLearnLevelTextField.setCaretPosition(0);
+		oldRelevanceTextField.setCaretPosition(0);
+		oldDescriptionTextArea.setCaretPosition(0);
+		
+		//set caret postions for new attribute value components
+		newFirstLanguageTextField.setCaretPosition(0);
+		newPhoneticScriptTextField.setCaretPosition(0);
+		newSecondLanguageTextField.setCaretPosition(0);
+		newTopicTextField.setCaretPosition(0);
+		newChapterTextField.setCaretPosition(0);
+		newLearnLevelTextField.setCaretPosition(0);
+		newRelevanceTextField.setCaretPosition(0);
+		newDescriptionTextArea.setCaretPosition(0);
 	}
 	
 	private void storeCurrentlyDisplayedVocableChanges() {

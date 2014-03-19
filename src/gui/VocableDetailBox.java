@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import listener.search.SearchListener;
 import listener.vocables.VocableChangedListener;
 import listener.vocables.VocableDeletedListener;
 import listener.vocabletable.VocableTableActionsListener;
@@ -21,16 +22,18 @@ import factories.ObserveableFactory;
  * @author xiaolong
  */
 @SuppressWarnings("serial")
-public class VocableDetailBox extends JPanel implements VocableDeletedListener, VocableChangedListener, VocableTableActionsListener {
+public class VocableDetailBox extends JPanel implements VocableDeletedListener, VocableChangedListener, VocableTableActionsListener, SearchListener {
 
 	// private DictionaryMainWindow window;
 
-	private JLabel vocableDetailChapter = new JLabel("Chapter");
-	private JLabel vocableDetailTopic = new JLabel("Topic");
-	private JLabel vocableDetailLevel = new JLabel("Level");
+	private JLabel vocableDetailChapter = new JLabel("Chapter:");
+	private JLabel vocableDetailTopic = new JLabel("Topic:");
+	private JLabel vocableDetailLearnLevel = new JLabel("Level:");
+	private JLabel vocableDetailRelevance = new JLabel("Relevance:");
 	private JLabel vocableDetailChapterText = new JLabel("---");
 	private JLabel vocableDetailTopicText = new JLabel("---");
 	private JLabel vocableDetailLearnLevelText = new JLabel("---");
+	private JLabel vocableDetailRelevanceText = new JLabel("---");
 	private Vocable currentVocable;
 
 	public VocableDetailBox() {
@@ -49,11 +52,13 @@ public class VocableDetailBox extends JPanel implements VocableDeletedListener, 
 
 		add(vocableDetailChapter, "cell 0 0");
 		add(vocableDetailTopic, "cell 0 1");
-		add(vocableDetailLevel, "cell 0 2");
+		add(vocableDetailLearnLevel, "cell 0 2");
+		add(vocableDetailRelevance, "cell 0 3");
 
 		add(vocableDetailChapterText, "cell 1 0");
 		add(vocableDetailTopicText, "cell 1 1");
 		add(vocableDetailLearnLevelText, "cell 1 2");
+		add(vocableDetailRelevanceText, "cell 1 3");
 	}
 
 	/**
@@ -62,6 +67,7 @@ public class VocableDetailBox extends JPanel implements VocableDeletedListener, 
 	private void registerListeners() {
 		ObserveableFactory.getVocablesObserveable().registerVocableChangedListener(this);
 		ObserveableFactory.getVocablesObserveable().registerVocableDeletedListener(this);
+		ObserveableFactory.getSearchObservable().registerListener(this);
 		DictionaryMainWindow.vocableTable.registerVocableTableActionsListener(this);
 	}
 
@@ -70,6 +76,7 @@ public class VocableDetailBox extends JPanel implements VocableDeletedListener, 
 		vocableDetailChapterText.setText(vocable.getChapter());
 		vocableDetailTopicText.setText(vocable.getTopic());
 		vocableDetailLearnLevelText.setText(vocable.getLearnLevel());
+		
 	}
 
 	public void updateChapter(String newChapter) {
@@ -82,6 +89,10 @@ public class VocableDetailBox extends JPanel implements VocableDeletedListener, 
 
 	public void updateLearnLevel(String newLevel) {
 		vocableDetailLearnLevelText.setText(newLevel);
+	}
+	
+	public void updateRelevance(String newRelevance) {
+		vocableDetailRelevanceText.setText(newRelevance);
 	}
 
 	@Override
@@ -104,5 +115,13 @@ public class VocableDetailBox extends JPanel implements VocableDeletedListener, 
 	@Override
 	public void selectedVocableInVocableTable(Vocable vocable) {
 		updateVocableDetails(vocable);
+	}
+
+	@Override
+	public void searchPerformedAction() {
+		updateChapter("---");
+		updateLearnLevel("---");
+		updateTopic("---");
+		updateRelevance("---");
 	}
 }

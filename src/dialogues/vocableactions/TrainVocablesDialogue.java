@@ -2,7 +2,7 @@
 package dialogues.vocableactions;
 
 import factories.ObserveableFactory;
-import gui.BigCharacterBox;
+import gui.BigCharacterBoxForTrainingVocablesDialogue;
 import gui.JTextFieldWithContextMenu;
 
 import java.awt.Color;
@@ -10,6 +10,10 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
@@ -17,7 +21,10 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
 import listener.vocables.VocableDeletedListener;
@@ -38,11 +45,19 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 	private JTextFieldWithContextMenu secondLanguageTextField;
 	private JLabel learnLevelLabel;
 	private JTextFieldWithContextMenu learnLevelLanguageTextField;
+	private JLabel relevanceLabel;
+	private JTextFieldWithContextMenu relevanceLanguageTextField;
+	private JLabel descriptionLabel;
+	private JTextArea descriptionTextArea;
+	private JScrollPane descriptionScrollPane;
 	
 	private JButton showPhoneticScriptButton;
 	private JButton showTranslationButton;
+	private JButton showDescriptionButton;
 	private JButton nextVocableButton;
 	private JButton previousVocableButton;
+	private JTextFieldWithContextMenu goToSpecificVocableTextField;
+	private JButton goToSpecificVocableButton;
 	private JButton restartTrainingButton;
 	private JButton stopTrainingButton;
 	
@@ -51,15 +66,22 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 	private JPanel buttonPanel;
 	private JPanel vocableTrainingPanel;
 	
-	private BigCharacterBox bigCharacterBox = new BigCharacterBox(Settings.bigCharacterBoxOptions_ignored_characters);
+	private BigCharacterBoxForTrainingVocablesDialogue bigCharacterBox = new BigCharacterBoxForTrainingVocablesDialogue(Settings.bigCharacterBoxOptions_ignored_characters);
 	private JPanel bigCharacterBoxPanel;
 	
 	private ArrayList<Vocable> trainingVocables = new ArrayList<Vocable>();
 	private int currentPositionInTrainingVocables = 0;
 	private boolean phoneticScriptShown = Settings.trainingOptions_phoneticScript_shown;
 	private boolean translationShown = false;
+	private boolean descriptionShown = Settings.trainingOptions_description_shown;
 	
 	private Vocable currentlyShownVocable;
+	
+	private static final int NO_TEXT_FIELD = 0;
+	private static final int GO_TO_SPECIFIC_VOCABLE_TEXT_FIELD = 1;
+	private static final int LEARN_LEVEL_TEXT_FIELD = 2;
+	
+	private int focusedTextField;
 	
 	public TrainVocablesDialogue(ArrayList<Vocable> trainingVocables) {
 		this.trainingVocables = trainingVocables;
@@ -79,7 +101,7 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		this.setResizable(false);
 		
 		buttonPanel = new JPanel();
-		GridLayout gridLayout = new GridLayout(3,2);
+		GridLayout gridLayout = new GridLayout(4,3);
 		gridLayout.setVgap(5);
 		buttonPanel.setLayout(gridLayout);
 		
@@ -91,6 +113,8 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		initializePhoneticScriptComponents();
 		initializeSecondLanguageComponents();
 		initializeLearnLevelComponents();
+		initializeRelevanceComponents();
+		initializeDesciptionComponents();
 		initializeButtonComponents();
 		initializeStatusLabel();
 	}
@@ -158,6 +182,32 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 	}
 	
 	/**
+	 * initializes the relevance components
+	 */
+	private void initializeRelevanceComponents() {
+		relevanceLabel = new JLabel("Relevance");
+		relevanceLanguageTextField = new JTextFieldWithContextMenu(20);
+		relevanceLanguageTextField.setFont(new Font(Settings.trainingOptions_font, Font.PLAIN, 16));
+		relevanceLanguageTextField.setEditable(false);
+		relevanceLanguageTextField.setBackground(new Color(240, 240, 240));
+		relevanceLanguageTextField.setCaretPosition(0);
+	}
+	
+	/**
+	 * initializes the description components
+	 */
+	private void initializeDesciptionComponents() {
+		descriptionLabel = new JLabel("Description");
+		descriptionTextArea = new JTextArea(4, 20);
+		descriptionTextArea.setEditable(false);
+		descriptionTextArea.setBackground(new Color(240,240,240));
+		descriptionTextArea.setCaretPosition(0);
+		descriptionTextArea.setLineWrap(true);
+		descriptionTextArea.setWrapStyleWord(true);
+		descriptionScrollPane = new JScrollPane(descriptionTextArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	}
+	
+	/**
 	 * initializes the button components
 	 */
 	private void initializeButtonComponents() {
@@ -172,8 +222,19 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		} else {
 			showTranslationButton = new JButton("Show " + Settings.languageOptions_firstLanguageName);
 		}
+		
+		if(Settings.trainingOptions_description_shown) {
+			showDescriptionButton = new JButton("Hide Description");
+		} else {
+			showDescriptionButton = new JButton("Show Description");
+		}
+		
 		nextVocableButton = new JButton(">>");
 		previousVocableButton = new JButton("<<");
+		
+		goToSpecificVocableButton = new JButton("Go To:");
+		goToSpecificVocableTextField = new JTextFieldWithContextMenu(5);
+		
 		restartTrainingButton = new JButton("Restart");
 		stopTrainingButton = new JButton("Stop");
 	}
@@ -199,15 +260,26 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		vocableTrainingPanel.add(secondLanguageTextField);
 		vocableTrainingPanel.add(learnLevelLabel);
 		vocableTrainingPanel.add(learnLevelLanguageTextField);
-		
+		vocableTrainingPanel.add(relevanceLabel);
+		vocableTrainingPanel.add(relevanceLanguageTextField);
+		vocableTrainingPanel.add(descriptionLabel);
+		vocableTrainingPanel.add(descriptionScrollPane);
 		addBorder(vocableTrainingPanel, null);
 		
 		add(vocableTrainingPanel, "cell 0 1 1 1");
 		
 		buttonPanel.add(showPhoneticScriptButton);
 		buttonPanel.add(showTranslationButton);
+		buttonPanel.add(showDescriptionButton);
+		
 		buttonPanel.add(previousVocableButton);
 		buttonPanel.add(nextVocableButton);
+		buttonPanel.add(new JPanel());
+		
+		buttonPanel.add(goToSpecificVocableButton);
+		buttonPanel.add(goToSpecificVocableTextField);
+		buttonPanel.add(new JPanel());
+		
 		buttonPanel.add(restartTrainingButton);
 		buttonPanel.add(stopTrainingButton);
 		
@@ -258,6 +330,24 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 			}
 		});
 		
+		goToSpecificVocableButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				goToSpecificVocable();
+			}
+		});
+		
+		goToSpecificVocableTextField.addFocusListener(new FocusListener() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				focusedTextField = TrainVocablesDialogue.NO_TEXT_FIELD;
+			}
+			@Override
+			public void focusGained(FocusEvent e) {
+				focusedTextField = TrainVocablesDialogue.GO_TO_SPECIFIC_VOCABLE_TEXT_FIELD;
+			}
+		});
+		
 		showPhoneticScriptButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -272,6 +362,13 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 			}
 		});
 		
+		showDescriptionButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				toggleDescription();
+			}
+		});
+		
 		restartTrainingButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -283,6 +380,61 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				stopTraining();
+			}
+		});
+		
+		goToSpecificVocableTextField.addKeyListener(new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+			
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(focusedTextField == TrainVocablesDialogue.GO_TO_SPECIFIC_VOCABLE_TEXT_FIELD) {
+					if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+						goToSpecificVocable();
+					};
+				}
+			}
+		});
+		
+		learnLevelLanguageTextField.addFocusListener(new FocusListener() {
+			@Override
+			public void focusLost(FocusEvent e) {
+				focusedTextField = TrainVocablesDialogue.NO_TEXT_FIELD;
+			}
+			
+			@Override
+			public void focusGained(FocusEvent e) {
+				focusedTextField = TrainVocablesDialogue.LEARN_LEVEL_TEXT_FIELD;
+			}
+		});
+		
+		learnLevelLanguageTextField.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if(focusedTextField == TrainVocablesDialogue.LEARN_LEVEL_TEXT_FIELD) {
+					if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+						nextVocable();
+					};
+				}
 			}
 		});
 	}
@@ -334,6 +486,29 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		}
 		
 		translationShown = false;
+	}
+	
+	/**
+	 * Goes to a specific vocable in vocable training.
+	 */
+	private void goToSpecificVocable() {
+		try {
+			saveVocableLearnLevel();
+			
+			currentPositionInTrainingVocables = Integer.parseInt(goToSpecificVocableTextField.getText(), 10) - 1;
+			
+			if(currentPositionInTrainingVocables > trainingVocables.size() - 1) {
+				currentPositionInTrainingVocables = trainingVocables.size() - 1;
+			}
+			if(currentPositionInTrainingVocables < 0) {
+				currentPositionInTrainingVocables = 0;
+			}
+			goToSpecificVocableTextField.setText(Integer.toString((currentPositionInTrainingVocables+1), 10));
+			
+			setVocable(trainingVocables.get(currentPositionInTrainingVocables));
+		} catch(NumberFormatException exc) {
+			JOptionPane.showMessageDialog(this, "Cannot go to vocable! Please enter a valid number!", "Error", JOptionPane.OK_OPTION);
+		}
 	}
 	
 	/**
@@ -415,14 +590,24 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		}
 	}
 	
+	private void toggleDescription() {
+		if(descriptionShown) {
+			descriptionTextArea.setText("Description hidden");
+			showDescriptionButton.setText("Show Description");
+			descriptionShown = false;
+		} else {
+			descriptionTextArea.setText(trainingVocables.get(currentPositionInTrainingVocables).getDescription());
+			showDescriptionButton.setText("Hide Description");
+			descriptionShown = true;
+		}
+	}
+	
 	/**
 	 * Sets a vocable for the vocable training dialogue. This vocables attributes will be shown.
 	 * @param vocable the shown vocable
 	 */
 	private void setVocable(Vocable vocable) {
 		currentlyShownVocable = trainingVocables.get(currentPositionInTrainingVocables);
-		
-		System.out.println("Pinyin is: " + phoneticScriptShown);
 		
 		//Settings texts according to the translation direction setting
 		if(Settings.trainingOptions_firstToSecond) {
@@ -437,14 +622,29 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		if(Settings.trainingOptions_phoneticScript_shown) {
 			phoneticScriptLanguageTextField.setText(vocable.getPhoneticScript());
 			showPhoneticScriptButton.setText("Hide " + Settings.languageOptions_phoneticScriptName);
-			System.out.println(phoneticScriptShown + " --> " + true);
 			phoneticScriptShown = true;
 		} else {
 			phoneticScriptLanguageTextField.setText(Settings.languageOptions_phoneticScriptName + " hidden");
 			showPhoneticScriptButton.setText("Show " + Settings.languageOptions_phoneticScriptName);
-			System.out.println(phoneticScriptShown + " --> " + false);
 			phoneticScriptShown = false;
 		}
+		
+		/* 
+		 * showing or hiding the description of a vocable, depending on the show description 
+		 * setting and labelling the show/hideDescription button accordingly
+		 */
+		if(Settings.trainingOptions_description_shown) {
+			descriptionTextArea.setText(vocable.getDescription());
+			showDescriptionButton.setText("Hide Description");
+			descriptionShown = true;
+		} else {
+			descriptionTextArea.setText("Description Hidden");
+			showDescriptionButton.setText("Show Description");
+			descriptionShown = false;
+		}
+		
+		
+		relevanceLanguageTextField.setText(vocable.getRelevance());
 		
 		learnLevelLanguageTextField.setText(vocable.getLearnLevel());
 		
@@ -452,6 +652,10 @@ public class TrainVocablesDialogue extends JFrame implements VocableDeletedListe
 		phoneticScriptLanguageTextField.setCaretPosition(0);
 		secondLanguageTextField.setCaretPosition(0);
 		learnLevelLanguageTextField.setCaretPosition(0);
+		
+		bigCharacterBox.setCharacters("");
+		showTranslationButton.setText("Show " + Settings.languageOptions_secondLanguageName);
+		translationShown = false;
 		
 		statusLabel.setText("Vocable " + (currentPositionInTrainingVocables+1) + " of " + trainingVocables.size());
 	}

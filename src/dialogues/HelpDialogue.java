@@ -2,6 +2,7 @@ package dialogues;
 
 import gui.DictionaryMainWindow;
 
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JDialog;
@@ -76,7 +77,7 @@ public class HelpDialogue extends JDialog {
 	
 	private static final String HELP_TEXT_VOCABLE_STRUCTURE_INTRO = "" +
 		"A vocable has the following parts:\n\n" +
-		"Topic\nChapter\nFirstLanguage\nSecondLanguage\nPhoneticScript\nLearnLevel\n\n" +
+		"Topic\nChapter\nFirstLanguage\nSecondLanguage\nPhoneticScript\nLearnLevel\nRelevance\nDescription\n\n" +
 		"Generally the vocable trainer does not limit you to using these parts strictly " +
 		"as their names indicate. You can enter whatever you want as a string and it " +
 		"will be saved in the vocable. Since the vocable file uses a colon (':') as a " +
@@ -118,6 +119,17 @@ public class HelpDialogue extends JDialog {
 		"couldn't speak the vocable then I wrote a '0', if I could speak the " +
 		"vocable, but not write it, I wrote a '1' and if I knew the vocable very " +
 		"well so that I could write and speak it, I wrote a '2'.\n\n";
+	
+	private static final String HELP_TEXT_VOCABLE_STRUCTURE_RELEVANCE_DEFINITION = ""
+		+ "Relevance is a measure for how important a vocable is. A low relevance "
+		+ "expresses that the vocable is not important, whereas a high relevance "
+		+ "expresses that a vocable should probably be learned, because it is "
+		+ "important.\n\n";
+	
+	private static final String HELP_TEXT_VOCABLE_STRUCTURE_DESCRIPTION_DEFINITION = ""
+		+ "A description allows you to enter a description for every vocable. One "
+		+ "good use case for descriptions are vocables, which have the same meaning, "
+		+ "but are used in disjunct and different contexts.\n\n";
 	
 	private static final String HELP_TEXT_WHY = "" +
 		"I tested many vocable trainer programs before I decided " +
@@ -180,7 +192,7 @@ public class HelpDialogue extends JDialog {
 		helpTextPane.setMinimumSize(new Dimension(400, 300));
 		helpTextPane.setMaximumSize(new Dimension(400, 300));
 		helpTextPane.setEditable(false);
-		helpTextPane.setBackground(getBackground());
+		helpTextPane.setBackground(new Color(240,240,240));
 		
 		helpTextPaneScrollPane = new JScrollPane(helpTextPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		helpTextPaneScrollPane.setMinimumSize(new Dimension(400, 300));
@@ -243,6 +255,12 @@ public class HelpDialogue extends JDialog {
 			
 			addHelpText("Learn Level\n\n", heading2);
 			addHelpText(HELP_TEXT_VOCABLE_STRUCTURE_LEARN_LEVEL_DEFINITION, paragraph);
+			
+			addHelpText("Relevance\n\n", heading2);
+			addHelpText(HELP_TEXT_VOCABLE_STRUCTURE_RELEVANCE_DEFINITION, paragraph);
+			
+			addHelpText("Description\n\n", heading2);
+			addHelpText(HELP_TEXT_VOCABLE_STRUCTURE_DESCRIPTION_DEFINITION, paragraph);
 			
 		} else if(helpTopic.equals("About")) {
 			helpTextPane.setText("");

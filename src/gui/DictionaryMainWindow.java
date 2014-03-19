@@ -64,15 +64,14 @@ public class DictionaryMainWindow extends JFrame {
 	//private Object[][] initialTableData = {{"","",""}};
 	
 	//EAST
-	public BigCharacterBox bigCharacterBox;
+	private JPanel eastJPanel;
+	public BigCharacterBoxForVocableTable bigCharacterBox;
+	private VocableDetailBox vocableDetailBox;
 	
 	//SOUTH
 	private JPanel southJPanel;
 	private JLabel versionLabel;
 	private static JLabel statusLabel;
-	
-	private VocableDetailBox vocableDetailBox;
-	
 
 	//EXTERNAL
 	public static AddVocableFrame addVocableDialogue;
@@ -133,31 +132,33 @@ public class DictionaryMainWindow extends JFrame {
 	private void initializeLayout() {
 		getContentPane().setLayout(new BorderLayout());
 
-		southJPanel = new JPanel(new MigLayout("wrap 3", "[][center, grow][]", ""));
-		getContentPane().add(southJPanel, BorderLayout.SOUTH);
-
+		southJPanel = new JPanel(new MigLayout("wrap 3","[]push[center, grow]push[]","[]push[]"));
+		eastJPanel = new JPanel(new MigLayout());
 		westJPanel = new JPanel(new MigLayout("wrap 1", "[center]"));
-		//westJPanel = new JPanel(new MigLayout("wrap 1", ""));
 		
+		getContentPane().add(southJPanel, BorderLayout.SOUTH);
 		getContentPane().add(westJPanel, BorderLayout.WEST);
 	}
 	
 	private void createComponents() {
 		createMenu();
+		
 		//NORTH
 		createTitleLabel();
+		
 		//WEST
 		createSearchBox();
 		createActionBox();
+		
 		//CENTER
 		createVocableTable();
 		
 		//EAST
-		createBigCharacterBox();
+		createEASTComponents();
+		
 		//SOUTH
-		createStatusLabel();
-		createVocableDetailsBox();
-		createVersionLabel();
+		createSOUTHComponents();
+		
 	}
 
 	private void createMenu() {
@@ -165,6 +166,20 @@ public class DictionaryMainWindow extends JFrame {
 		setJMenuBar(dictionaryMenuBar);
 	}
 
+	private void createEASTComponents() {
+		add(eastJPanel, BorderLayout.EAST);
+		bigCharacterBox = new BigCharacterBoxForVocableTable(Settings.bigCharacterBoxOptions_ignored_characters);
+		eastJPanel.add(bigCharacterBox, "cell 0 0 1 1");
+	}
+	
+	private void createSOUTHComponents() {
+		southJPanel.add(new JPanel());
+		createVocableDetailsBox();
+		southJPanel.add(new JPanel());
+		createStatusLabel();
+		createVersionLabel();
+	}
+	
 	private void createSearchBox() {
 		searchBox = new SearchBox(Settings.lastSearchTerm.substring(0, Settings.lastSearchTerm.length()-1));
 		westJPanel.add(searchBox);
@@ -186,36 +201,25 @@ public class DictionaryMainWindow extends JFrame {
 		add(vocableTableScrollPane, BorderLayout.CENTER);
 	}
 	
-	private void createBigCharacterBox() {
-		bigCharacterBox = new BigCharacterBox(Settings.bigCharacterBoxOptions_ignored_characters);
-		getContentPane().add(bigCharacterBox, BorderLayout.EAST);
-	}
-	
 	private void createTitleLabel() {
 		titleLabel = new JLabel("Dictionary", JLabel.CENTER);
 		titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
-		getContentPane().add(titleLabel, BorderLayout.NORTH);
+		add(titleLabel, BorderLayout.NORTH);
 	}
 
 	private void createStatusLabel() {
 		statusLabel = ComponentFactory.getDictionaryStatusLabel();
-		
-		southJPanel.add(new JPanel(), "cell 0 0");
-		southJPanel.add(new JPanel(), "cell 0 1");
-		southJPanel.add(statusLabel, "cell 0 2");
+		southJPanel.add(statusLabel);
 	}
 
 	private void createVocableDetailsBox() {
 		vocableDetailBox = new VocableDetailBox();
-		southJPanel.add(vocableDetailBox, "cell 1 0 1 3");
+		southJPanel.add(vocableDetailBox, "span 1 2");
 	}
 	
 	private void createVersionLabel() {
 		versionLabel = new JLabel(VERSION_LABEL_STRING);
-
-		southJPanel.add(new JPanel(), "cell 2 0");
-		southJPanel.add(new JPanel(), "cell 2 1");
-		southJPanel.add(versionLabel, "cell 2 2");
+		southJPanel.add(versionLabel);
 	}
 	
 	public SaveOnExitConfirmation getSaveOnExitConfirmation() {

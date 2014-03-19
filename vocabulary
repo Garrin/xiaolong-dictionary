@@ -1,4 +1,4 @@
-Personalpronomen:PC01/LSC01/NPC01:Du:你:nǐ:2:---:---
+Personalpronomen:PC01/LSC01/NPC01:Du:你:nǐ:2:5:---
 ---:PC01/LSC01/NPC01:gut:好:hǎo:2:---:---
 Grammatik/Fragepartikel:PC02/LSC01/NPC01:---:吗:ma:2:---:---
 Grammatik/Personalpronomen:PC02/LSC01/NPC01:ich/mir/mich:我:wǒ:2:---:---
@@ -47,7 +47,7 @@ Fluesse:PC07:Yangtze:长江:chángjiāng:0:---:---
 Fluesse:PC07:gelber Fluss:黄河:huánghé:0:---:---
 Sehenswuerdigkeiten:PC07:die chinesische Mauer:长城:chángchéng:0:---:---
 Geografie:PC07Z:die Welt:世界:shìjiè:0:---:---
-Geografie:PC07Z/NPC14:Europa:欧洲:ōuzhōu:2:---:---
+Geografie:PC07Z/NPC14:Europa:欧洲:ōuzhōu:1:---:---
 Geografie:PC07Z:Afrika:非洲:fēizhōu:0:---:---
 Geografie:PC07Z:Ozeanien:大洋洲:dàyángzhōu:0:---:---
 Geografie:PC07Z:Suedamerika:南美洲:nánměizhōu:0:---:---
@@ -60,7 +60,7 @@ Begrueßung:PC08:willkommen/willkommenheißen:欢迎:huānyíng:0:---:---
 ---:PC08/LSC01/NPC05:danken:谢谢:xièxiè:2:---:---
 ---:PC08:hoeflich:客气:kèqi:0:---:---
 ---:PC08/NPC11Z:rauchen:吸烟:xīyān:0:---:---
-Getraenke:PC08Z/PC19/NPC09Z:das Bier:啤酒:píjiǔ:2:---:---
+Getraenke:PC08Z/PC19/NPC09Z:das Bier:啤酒:píjiǔ:0:---:---
 Getraenke:PC08Z/PC25Z/NPC09Z:die Milch:牛奶:níunǎi:2:---:---
 Anrede:PC08Z/PC12/NPC04:der Herr:先生:xiānsheng/xiānshēng:2:---:---
 Anrede:PC08Z:die Frau:太太:tàitai:2:---:---
@@ -75,7 +75,7 @@ Schule/Studium:PC09/NPC04:das Institut/die Hochschule:学院:xuéyuàn:2:---:---
 Berufe:PC09/NPC04:der Student/der Schueler:学生:xuéshēng:2:---:---
 Verben:PC09/NPC04:lernen/studieren:学习:xuéxí:2:---:---
 Verben:PC09/NPC07:lernen/studieren:学:xué:2:---:---
-Anrede:PC09Z/PC19/NPC05:das Fraeulein:小姐:xiǎojiě:2:---:---
+Anrede:PC09Z/PC19/NPC05:das Fraeulein:小姐:xiǎojiě:2:---:Achtung! Diese Anrede hat einen Bedeutungswandel durchlaufen und kann eventuell sehr missverstanden werden!
 Anrede:PC09Z:hoefliche Form der Anrede einer Frau:女士:nǚshì:0:---:---
 Anrede:PC09Z:der Genosse:同志:tóngzhì:0:---:---
 Laender:PC09Z:Korea:朝鲜:cháoxiǎn:0:---:---
@@ -150,12 +150,12 @@ Familie:PC14:der Ehepartner:爱人:àiren:0:---:---
 Gebaeude:PC14/NPC10Z:der Buchladen/die Buchhandlung:书店:shūdiàn:2:---:---
 Familie:PC14/NPC08Z:das Kind:孩子:háizi:2:---:---
 ---:PC14/NPC10:geben/fuer/zu/zu Gunsten von jemandem:给:gěi:2:---:---
-Verben:PC14/NPC11:schreiben:写:xiě:2:---:---
-Papierzeug:PC14/NPC15:der Brief:信:xìn:0:5:---
+Verben:PC14/NPC11:schreiben:写:xiě:1:---:---
+Papierzeug:PC14/NPC15:der Brief:信:xìn:1:5:---
 Verben:PC14/NPC13:erzaehlen/jemanden etwas mitteilen:告诉:gàosu:2:---:---
 Berufe:PC14Z:der Angestellter:职员:zhíyuán:0:---:---
 Berufe:PC14Z/NPC08Z:der Ingenieur:工程师:gōngchéngshī:0:---:---
-Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:0:---:---
+Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:2:---:---
 ---:PC14Z/LSC01/NPC13:die Firma/das Unternehmen:公司:gōngsī:2:---:---
 Sprachen:PC15/NPC07:das Chinesisch:中文:zhōngwén:2:---:---
 Studium:PC15/NPC07:die Fakultaet/der Fachbereich:系:xì:2:---:---
