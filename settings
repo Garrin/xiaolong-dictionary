@@ -1,5 +1,5 @@
-WINDOW_WIDTH=882
-WINDOW_HEIGHT=899
+WINDOW_WIDTH=888
+WINDOW_HEIGHT=738
 FIRST_TIME_RUN=false
 VOCABLE_OPTION_TRANSLATION_SEPERATOR=/
 SEARCH_OPTION_FIRST_LANGUAGE_ACTIVATED=true
@@ -36,7 +36,7 @@ BIG_CHARACTER_BOX_OPTIONS_IGNORE=/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRST
 SHOW_SAVE_VOCABULARY_BEFORE_EXIT_CONFIRMATION_DIALOG=true
 SHOW_EXIT_CONFIRMATION_DIALOG=true
 SAVE_VOCABULARY_ON_EXIT=false
-VOCABLE_FILE_LOCATION=C:\xiaolong-dictionary\vocabulary
+VOCABLE_FILE_LOCATION=vocabulary
 SPECIAL_CHARACTERS=āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ
 SEARCH_HISTORY_MAXIMUM_LENGTH=10
 SEARCH_HISTORY=---:false:false:false:false:false:false:true:false:false:false:true:,:true:true:true:true:true:true:true:true:false:false:false:,NPC:true:true:true:true:true:true:true:true:false:false:false:,NPC:true:true:true:true:true:true:true:true:false:false:false:,NPC:true:true:true:true:true:true:true:true:false:false:false:,NPC:true:true:true:true:true:true:true:true:false:false:false:,schiff:true:false:false:true:false:false:false:false:false:false:false:,essen:false:false:false:true:false:false:false:false:false:false:false:,:true:true:true:true:true:true:true:true:false:false:false:,NPC:true:true:true:true:true:true:true:true:false:false:false:,

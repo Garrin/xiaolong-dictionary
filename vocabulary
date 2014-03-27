@@ -142,10 +142,10 @@ Verben:PC14/NPC08:arbeiten/Arbeit:工作:gōngzuò:2:---:---
 Verben:PC14/NPC12:denken/vermissen/wollen:想:xiǎng:2:---:---
 ---:PC14/NPC08:die Familie/das Haus/das Zuhause:家:jiā:2:---:---
 ---:PC14/NPC06:haben/es gibt:有:yǒu:2:---:---
----:PC14/NPC08:nicht:没:méi:2:---:---
+---:PC14/NPC08:nicht:没:méi:2:---:Dieses "nicht" wird fuer die Vergangenheitsform verwendet.
 Familie:PC14/NPC08:die juengere Schwester:妹妹:mèimei:2:---:---
 Familie:PC14/NPC08:die aeltere Schwester:姐姐:jiějie:2:---:---
-Gebaeude:PC14/NPC15:die Bank/das Geldinstitut:银行:yínháng:0:5:---
+Gebaeude:PC14/NPC15:die Bank/das Geldinstitut:银行:yínháng:2:5:---
 Familie:PC14:der Ehepartner:爱人:àiren:0:---:---
 Gebaeude:PC14/NPC10Z:der Buchladen/die Buchhandlung:书店:shūdiàn:2:---:---
 Familie:PC14/NPC08Z:das Kind:孩子:háizi:2:---:---
@@ -157,10 +157,10 @@ Berufe:PC14Z:der Angestellter:职员:zhíyuán:0:---:---
 Berufe:PC14Z/NPC08Z:der Ingenieur:工程师:gōngchéngshī:0:---:---
 Berufe:PC14Z/NPC13:der Manager/der Direktor/der Geschaeftsfuehrer:经理:jīnglǐ:2:---:---
 ---:PC14Z/LSC01/NPC13:die Firma/das Unternehmen:公司:gōngsī:2:---:---
-Sprachen:PC15/NPC07:das Chinesisch:中文:zhōngwén:2:---:---
+Sprachen:PC15/NPC07:das Chinesisch:中文:zhōngwén:2:---:Allgemeiner Ausdruck fuer Chinesisch, auch geschriebene Sprache und Dialekte
 Studium:PC15/NPC07:die Fakultaet/der Fachbereich:系:xì:2:---:---
-ZEW:PC15/NPC08:(allgemeines ZEW):个:gè:2:---:---
-Grammatik/Fragepartikel/Anzahl:PC15/NPC08:wieviel/wie viele/einige:几:jǐ:2:---:---
+ZEW:PC15/NPC08:(ZEW fuer Menschen):个:gè:2:---:allgemeines Zaehleinheitswort, kann man benutzen wenn man das richtige Zaehleinheitswort nicht kennt
+Grammatik/Fragepartikel/Anzahl:PC15/NPC08:wieviel/wie viele/einige:几:jǐ:2:---:Man benutzt dieses Fragewort, wenn man eine Anzahl von bis zu zehn in der Antwort auf die Frage erwartet.
 Studium:PC15/NPC07/NPC11:lehren/unterrichten:教:jiāo:2:---:---
 Grammatik:PC15/NPC14:die Grammatik:语法:yǔfǎ:2:---:---
 ---:PC15/NPC11:chinesisches Schriftzeichen:汉字:hànzì:2:---:---
@@ -191,7 +191,7 @@ Zeiten:PC16/NPC09Z:der Abend/abends:晚上:wǎnshang:2:---:---
 ---:PC16/NPC15:von (irgendwo):从:cóng:2:5:---
 Verben:PC16/NPC10:suchen/jemanden rufen/jemandem Wechselgeld herausgeben:找:zhǎo:2:---:---
 ---:PC16:alt:旧:jiù:0:---:---
-Kleidung:PC16/NPC12:anziehen/tragen:穿:chuān:2:---:---
+Kleidung:PC16/NPC12:anziehen/tragen:穿:chuān:0:---:---
 ZEW:PC16/NPC13:(ZEW Oberbekleidung, Arbeit, abstrakte Dinge):件:jiàn:1:---:---
 Kleidung:PC16:das Hemd/die Bluse:衬衫:chènshān:0:---:---
 Farben:PC16:gruen:绿色:lǜsè:0:---:---

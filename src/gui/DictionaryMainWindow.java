@@ -148,7 +148,6 @@ public class DictionaryMainWindow extends JFrame {
 		
 		//WEST
 		createSearchBox();
-		createActionBox();
 		
 		//CENTER
 		createVocableTable();
@@ -170,6 +169,7 @@ public class DictionaryMainWindow extends JFrame {
 		add(eastJPanel, BorderLayout.EAST);
 		bigCharacterBox = new BigCharacterBoxForVocableTable(Settings.bigCharacterBoxOptions_ignored_characters);
 		eastJPanel.add(bigCharacterBox, "cell 0 0 1 1");
+		eastJPanel.add(new ActionBox(this), "cell 0 1 1 1");
 	}
 	
 	private void createSOUTHComponents() {
@@ -183,10 +183,6 @@ public class DictionaryMainWindow extends JFrame {
 	private void createSearchBox() {
 		searchBox = new SearchBox(Settings.lastSearchTerm.substring(0, Settings.lastSearchTerm.length()-1));
 		westJPanel.add(searchBox);
-	}
-
-	private void createActionBox() {
-		westJPanel.add(new ActionBox(this));
 	}
 
 	private void createVocableTable() {
